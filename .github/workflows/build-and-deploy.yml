@@ -1,10 +1,11 @@
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
+    paths-ignore: ['.github/**']
 
 env:
   AZURE_WEBAPP_NAME: pera
-  AZURE_WEBAPP_PACKAGE_PATH: './build/standalone'
+  AZURE_WEBAPP_PACKAGE_PATH: ./build/standalone
   NODE_VERSION: '22.x'
 
 permissions:
