@@ -1,0 +1,13 @@
+tools:
+  exceptions: https://lexislabs.sentry.io/issues/
+  ci: ./.github/workflows/playwright.yml
+
+services:
+  production: pera-dydhd2huhybjakgg.canadacentral-01.azurewebsites.netpera-dydhd2huhybjakgg.canadacentral-01.azurewebsites.net
+
+docs:
+  getting_started: README.md
+
+commands:
+  # for build and test commands, see README.md
+  bootstrap: script/bootstrap
