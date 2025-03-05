@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# This assumes that npm and node are installed and available
+npm install
+npm run dev
