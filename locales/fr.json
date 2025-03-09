@@ -1,0 +1,15 @@
+{
+  "constructionPage": {
+    "contactButton": "Contactez-nous",
+    "subtitle": "Nous construisons quelque chose spécial. \nÀ venir.",
+    "title": "Pera par LexisLabs"
+  },
+  "sentryExamplePage": {
+    "forMoreInfo": "Pour plus d'informations, voir",
+    "getStarted": "Commencez par nous envoyer un exemple d'erreur:",
+    "issuesPage": "Page des Problèmes",
+    "nextLook": "Ensuite, recherchez l'erreur sur le",
+    "theDocumentation": "la documentation",
+    "throwError": "Lancer une erreur!"
+  }
+}

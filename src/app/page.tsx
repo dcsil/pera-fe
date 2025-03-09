@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Construction } from "@mui/icons-material";
+import { useTranslations } from "next-intl";
 
 const StyledHero = styled(Box)(() => ({
     minHeight: "100vh",
@@ -18,6 +19,7 @@ const StyledHero = styled(Box)(() => ({
 }));
 
 export default function Home() {
+    const t = useTranslations("constructionPage");
     return (
         <StyledHero>
             <Container>
@@ -31,10 +33,10 @@ export default function Home() {
                 >
                     <Construction sx={{ fontSize: 60 }} />
                     <Typography variant="h2" fontWeight="bold">
-                        Pera by LexisLabs
+                        {t("title")}
                     </Typography>
                     <Typography variant="h5">
-                        We&apos;re building something special. Coming soon.
+                        {t("subtitle")}
                     </Typography>
                     <Button
                         variant="contained"
@@ -48,7 +50,7 @@ export default function Home() {
                             },
                         }}
                     >
-                        Contact Us
+                        {t("contactButton")}
                     </Button>
                 </Box>
             </Container>

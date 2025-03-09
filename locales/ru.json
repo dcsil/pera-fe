@@ -1,0 +1,15 @@
+{
+  "constructionPage": {
+    "contactButton": "Связаться с нами",
+    "subtitle": "Мы строим что -то особенное. \nВскоре.",
+    "title": "Pera от LexisLabs"
+  },
+  "sentryExamplePage": {
+    "forMoreInfo": "Для получения дополнительной информации см.",
+    "getStarted": "Начните, отправив нам образец ошибки:",
+    "issuesPage": "Проблемы страницы",
+    "nextLook": "Далее ищите ошибку на",
+    "theDocumentation": "документация",
+    "throwError": "Бросить ошибку!"
+  }
+}
