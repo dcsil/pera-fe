@@ -4,7 +4,7 @@ import { Button, Paper, Typography, LinearProgress, Stack } from "@mui/material"
 import { Mic, Stop, NavigateNext, NavigateBefore } from "@mui/icons-material";
 import { useState } from "react";
 import { PageContainer } from "../../common/PageContainer";
-import { SPACING } from "@/src/theme";
+import { SPACING } from "@/theme";
 import { useTranslations } from "next-intl";
 
 export default function ReadingKaraoke() {
