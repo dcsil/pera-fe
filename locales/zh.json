@@ -11,5 +11,35 @@
     "nextLook": "接下来，在",
     "theDocumentation": "文档",
     "throwError": "投掷错误！"
+  },
+  "common": {
+    "nav": {
+      "baseLanguage": "基本语言",
+      "dashboard": "仪表板",
+      "feedbackTooltip": "有一些反馈？\n点击这里！",
+      "helpTooltip": "需要帮助开始吗？\n点击这里！",
+      "logout": "注销",
+      "longReading": "长阅读",
+      "readingKaraoke": "阅读卡拉OK",
+      "sentry": "哨兵示例",
+      "settings": "设置",
+      "targetLanguage": "目标语言"
+    }
+  },
+  "readingKaraoke": {
+    "%": "％",
+    "feedback": "录制后，反馈将出现在这里。",
+    "next": "下一个",
+    "previous": "以前的",
+    "progress": "进步：",
+    "samplePlaceholder": {
+      "sentence": "在地面上的一个洞里住了一个霍比特人。",
+      "title": "霍比特人 - 第1章"
+    },
+    "startButton": "开始",
+    "startRecording": "开始录制",
+    "stopRecording": "停止记录",
+    "subtitle": "通过唱歌来提高您最喜欢的歌曲来提高您的阅读能力！",
+    "title": "阅读卡拉OK"
   }
 }
