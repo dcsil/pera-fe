@@ -1,0 +1,28 @@
+name: Build, Test, and Lint
+
+on:
+  pull_request:
+
+env:
+  NODE_VERSION: '22.x'
+
+permissions:
+    contents: read
+
+jobs:
+  build-test-lint:
+    name: Build, Test, and Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+    - name: npm run lint
+      run: |
+        npm install
+        npm run build
+        npm run test --if-present
+        npm run lint
