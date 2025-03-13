@@ -3,7 +3,7 @@
 import { Box, Button, Typography, Stack, styled } from "@mui/material";
 import { Construction } from "@mui/icons-material";
 import { useTranslations } from "next-intl";
-import { SPACING } from "@/src/theme";
+import { SPACING } from "@/theme";
 
 const StyledHeroContainer = styled(Box)(({ theme }) => ({
     minHeight: "100vh",
