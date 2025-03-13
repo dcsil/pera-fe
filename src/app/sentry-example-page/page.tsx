@@ -4,6 +4,7 @@ import { Box, Container, Typography, Button } from "@mui/material";
 import * as Sentry from "@sentry/nextjs";
 import { styled } from "@mui/material/styles";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const StyledContainer = styled(Box)(() => ({
     minHeight: "100vh",
@@ -14,6 +15,7 @@ const StyledContainer = styled(Box)(() => ({
 }));
 
 export default function Page() {
+    const t = useTranslations("sentryExamplePage");
     return (
         <StyledContainer>
             <Container>
@@ -33,7 +35,7 @@ export default function Page() {
                         </Box>
                     </Typography>
 
-                    <Typography>Get started by sending us a sample error:</Typography>
+                    <Typography>{t("getStarted")}</Typography>
                     <Button
                         variant="contained"
                         onClick={async () => {
@@ -54,21 +56,21 @@ export default function Page() {
                             },
                         }}
                     >
-                        Throw error!
+                        {t("throwError")}
                     </Button>
 
                     <Typography>
-                        Next, look for the error on the
+                        {t("nextLook")}
                         {" "}
                         <Link href="https://lexislabs.sentry.io/issues/?project=4508909185925120">
-                            Issues Page
+                            {t("issuesPage")}
                         </Link>
                     </Typography>
                     <Typography sx={{ mt: 3 }}>
-                        For more information, see
+                        {t("forMoreInfo")}
                         {" "}
                         <Link href="https://docs.sentry.io/platforms/javascript/guides/nextjs/">
-                            https://docs.sentry.io/platforms/javascript/guides/nextjs/
+                            {t("theDocumentation") + "."}
                         </Link>
                     </Typography>
                 </Box>
