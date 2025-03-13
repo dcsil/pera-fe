@@ -19,7 +19,7 @@ const eslintConfig = [
         semi: true,
     }),
     {
-        ignores: [".next/"],
+        ignores: ["build/"],
     },
 ];
 
