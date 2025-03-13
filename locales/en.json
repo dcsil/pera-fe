@@ -11,5 +11,19 @@
     "issuesPage": "Issues Page",
     "forMoreInfo": "For more information, see",
     "theDocumentation": "the documentation"
+  },
+  "common": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "sentry": "Sentry Example",
+      "readingKaraoke": "Reading Karaoke",
+      "longReading": "Long Reading",
+      "targetLanguage": "Target Language",
+      "baseLanguage": "Base Language",
+      "settings": "Settings",
+      "logout": "Log out",
+      "helpTooltip": "Need help getting started? Click here!",
+      "feedbackTooltip": "Have some feedback? Click here!"
+    }
   }
 }
