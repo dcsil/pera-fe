@@ -11,5 +11,35 @@
     "nextLook": "A continuación, busque el error en el",
     "theDocumentation": "la documentación",
     "throwError": "¡Error!"
+  },
+  "common": {
+    "nav": {
+      "baseLanguage": "Lenguaje base",
+      "dashboard": "Panel",
+      "feedbackTooltip": "¿Tienes algunos comentarios? \n¡Haga clic aquí!",
+      "helpTooltip": "¿Necesita ayuda para comenzar? \n¡Haga clic aquí!",
+      "logout": "Finalizar la sesión",
+      "longReading": "Lectura larga",
+      "readingKaraoke": "Lectura de karaoke",
+      "sentry": "Ejemplo de centinela",
+      "settings": "Ajustes",
+      "targetLanguage": "Lengua de llegada"
+    }
+  },
+  "readingKaraoke": {
+    "%": "De %",
+    "feedback": "Los comentarios aparecerán aquí después de la grabación.",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "progress": "Progreso:",
+    "samplePlaceholder": {
+      "sentence": "En un agujero en el suelo vivía un hobbit.",
+      "title": "The Hobbit - Capítulo 1"
+    },
+    "startButton": "Comenzar",
+    "startRecording": "Comenzar a grabar",
+    "stopRecording": "Dejar de grabar",
+    "subtitle": "¡Mejora tus habilidades de lectura cantando a tus canciones favoritas!",
+    "title": "Lectura de karaoke"
   }
 }

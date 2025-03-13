@@ -11,5 +11,35 @@
     "nextLook": "Далее ищите ошибку на",
     "theDocumentation": "документация",
     "throwError": "Бросить ошибку!"
+  },
+  "common": {
+    "nav": {
+      "baseLanguage": "Базовый язык",
+      "dashboard": "Приборная панель",
+      "feedbackTooltip": "Есть отзывы? \nКликните сюда!",
+      "helpTooltip": "Нужна помощь в начале работы? \nКликните сюда!",
+      "logout": "Выходите из строя",
+      "longReading": "Длинное чтение",
+      "readingKaraoke": "Чтение караоке",
+      "sentry": "Часовой пример",
+      "settings": "Настройки",
+      "targetLanguage": "Целевой язык"
+    }
+  },
+  "readingKaraoke": {
+    "%": "%",
+    "feedback": "Обратная связь появится здесь после записи.",
+    "next": "Следующий",
+    "previous": "Предыдущий",
+    "progress": "Прогресс:",
+    "samplePlaceholder": {
+      "sentence": "В дыре в земле жил хоббит.",
+      "title": "Хоббит - Глава 1"
+    },
+    "startButton": "Начинать",
+    "startRecording": "Начать запись",
+    "stopRecording": "Прекратить запись",
+    "subtitle": "Улучшите свои навыки чтения, подпеваясь на ваши любимые песни!",
+    "title": "Чтение караоке"
   }
 }
