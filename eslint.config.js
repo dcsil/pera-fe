@@ -19,6 +19,11 @@ const eslintConfig = [
         semi: true,
     }),
     {
+        rules: {
+            "react/jsx-no-literals": "error",
+        },
+    },
+    {
         ignores: ["build/"],
     },
 ];

@@ -1,0 +1,15 @@
+{
+  "constructionPage": {
+    "contactButton": "联系我们",
+    "subtitle": "我们正在建造一些特别的东西。即将推出。",
+    "title": "LexisLabs 的 Pera"
+  },
+  "sentryExamplePage": {
+    "forMoreInfo": "有关更多信息，请参阅",
+    "getStarted": "通过向我们发送示例错误开始开始：",
+    "issuesPage": "问题页",
+    "nextLook": "接下来，在",
+    "theDocumentation": "文档",
+    "throwError": "投掷错误！"
+  }
+}

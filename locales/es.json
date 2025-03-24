@@ -1,0 +1,15 @@
+{
+  "constructionPage": {
+    "contactButton": "Contáctenos",
+    "subtitle": "Estamos construyendo algo especial. Muy pronto.",
+    "title": "Pera por LexisLabs"
+  },
+  "sentryExamplePage": {
+    "forMoreInfo": "Para más información, ver",
+    "getStarted": "Comience enviándonos un error de muestra:",
+    "issuesPage": "Página de emisión",
+    "nextLook": "A continuación, busque el error en el",
+    "theDocumentation": "la documentación",
+    "throwError": "¡Error!"
+  }
+}
