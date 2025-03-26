@@ -1,22 +1,24 @@
 "use client";
 
-import { Mic } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
-import { useRef, useState } from "react";
 import { FlacAudioRecorder } from "@/lib/flac-audio-recorder";
+import { Mic, Stop } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
 
 export default function RecordButton() {
-    const [recording, setRecording] = useState(false);
+    const t = useTranslations("recordButton");
+    const [isRecording, setIsRecording] = useState(false);
     const recorderRef = useRef(new FlacAudioRecorder());
 
     async function handleClick() {
-        if (recording) {
+        if (isRecording) {
             await stop();
-            setRecording(false);
+            setIsRecording(false);
         }
         else {
             await record();
-            setRecording(true);
+            setIsRecording(true);
         }
     }
 
@@ -34,10 +36,15 @@ export default function RecordButton() {
     }
 
     return (
-        <>
-            <IconButton color={recording ? "secondary" : "primary"} onClick={handleClick}>
-                <Mic sx={{ fontSize: 60 }} />
-            </IconButton>
-        </>
+        <Button
+            variant="contained"
+            size="large"
+            onClick={handleClick}
+            startIcon={isRecording ? <Stop /> : <Mic />}
+            color={isRecording ? "error" : "primary"}
+            sx={{ px: 4 }}
+        >
+            {isRecording ? t("stop") : t("start")}
+        </Button>
     );
 }

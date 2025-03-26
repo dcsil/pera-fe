@@ -25,7 +25,7 @@
       "helpTooltip": "Need help getting started? Click here!",
       "feedbackTooltip": "Have some feedback? Click here!"
     }
-  }, 
+  },
   "readingKaraoke": {
     "title": "Reading Karaoke",
     "samplePlaceholder": {
@@ -38,8 +38,10 @@
     "previous": "Previous",
     "subtitle": "Improve your reading skills by singing along to your favorite songs!",
     "startButton": "Start",
-    "feedback": "Feedback will appear here after recording.",
-    "startRecording": "Start Recording",
-    "stopRecording": "Stop Recording"
+    "feedback": "Feedback will appear here after recording."
+  },
+  "recordButton": {
+    "start": "Start Recording",
+    "stop": "Stop Recording"
   }
 }
