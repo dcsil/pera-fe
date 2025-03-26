@@ -68,10 +68,10 @@ export default function FeaturesLayout({
                         const isSelected = (() => {
                             if (pathname === finalPath) return true;
                             const mode = params.get("mode");
-                            if (path.startsWith("/generation") && mode === "RK" && finalPath === "/scripted-assessment/reading-karaoke") {
+                            if (pathname.startsWith("/generation") && mode === "RK" && finalPath === "/scripted-assessment/reading-karaoke") {
                                 return true;
                             }
-                            if (path.startsWith("/generation") && mode === "LR" && finalPath === "/scripted-assessment/long-reading") {
+                            if (pathname.startsWith("/generation") && mode === "LR" && finalPath === "/scripted-assessment/long-reading") {
                                 return true;
                             }
                             return false;
