@@ -11,5 +11,35 @@
     "nextLook": "Ensuite, recherchez l'erreur sur",
     "theDocumentation": "la documentation",
     "throwError": "Lancer une erreur!"
+  },
+  "common": {
+    "nav": {
+      "baseLanguage": "Langue de base",
+      "dashboard": "Tableau de bord",
+      "feedbackTooltip": "Vous avez des commentaires? \nCliquez ici!",
+      "helpTooltip": "Besoin d'aide pour commencer? \nCliquez ici!",
+      "logout": "Déconnecter",
+      "longReading": "Lecture longue",
+      "readingKaraoke": "Lire le karaoké",
+      "sentry": "Exemple de sentinelle",
+      "settings": "Paramètres",
+      "targetLanguage": "Langue cible"
+    }
+  },
+  "readingKaraoke": {
+    "%": "%",
+    "feedback": "Les commentaires apparaîtront ici après l'enregistrement.",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "progress": "Progrès:",
+    "samplePlaceholder": {
+      "sentence": "Dans un trou dans le sol, il vivait un hobbit.",
+      "title": "The Hobbit - Chapitre 1"
+    },
+    "startButton": "Commencer",
+    "startRecording": "Commencer l'enregistrement",
+    "stopRecording": "Arrêter l'enregistrement",
+    "subtitle": "Améliorez vos compétences en lecture en chantant dans vos chansons préférées!",
+    "title": "Lire le karaoké"
   }
 }

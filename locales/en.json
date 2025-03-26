@@ -11,5 +11,35 @@
     "issuesPage": "Issues Page",
     "forMoreInfo": "For more information, see",
     "theDocumentation": "the documentation"
+  },
+  "common": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "sentry": "Sentry Example",
+      "readingKaraoke": "Reading Karaoke",
+      "longReading": "Long Reading",
+      "targetLanguage": "Target Language",
+      "baseLanguage": "Base Language",
+      "settings": "Settings",
+      "logout": "Log out",
+      "helpTooltip": "Need help getting started? Click here!",
+      "feedbackTooltip": "Have some feedback? Click here!"
+    }
+  }, 
+  "readingKaraoke": {
+    "title": "Reading Karaoke",
+    "samplePlaceholder": {
+      "title": "The Hobbit - Chapter 1",
+      "sentence": "In a hole in the ground there lived a hobbit."
+    },
+    "progress": "Progress:",
+    "%" : "%",
+    "next": "Next",
+    "previous": "Previous",
+    "subtitle": "Improve your reading skills by singing along to your favorite songs!",
+    "startButton": "Start",
+    "feedback": "Feedback will appear here after recording.",
+    "startRecording": "Start Recording",
+    "stopRecording": "Stop Recording"
   }
 }
