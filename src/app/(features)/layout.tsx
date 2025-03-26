@@ -2,7 +2,7 @@
 
 import { Box, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ErrorOutline, Home, Mic, Book, Settings } from "@mui/icons-material";
 
@@ -11,26 +11,31 @@ const DRAWER_WIDTH = 240;
 const NAV_ITEMS = [
     {
         path: "/dashboard",
+        finalPath: "/dashboard",
         label: "dashboard",
         icon: Home,
     },
     {
         path: "/generation?mode=RK",
+        finalPath: "/scripted-assessment/reading-karaoke",
         label: "readingKaraoke",
         icon: Mic,
     },
     {
         path: "/generation?mode=LR",
+        finalPath: "/scripted-assessment/long-reading",
         label: "longReading",
         icon: Book,
     },
     {
         path: "/settings",
+        finalPath: "/settings",
         label: "settings",
         icon: Settings,
     },
     {
         path: "/sentry-example-page",
+        finalPath: "/sentry-example-page",
         label: "sentry",
         icon: ErrorOutline,
     },
@@ -43,6 +48,7 @@ export default function FeaturesLayout({
 }>) {
     const t = useTranslations("common.nav");
     const pathname = usePathname();
+    const params = useSearchParams();
 
     return (
         <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "background.default" }}>
@@ -58,28 +64,41 @@ export default function FeaturesLayout({
                 }}
             >
                 <List sx={{ mt: 8 }}>
-                    {NAV_ITEMS.map(({ path, label, icon: Icon }) => (
-                        <ListItemButton
-                            key={path}
-                            component={Link}
-                            href={path}
-                            selected={pathname === path}
-                            sx={{
-                                "&.Mui-selected": {
-                                    "backgroundColor": "primary.main",
-                                    "color": "primary.contrastText",
-                                    "&:hover": {
-                                        backgroundColor: "primary.dark",
+                    {NAV_ITEMS.map(({ path, finalPath, label, icon: Icon }) => {
+                        const isSelected = (() => {
+                            if (pathname === finalPath) return true;
+                            const mode = params.get("mode");
+                            if (path.startsWith("/generation") && mode === "RK" && finalPath === "/scripted-assessment/reading-karaoke") {
+                                return true;
+                            }
+                            if (path.startsWith("/generation") && mode === "LR" && finalPath === "/scripted-assessment/long-reading") {
+                                return true;
+                            }
+                            return false;
+                        })();
+                        return (
+                            <ListItemButton
+                                key={path}
+                                component={Link}
+                                href={path}
+                                selected={isSelected}
+                                sx={{
+                                    "&.Mui-selected": {
+                                        "backgroundColor": "primary.main",
+                                        "color": "primary.contrastText",
+                                        "&:hover": {
+                                            backgroundColor: "primary.dark",
+                                        },
                                     },
-                                },
-                            }}
-                        >
-                            <ListItemIcon>
-                                <Icon color={pathname === path ? "inherit" : "primary"} />
-                            </ListItemIcon>
-                            <ListItemText primary={t(label)} />
-                        </ListItemButton>
-                    ))}
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <Icon color={isSelected ? "inherit" : "primary"} />
+                                </ListItemIcon>
+                                <ListItemText primary={t(label)} />
+                            </ListItemButton>
+                        );
+                    })}
                 </List>
             </Drawer>
             <Box
