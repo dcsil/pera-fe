@@ -57,8 +57,6 @@ class FlacAudioRecorder {
     this.source.channelCount = channelCount;
     this.source.channelCountMode = 'explicit';
 
-    // Using ../dist/my_processor.js so that it works when compiled with tsc directly
-    // AND when using webpack (where there is a separate task to bundle the worklet first)
     await audioContext.audioWorklet.addModule(new URL('processor.js', import.meta.url));
     console.log('AudioWorkletProcessor module loaded');
     this.myProcessorNode = new AudioWorkletNode(audioContext, 'my-processor');
