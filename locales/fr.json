@@ -37,9 +37,11 @@
       "title": "The Hobbit - Chapitre 1"
     },
     "startButton": "Commencer",
-    "startRecording": "Commencer l'enregistrement",
-    "stopRecording": "Arrêter l'enregistrement",
     "subtitle": "Améliorez vos compétences en lecture en chantant dans vos chansons préférées!",
     "title": "Lire le karaoké"
+  },
+  "recordButton": {
+    "startRecording": "Commencer l'enregistrement",
+    "stopRecording": "Arrêter l'enregistrement"
   }
 }

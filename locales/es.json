@@ -41,5 +41,9 @@
     "stopRecording": "Dejar de grabar",
     "subtitle": "¡Mejora tus habilidades de lectura cantando a tus canciones favoritas!",
     "title": "Lectura de karaoke"
+  },
+  "recordButton": {
+    "start": "Comenzar a grabar",
+    "stop": "Dejar de grabar"
   }
 }
