@@ -38,7 +38,10 @@
     "previous": "Previous",
     "subtitle": "Improve your reading skills by singing along to your favorite songs!",
     "startButton": "Start",
-    "feedback": "Feedback will appear here after recording."
+    "feedback": "Feedback will appear here after recording.",
+    "accuracyScore": "Accuracy Score",
+    "fluencyScore": "Fluency Score",
+    "pronunciationScore": "Pronunciation Score"
   },
   "recordButton": {
     "start": "Start Recording",
