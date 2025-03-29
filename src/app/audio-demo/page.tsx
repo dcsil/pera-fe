@@ -24,7 +24,16 @@ export default function AudioDemo() {
                     gap: 4,
                 }}
                 >
-                    <RecordButton />
+                    <RecordButton onBlobReady={(blob: Blob) => {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = "recording.flac";
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }}
+                    />
                 </Box>
             </Container>
         </StyledHero>
