@@ -37,9 +37,11 @@
       "title": "霍比特人 - 第1章"
     },
     "startButton": "开始",
-    "startRecording": "开始录制",
-    "stopRecording": "停止记录",
     "subtitle": "通过唱歌来提高您最喜欢的歌曲来提高您的阅读能力！",
     "title": "阅读卡拉OK"
+  },
+  "recordButton": {
+    "startRecording": "开始录制",
+    "stopRecording": "停止录制"
   }
 }

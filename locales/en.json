@@ -127,5 +127,9 @@
         "pasteTextLabel": "Paste your text here:",
         "pasteTextPlaceholder": "Type or paste your text here..."
     }
+  },
+  "recordButton": {
+    "start": "Start Recording",
+    "stop": "Stop Recording"
   }
 }

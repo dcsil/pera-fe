@@ -1,14 +1,13 @@
 "use client";
 
 import { Button, Card, Typography, LinearProgress, Stack } from "@mui/joy";
-import { Mic, Stop, NavigateNext, NavigateBefore } from "@mui/icons-material";
-import { useState } from "react";
+import { NavigateNext, NavigateBefore } from "@mui/icons-material";
+import { useTranslations } from "next-intl";
 import { PageContainer } from "../../common/PageContainer";
 import { SPACING } from "@/theme";
-import { useTranslations } from "next-intl";
+import RecordButton from "@/components/RecordButton";
 
 export default function ReadingKaraoke() {
-    const [isRecording, setIsRecording] = useState(false);
     const t = useTranslations("readingKaraoke");
     const progressStr = "30%";
     const progress = 30;
@@ -59,16 +58,7 @@ export default function ReadingKaraoke() {
                 >
                     {t("previous")}
                 </Button>
-                <Button
-                    variant="solid"
-                    size="lg"
-                    onClick={() => setIsRecording(!isRecording)}
-                    startDecorator={isRecording ? <Stop /> : <Mic />}
-                    color={isRecording ? "warning" : "primary"}
-                    sx={{ px: 4 }}
-                >
-                    {isRecording ? t("stopRecording") : t("startRecording")}
-                </Button>
+                <RecordButton />
                 <Button
                     variant="solid"
                     endDecorator={<NavigateNext />}

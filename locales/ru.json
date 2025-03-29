@@ -37,9 +37,11 @@
       "title": "Хоббит - Глава 1"
     },
     "startButton": "Начинать",
-    "startRecording": "Начать запись",
-    "stopRecording": "Прекратить запись",
     "subtitle": "Улучшите свои навыки чтения, подпеваясь на ваши любимые песни!",
     "title": "Чтение караоке"
+  },
+  "recordButton": {
+    "startRecording": "Начать запись",
+    "stopRecording": "Прекратить запись"
   }
 }
