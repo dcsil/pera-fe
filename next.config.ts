@@ -7,6 +7,9 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
     output: "standalone",
     distDir: "build",
+    compiler: {
+        removeConsole: process.env.NODE_ENV === "production",
+    },
 };
 
 export default withSentryConfig(withNextIntl(nextConfig), {
