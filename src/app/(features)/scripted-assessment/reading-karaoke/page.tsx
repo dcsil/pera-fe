@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Paper, Typography, LinearProgress, Stack } from "@mui/material";
+import { Button, Card, Typography, LinearProgress, Stack } from "@mui/joy";
 import { Mic, Stop, NavigateNext, NavigateBefore } from "@mui/icons-material";
 import { useState } from "react";
 import { PageContainer } from "../../common/PageContainer";
@@ -16,58 +16,62 @@ export default function ReadingKaraoke() {
     return (
         <PageContainer>
             <Stack spacing={1} sx={{ textAlign: "center", mb: SPACING.SECTION_GAP }}>
-                <Typography variant="h4" sx={{ color: "text.primary" }}>
+                <Typography level="h2" sx={{ color: "text.primary" }}>
                     {t("title")}
                 </Typography>
-                <Typography variant="h6" color="text.secondary">
+                <Typography level="body-md" color="neutral">
                     {t("samplePlaceholder.title")}
                 </Typography>
             </Stack>
 
             <Stack spacing={1} sx={{ width: "100%" }}>
-                <Typography variant="body2" color="text.secondary">
+                <Typography level="body-sm" color="neutral">
                     {t("progress")}
                     {progressStr}
                 </Typography>
-                <LinearProgress variant="determinate" value={progress} />
+                <LinearProgress
+                    determinate
+                    value={progress}
+                    sx={{ height: 8, borderRadius: 4 }}
+                />
             </Stack>
 
-            <Paper elevation={3}>
-                <Typography variant="body1" align="center">
+            <Card variant="outlined">
+                <Typography level="body-md" textAlign="center">
                     {t("samplePlaceholder.sentence")}
                 </Typography>
-            </Paper>
+            </Card>
 
-            <Paper
-                elevation={3}
+            <Card
+                variant="outlined"
                 sx={{ minHeight: 150 }}
             >
-                <Typography variant="subtitle1" color="text.secondary" align="center">
+                <Typography level="body-sm" color="neutral" textAlign="center">
                     {t("feedback")}
                 </Typography>
-            </Paper>
+            </Card>
 
             <Stack direction="row" spacing={SPACING.ELEMENT_GAP}>
                 <Button
-                    variant="outlined"
-                    startIcon={<NavigateBefore />}
+                    variant="solid"
+                    startDecorator={<NavigateBefore />}
                     onClick={() => {}}
                 >
                     {t("previous")}
                 </Button>
                 <Button
-                    variant="contained"
-                    size="large"
+                    variant="solid"
+                    size="lg"
                     onClick={() => setIsRecording(!isRecording)}
-                    startIcon={isRecording ? <Stop /> : <Mic />}
-                    color={isRecording ? "error" : "primary"}
+                    startDecorator={isRecording ? <Stop /> : <Mic />}
+                    color={isRecording ? "warning" : "primary"}
                     sx={{ px: 4 }}
                 >
                     {isRecording ? t("stopRecording") : t("startRecording")}
                 </Button>
                 <Button
-                    variant="contained"
-                    endIcon={<NavigateNext />}
+                    variant="solid"
+                    endDecorator={<NavigateNext />}
                     onClick={() => {}}
                 >
                     {t("next")}

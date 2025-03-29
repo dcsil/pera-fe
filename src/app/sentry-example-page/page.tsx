@@ -1,32 +1,32 @@
 "use client";
 
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Box, Container, Typography, Button } from "@mui/joy";
 import * as Sentry from "@sentry/nextjs";
-import { styled } from "@mui/material/styles";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-
-const StyledContainer = styled(Box)(() => ({
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-}));
 
 export default function Page() {
     const t = useTranslations("sentryExamplePage");
     return (
-        <StyledContainer>
+        <Box
+            sx={{
+                minHeight: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
             <Container>
-                <Box sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 3,
-                }}
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        gap: 3,
+                    }}
                 >
-                    <Typography variant="h1" sx={{ fontSize: "4rem", margin: "14px 0" }}>
+                    <Typography level="h1" sx={{ margin: "14px 0" }}>
                         <Box component="svg" sx={{ height: "1em" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44">
                             <path
                                 fill="currentColor"
@@ -37,7 +37,7 @@ export default function Page() {
 
                     <Typography>{t("getStarted")}</Typography>
                     <Button
-                        variant="contained"
+                        variant="solid"
                         onClick={async () => {
                             await Sentry.startSpan({
                                 name: "Example Frontend Span",
@@ -50,9 +50,9 @@ export default function Page() {
                             });
                         }}
                         sx={{
-                            "backgroundColor": "#AD6CAA",
+                            "backgroundColor": theme => theme.palette.primary[500],
                             "&:hover": {
-                                backgroundColor: "#9B5C98",
+                                backgroundColor: theme => theme.palette.primary[400],
                             },
                         }}
                     >
@@ -75,6 +75,6 @@ export default function Page() {
                     </Typography>
                 </Box>
             </Container>
-        </StyledContainer>
+        </Box>
     );
 }

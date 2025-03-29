@@ -15,8 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Pera by Lexis Labs",
-    description: "AI-powered pronunciation training platform",
+    title: "Pera",
 };
 
 export default async function RootLayout({
@@ -29,6 +28,10 @@ export default async function RootLayout({
 
     return (
         <html lang={locale}>
+            <head>
+                <link rel="icon" href="/favicon.ico" />
+                <title>{String(metadata.title)}</title>
+            </head>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
                 <Providers messages={messages} locale={locale}>
                     {children}

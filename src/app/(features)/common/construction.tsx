@@ -1,23 +1,24 @@
 "use client";
 
-import { Box, Button, Typography, Stack, styled } from "@mui/material";
+import { Box, Button, Typography, Stack } from "@mui/joy";
 import { Construction } from "@mui/icons-material";
 import { useTranslations } from "next-intl";
 import { SPACING } from "@/theme";
-
-const StyledHeroContainer = styled(Box)(({ theme }) => ({
-    minHeight: "100vh",
-    background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.primary.light} 90%)`,
-    display: "flex",
-    alignItems: "center",
-    color: theme.palette.text.primary,
-}));
 
 export default function UnderConstruction() {
     const t = useTranslations("constructionPage");
 
     return (
-        <StyledHeroContainer>
+        <Box
+            sx={{
+                minHeight: "100vh",
+                background: theme =>
+                    `linear-gradient(45deg, ${theme.palette.secondary.solidHoverBg} 10%, ${theme.palette.primary.solidHoverBg} 90%)`,
+                display: "flex",
+                alignItems: "center",
+                color: "text.primary",
+            }}
+        >
             <Stack
                 spacing={SPACING.SECTION_GAP}
                 alignItems="center"
@@ -29,28 +30,33 @@ export default function UnderConstruction() {
                     textAlign: "center",
                 }}
             >
-                <Construction sx={{ fontSize: 60 }} />
-                <Typography variant="h2" fontWeight="bold">
+                <Construction sx={{ fontSize: 64, color: "text.primary" }} />
+                <Typography level="h2" fontWeight="bold">
                     {t("title")}
                 </Typography>
-                <Typography variant="h5">
+                <Typography
+                    level="body-md"
+                    // @ts-expect-error: Type '"text.primary"' is not assignable to the expected type
+                    color="text.primary"
+                >
                     {t("subtitle")}
                 </Typography>
                 <Button
-                    variant="contained"
-                    size="large"
+                    variant="solid"
+                    size="lg"
                     href="mailto:teamlexislabs@outlook.com"
+                    component="a"
                     sx={{
-                        "bgcolor": "background.paper",
-                        "color": "primary.main",
+                        "backgroundColor": "primary.solidBg",
+                        "color": "primary.solidColor",
                         "&:hover": {
-                            bgcolor: "background.default",
+                            backgroundColor: "primary.solidHoverBg",
                         },
                     }}
                 >
                     {t("contactButton")}
                 </Button>
             </Stack>
-        </StyledHeroContainer>
+        </Box>
     );
 }

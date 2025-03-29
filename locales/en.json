@@ -13,6 +13,7 @@
     "theDocumentation": "the documentation"
   },
   "common": {
+    "pera": "Pera",
     "nav": {
       "dashboard": "Dashboard",
       "sentry": "Sentry Example",
@@ -23,9 +24,10 @@
       "settings": "Settings",
       "logout": "Log out",
       "helpTooltip": "Need help getting started? Click here!",
-      "feedbackTooltip": "Have some feedback? Click here!"
+      "feedbackTooltip": "Have some feedback? Click here!",
+      "pera": "Pera"
     }
-  }, 
+  },
   "readingKaraoke": {
     "title": "Reading Karaoke",
     "samplePlaceholder": {
@@ -33,7 +35,7 @@
       "sentence": "In a hole in the ground there lived a hobbit."
     },
     "progress": "Progress:",
-    "%" : "%",
+    "%": "%",
     "next": "Next",
     "previous": "Previous",
     "subtitle": "Improve your reading skills by singing along to your favorite songs!",
@@ -41,5 +43,89 @@
     "feedback": "Feedback will appear here after recording.",
     "startRecording": "Start Recording",
     "stopRecording": "Stop Recording"
+  },
+  "landing": {
+    "hero": {
+      "title": "Welcome to Pera by LexisLabs",
+      "subtitle": "Empowering language learning with cutting-edge technology.",
+      "contactButton": "Get in Touch"
+    },
+    "features": {
+      "title": "Our Features",
+      "items": {
+        "interactiveLearning": {
+          "title": "Interactive Learning",
+          "description": "Engage with interactive exercises tailored to your needs."
+        },
+        "aiPoweredInsights": {
+          "title": "AI-Powered Insights",
+          "description": "Receive personalized feedback to improve your skills."
+        },
+        "multilingualSupport": {
+          "title": "Multilingual Support",
+          "description": "Learn in your preferred language with seamless translations."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "What Our Users Say",
+      "items": {
+        "john": {
+          "name": "John Doe",
+          "feedback": "Pera has transformed the way I learn languages. Highly recommended!"
+        },
+        "jane": {
+          "name": "Jane Smith",
+          "feedback": "The AI feedback is incredibly accurate and helpful. Love it!"
+        },
+        "carlos": {
+          "name": "Carlos García",
+          "feedback": "Learning a new language has never been this fun and easy!"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Join thousands of learners and start your journey today.",
+      "button": "Sign Up Now"
+    }
+  },
+  "generation": {
+    "title": {
+      "default": "Welcome to Generation!",
+      "rk": "Welcome to Reading Karaoke!",
+      "lr": "Welcome to Long Reading!"
+    },
+    "subtitle": "To get started, select an option below.",
+    "step1": {
+      "import": "Import",
+      "generate": "Generate",
+      "history": "History",
+      "historyDisabled": "History (Coming Soon)"
+    },
+    "step2": {
+        "importTitle": "Import Content",
+        "importDescription": "Select a file type and upload your content.",
+        "generateTitle": "Generate Content",
+        "proceedButton": "Proceed",
+        "fileTypeLabel": "From:",
+        "fileTypeOptions": {
+            "textFile": "Text File",
+            "pdf": "PDF",
+            "docx": "Word Document",
+            "pasteText": "Paste Text"
+        },
+        "dragDropText": "Drag and drop, or click to open file picker",
+        "optionsTitle": "Options",
+        "teleprompterLabel": "Teleprompter",
+        "wordsPerMinuteLabel": "Words per minute",
+        "feedbackStrictnessLabel": "Feedback strictness",
+        "feedbackStrictnessMin": "Only major mistakes",
+        "feedbackStrictnessMax": "All mistakes",
+        "backButton": "< Back",
+        "startButton": "Start",
+        "pasteTextLabel": "Paste your text here:",
+        "pasteTextPlaceholder": "Type or paste your text here..."
+    }
   }
 }

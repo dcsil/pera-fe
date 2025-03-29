@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container } from "@mui/material";
+import { Box, Container } from "@mui/joy";
 
 interface PageContainerProps {
     children: React.ReactNode;
