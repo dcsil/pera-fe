@@ -56,7 +56,6 @@ export default function ReadingKaraoke() {
     const [feedback, setFeedback] = useState<FeedbackProps | undefined>(undefined);
 
     async function sendAudio(blob: Blob) {
-        // TODO: Change this to the backend URL
         const baseUrl = BACKEND;
         const url = baseUrl + "/speech-processing/scripted-assessment/";
         const formData = new FormData();
