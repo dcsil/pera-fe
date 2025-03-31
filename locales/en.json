@@ -125,7 +125,12 @@
         "backButton": "< Back",
         "startButton": "Start",
         "pasteTextLabel": "Paste your text here:",
-        "pasteTextPlaceholder": "Type or paste your text here..."
+        "pasteTextPlaceholder": "Type or paste your text here...",
+        "describeContentLabel": "Describe the content you want to read aloud:",
+        "describeContentPlaceholder": "Type a brief description of the content...",
+        "difficultyLabel": "Select the difficulty level:",
+        "difficultyEasy": "Easy",
+        "difficultyHard": "Hard"
     }
   },
   "recordButton": {

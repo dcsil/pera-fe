@@ -1,23 +1,26 @@
 "use client";
 
-import { Box, Stack, Typography, Button } from "@mui/joy";
+import { Box } from "@mui/joy";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Step1 from "./components/Step1";
 import ImportSection from "./components/ImportSection";
+import GenerateSection from "./components/GenerateSection";
 
 export default function Generation() {
     const router = useRouter();
     const params = useSearchParams();
     const t = useTranslations("generation");
-    const mode = params?.get("mode") || null; // Ensure mode is string or null
+    const mode = params?.get("mode") || null;
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState<"import" | "generate" | "history" | null>(null);
     const [fileType, setFileType] = useState("text file");
     const [teleprompter, setTeleprompter] = useState(false);
     const [wordsPerMinute, setWordsPerMinute] = useState(120);
     const [feedbackStrictness, setFeedbackStrictness] = useState(50);
+    const [description, setDescription] = useState("");
+    const [difficulty, setDifficulty] = useState(5);
 
     const handleOptionSelect = (option: "import" | "generate" | "history") => {
         setSelectedOption(option);
@@ -44,17 +47,21 @@ export default function Generation() {
         }
         else if (selectedOption === "generate") {
             return (
-                <Stack spacing={2} alignItems="center">
-                    <Typography level="h4" fontWeight="lg">
-                        {t("step2.generateTitle")}
-                    </Typography>
-                    <Button
-                        variant="solid"
-                        onClick={() => router.push("/scripted-assessment/reading-karaoke")}
-                    >
-                        {t("step2.proceedButton")}
-                    </Button>
-                </Stack>
+                <GenerateSection
+                    t={t}
+                    description={description}
+                    setDescription={setDescription}
+                    difficulty={difficulty}
+                    setDifficulty={setDifficulty}
+                    teleprompter={teleprompter}
+                    setTeleprompter={setTeleprompter}
+                    wordsPerMinute={wordsPerMinute}
+                    setWordsPerMinute={setWordsPerMinute}
+                    feedbackStrictness={feedbackStrictness}
+                    setFeedbackStrictness={setFeedbackStrictness}
+                    onBack={() => setStep(1)}
+                    onStart={() => router.push("/scripted-assessment/reading-karaoke")}
+                />
             );
         }
         return null;
