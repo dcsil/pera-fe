@@ -42,7 +42,10 @@
     "startButton": "Start",
     "feedback": "Feedback will appear here after recording.",
     "startRecording": "Start Recording",
-    "stopRecording": "Stop Recording"
+    "stopRecording": "Stop Recording",
+    "accuracyScore": "Accuracy Score",
+    "fluencyScore": "Fluency Score",
+    "pronunciationScore": "Pronunciation Score"
   },
   "landing": {
     "hero": {

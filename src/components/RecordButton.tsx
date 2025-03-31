@@ -6,7 +6,11 @@ import { Button } from "@mui/joy";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 
-export default function RecordButton() {
+interface RecordButtonProps {
+    onBlobReady: (blob: Blob) => void;
+}
+
+export default function RecordButton({ onBlobReady }: Readonly<RecordButtonProps>) {
     const t = useTranslations("recordButton");
     const [isRecording, setIsRecording] = useState(false);
     const recorderRef = useRef(new FlacAudioRecorder());
@@ -28,11 +32,7 @@ export default function RecordButton() {
 
     async function stop() {
         const blob = await recorderRef.current.stop();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "recording.flac";
-        a.click();
+        onBlobReady(blob);
     }
 
     return (
