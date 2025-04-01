@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Container, Typography, Button } from "@mui/joy";
-import { styled } from "@mui/joy/styles";
+import { styled, useTheme } from "@mui/joy/styles";
 import { Construction } from "@mui/icons-material";
 import { useTranslations } from "next-intl";
 import FeaturesSection from "./(landing)/FeaturesSection";
@@ -18,6 +18,7 @@ const StyledHero = styled(Box)(({ theme }) => ({
 
 export default function Home() {
     const t = useTranslations("landing");
+    const theme = useTheme();
 
     return (
         <>
@@ -32,11 +33,11 @@ export default function Home() {
                             gap: 4,
                         }}
                     >
-                        <Construction sx={{ color: theme => theme.palette.common.white }} />
-                        <Typography level="h1" fontWeight="lg" sx={{ color: theme => theme.palette.common.white }}>
+                        <Construction sx={{ color: theme.palette.common.white }} />
+                        <Typography level="h1" fontWeight="lg" sx={{ color: theme.palette.common.white }}>
                             {t("hero.title")}
                         </Typography>
-                        <Typography level="h4" sx={{ color: theme => theme.palette.common.white }}>
+                        <Typography level="h4" sx={{ color: theme.palette.common.white }}>
                             {t("hero.subtitle")}
                         </Typography>
                         <Button
@@ -45,10 +46,10 @@ export default function Home() {
                             href="mailto:teamlexislabs@outlook.com"
                             component="a"
                             sx={{
-                                "backgroundColor": theme => theme.palette.common.white,
-                                "color": theme => theme.palette.primary.solidBg,
+                                "backgroundColor": theme.palette.common.white,
+                                "color": theme.palette.primary.solidBg,
                                 "&:hover": {
-                                    backgroundColor: theme => theme.palette.primary.softHoverBg,
+                                    backgroundColor: theme.palette.primary.softHoverBg,
                                 },
                             }}
                         >
