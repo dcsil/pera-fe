@@ -5,6 +5,14 @@ import { extendTheme } from "@mui/joy/styles";
 import "@mui/joy/styles";
 
 declare module "@mui/joy/styles" {
+    interface TypographySystem {
+        h5?: {
+            fontSize?: string;
+            fontWeight?: number;
+            lineHeight?: number;
+        };
+    }
+
     interface Palette {
         secondary: {
             solidBg: string;
@@ -37,6 +45,13 @@ declare module "@mui/joy/styles" {
 }
 
 const theme = extendTheme({
+    typography: {
+        h5: {
+            fontSize: "0.875rem", // Smaller font size
+            fontWeight: 600, // Bold text
+            lineHeight: 1.5, // Adjusted line height
+        },
+    },
     colorSchemes: {
         light: {
             palette: {

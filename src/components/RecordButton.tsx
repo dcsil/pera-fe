@@ -50,9 +50,17 @@ export default function RecordButton({ onBlobReady }: Readonly<RecordButtonProps
                 "&:hover": {
                     backgroundColor: isRecording ? "danger.solidHoverBg" : "primary.solidHoverBg",
                 },
+                "@media (max-width: 600px)": {
+                    "&::after": {
+                        content: `"${isRecording ? t("stopShort") : t("startShort")}"`,
+                    },
+                },
+                "@media (min-width: 601px)": {
+                    "&::after": {
+                        content: `"${isRecording ? t("stop") : t("start")}"`,
+                    },
+                },
             }}
-        >
-            {isRecording ? t("stop") : t("start")}
-        </Button>
+        />
     );
 }

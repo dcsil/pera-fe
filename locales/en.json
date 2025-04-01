@@ -36,6 +36,7 @@
     },
     "progress": "Progress:",
     "%": "%",
+    ":": ":",
     "next": "Next",
     "previous": "Previous",
     "subtitle": "Improve your reading skills by singing along to your favorite songs!",
@@ -43,9 +44,17 @@
     "feedback": "Feedback will appear here after recording.",
     "startRecording": "Start Recording",
     "stopRecording": "Stop Recording",
-    "accuracyScore": "Accuracy Score",
-    "fluencyScore": "Fluency Score",
-    "pronunciationScore": "Pronunciation Score"
+    "feedbackTitle": "Feedback",
+    "feedbackPlaceholder": "Your feedback will appear here.",
+    "accuracyScore": "Accuracy",
+    "fluencyScore": "Fluency",
+    "pronunciationScore": "Pronunciation",
+    "defaultComments": "Great job! Keep practicing to improve further.",
+    "instructions": "Directions: Click the record button to start, then read the sentence below.",
+    "errorsTitle": "Errors",
+    "noErrors": "No errors detected. Great job!",
+    "prevShort": "Prev",
+    "nextShort": "Next"
   },
   "landing": {
     "hero": {
@@ -107,37 +116,59 @@
       "historyDisabled": "History (Coming Soon)"
     },
     "step2": {
-        "importTitle": "Import Content",
-        "importDescription": "Select a file type and upload your content.",
-        "generateTitle": "Generate Content",
-        "proceedButton": "Proceed",
-        "fileTypeLabel": "From:",
-        "fileTypeOptions": {
-            "textFile": "Text File",
-            "pdf": "PDF",
-            "docx": "Word Document",
-            "pasteText": "Paste Text"
-        },
-        "dragDropText": "Drag and drop, or click to open file picker",
-        "optionsTitle": "Options",
-        "teleprompterLabel": "Teleprompter",
-        "wordsPerMinuteLabel": "Words per minute",
-        "feedbackStrictnessLabel": "Feedback strictness",
-        "feedbackStrictnessMin": "Only major mistakes",
-        "feedbackStrictnessMax": "All mistakes",
-        "backButton": "< Back",
-        "startButton": "Start",
-        "pasteTextLabel": "Paste your text here:",
-        "pasteTextPlaceholder": "Type or paste your text here...",
-        "describeContentLabel": "Describe the content you want to read aloud:",
-        "describeContentPlaceholder": "Type a brief description of the content...",
-        "difficultyLabel": "Select the difficulty level:",
-        "difficultyEasy": "Easy",
-        "difficultyHard": "Hard"
+      "importTitle": "Import Content",
+      "importDescription": "Select a file type and upload your content.",
+      "generateTitle": "Generate Content",
+      "proceedButton": "Proceed",
+      "fileTypeLabel": "From:",
+      "fileTypeOptions": {
+        "textFile": "Text File",
+        "pdf": "PDF",
+        "docx": "Word Document",
+        "pasteText": "Paste Text"
+      },
+      "dragDropText": "Drag and drop, or click to open file picker",
+      "optionsTitle": "Options",
+      "teleprompterLabel": "Teleprompter",
+      "wordsPerMinuteLabel": "Words per minute",
+      "feedbackStrictnessLabel": "Feedback strictness",
+      "feedbackStrictnessMin": "Only major mistakes",
+      "feedbackStrictnessMax": "All mistakes",
+      "backButton": "< Back",
+      "startButton": "Start",
+      "pasteTextLabel": "Paste your text here:",
+      "pasteTextPlaceholder": "Type or paste your text here...",
+      "describeContentLabel": "Describe the content you want to read aloud:",
+      "describeContentPlaceholder": "Type a brief description of the content...",
+      "difficultyLabel": "Select the difficulty level:",
+      "difficultyEasy": "Easy",
+      "difficultyHard": "Hard"
     }
   },
   "recordButton": {
     "start": "Start Recording",
-    "stop": "Stop Recording"
+    "stop": "Stop Recording",
+    "startShort": "Start",
+    "stopShort": "Stop",
+    "stopRecording": "Stop recording",
+    "startRecording": "Start recording"
+  },
+  ":": ":",
+  "settings": {
+    "title": "Settings",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "notificationsLabel": "Enable Notifications",
+    "saveButton": "Save Changes",
+    "localeLabel": "Language",
+    "english": "English",
+    "spanish": "Spanish",
+    "french": "French",
+    "chinese": "Chinese",
+    "russian": "Russian"
   }
 }

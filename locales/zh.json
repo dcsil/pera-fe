@@ -23,8 +23,10 @@
       "readingKaraoke": "阅读卡拉OK",
       "sentry": "哨兵示例",
       "settings": "设置",
-      "targetLanguage": "目标语言"
-    }
+      "targetLanguage": "目标语言",
+      "pera": "佩拉"
+    },
+    "pera": "佩拉"
   },
   "readingKaraoke": {
     "%": "％",
@@ -38,10 +40,135 @@
     },
     "startButton": "开始",
     "subtitle": "通过唱歌来提高您最喜欢的歌曲来提高您的阅读能力！",
-    "title": "阅读卡拉OK"
+    "title": "阅读卡拉OK",
+    ":": "：",
+    "accuracyScore": "准确性",
+    "defaultComments": "好！\n继续练习以进一步改善。",
+    "errorsTitle": "错误",
+    "feedbackPlaceholder": "您的反馈将在这里出现。",
+    "feedbackTitle": "反馈",
+    "fluencyScore": "流利",
+    "instructions": "方向：单击记录按钮开始，然后阅读下面的句子。",
+    "nextShort": "下一个",
+    "noErrors": "未检测到错误。\n好！",
+    "prevShort": "上一条",
+    "pronunciationScore": "发音",
+    "startRecording": "开始录制",
+    "stopRecording": "停止记录"
   },
   "recordButton": {
     "startRecording": "开始录制",
-    "stopRecording": "停止录制"
+    "stopRecording": "停止录制",
+    "start": "开始录制",
+    "startShort": "开始",
+    "stop": "停止记录",
+    "stopShort": "停止"
+  },
+  ":": "：",
+  "generation": {
+    "step1": {
+      "generate": "产生",
+      "history": "历史",
+      "historyDisabled": "历史（即将推出）",
+      "import": "进口"
+    },
+    "step2": {
+      "backButton": "<返回",
+      "describeContentLabel": "描述您要大声朗读的内容：",
+      "describeContentPlaceholder": "键入内容的简要说明...",
+      "difficultyEasy": "简单的",
+      "difficultyHard": "难的",
+      "difficultyLabel": "选择难度级别：",
+      "dragDropText": "拖放，或单击打开文件选择器",
+      "feedbackStrictnessLabel": "反馈严格",
+      "feedbackStrictnessMax": "所有错误",
+      "feedbackStrictnessMin": "只是主要错误",
+      "fileTypeLabel": "从：",
+      "fileTypeOptions": {
+        "docx": "Word文档",
+        "pasteText": "糊状文字",
+        "pdf": "PDF",
+        "textFile": "文本文件"
+      },
+      "generateTitle": "生成内容",
+      "importDescription": "选择文件类型并上传您的内容。",
+      "importTitle": "导入内容",
+      "optionsTitle": "选项",
+      "pasteTextLabel": "在这里粘贴您的文字：",
+      "pasteTextPlaceholder": "在这里输入或粘贴您的文字...",
+      "proceedButton": "继续",
+      "startButton": "开始",
+      "teleprompterLabel": "远程编译器",
+      "wordsPerMinuteLabel": "每分钟的话"
+    },
+    "subtitle": "要开始，请在下面选择一个选项。",
+    "title": {
+      "default": "欢迎一代！",
+      "lr": "欢迎阅读！",
+      "rk": "欢迎阅读卡拉OK！"
+    }
+  },
+  "landing": {
+    "cta": {
+      "button": "立即注册",
+      "subtitle": "加入成千上万的学习者，今天开始您的旅程。",
+      "title": "准备开始了吗？"
+    },
+    "features": {
+      "items": {
+        "aiPoweredInsights": {
+          "description": "接收个性化的反馈以提高您的技能。",
+          "title": "AI驱动的见解"
+        },
+        "interactiveLearning": {
+          "description": "参与根据您的需求量身定制的互动练习。",
+          "title": "互动学习"
+        },
+        "multilingualSupport": {
+          "description": "用您喜欢的语言学习，并通过无缝翻译学习。",
+          "title": "多语言支持"
+        }
+      },
+      "title": "我们的功能"
+    },
+    "hero": {
+      "contactButton": "取得联系",
+      "subtitle": "通过最先进的技术赋予语言学习能力。",
+      "title": "欢迎来到Lexislabs的Pera"
+    },
+    "testimonials": {
+      "items": {
+        "carlos": {
+          "feedback": "学习新语言从未如此有趣！",
+          "name": "卡洛斯·加西亚（CarlosGarcía）"
+        },
+        "jane": {
+          "feedback": "AI反馈非常准确且有用。\n爱它！",
+          "name": "简·史密斯"
+        },
+        "john": {
+          "feedback": "Pera改变了我学习语言的方式。\n强烈推荐！",
+          "name": "约翰·多伊"
+        }
+      },
+      "title": "我们的用户怎么说"
+    }
+  },
+  "settings": {
+    "chinese": "中国人",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "english": "英语",
+    "french": "法语",
+    "localeLabel": "语言",
+    "notificationsLabel": "启用通知",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "russian": "俄语",
+    "saveButton": "保存更改",
+    "spanish": "西班牙语",
+    "title": "设置",
+    "usernameLabel": "用户名",
+    "usernamePlaceholder": "输入您的用户名"
   }
 }
