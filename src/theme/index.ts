@@ -37,6 +37,7 @@ declare module "@mui/joy/styles" {
             solidHoverBg: string;
             solidColor: string;
             solidActiveBg?: string;
+            softHoverBg?: string;
         };
     }
 

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ErrorOutline, Home, Mic, Book, Settings, Close, Menu } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import Image from "next/image"; // Import Image for the logo
+import { useTheme } from "@mui/joy/styles";
 
 const NAV_ITEMS = [
     {
@@ -45,6 +46,7 @@ function NavList({ onClose }: { onClose?: () => void }) {
     const t = useTranslations("common.nav");
     const pathname = usePathname() || ""; // Default to an empty string if null
     const params = useSearchParams();
+    const theme = useTheme();
 
     return (
         <List sx={{ mt: 8 }}>
@@ -56,7 +58,7 @@ function NavList({ onClose }: { onClose?: () => void }) {
                     gap: 2,
                     padding: "1rem",
                     borderBottom: "1px solid",
-                    borderColor: theme => theme.palette.neutral.outlinedBorder,
+                    borderColor: theme.palette.neutral.outlinedBorder,
                 }}
             >
                 <Image
@@ -68,7 +70,7 @@ function NavList({ onClose }: { onClose?: () => void }) {
                 <Typography
                     level="h4"
                     fontWeight="lg"
-                    sx={{ color: theme => theme.palette.text.primary }}
+                    sx={{ color: theme.palette.text.primary }}
                 >
                     {t("pera")}
                 </Typography>
@@ -96,10 +98,10 @@ function NavList({ onClose }: { onClose?: () => void }) {
                         onClick={onClose} // Close the drawer on item click (for mobile)
                         sx={{
                             "&.Joy-selected": {
-                                "backgroundColor": theme => theme.palette.primary.solidBg,
-                                "color": theme => theme.palette.primary.solidColor,
+                                "backgroundColor": theme.palette.primary.solidBg,
+                                "color": theme.palette.primary.solidColor,
                                 "&:hover": {
-                                    backgroundColor: theme => theme.palette.primary.solidHoverBg,
+                                    backgroundColor: theme.palette.primary.solidHoverBg,
                                 },
                             },
                         }}
@@ -107,7 +109,7 @@ function NavList({ onClose }: { onClose?: () => void }) {
                         <ListItemDecorator>
                             <Icon
                                 sx={{
-                                    color: theme => theme.palette.primary.solidBg,
+                                    color: theme.palette.primary.solidBg,
                                 }}
                             />
                         </ListItemDecorator>
