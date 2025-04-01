@@ -113,7 +113,7 @@ export default function ImportSection({
                                 />
                             </FormControl>
                             <FormControl>
-                                <FormLabel>{t("step2.feedbackStrictnessLabel")}</FormLabel>
+                                <FormLabel sx={{ marginBottom: 1 }}>{t("step2.feedbackStrictnessLabel")}</FormLabel>
                                 <Slider
                                     value={feedbackStrictness}
                                     onChange={(e, newValue) => setFeedbackStrictness(newValue as number)}
@@ -121,9 +121,8 @@ export default function ImportSection({
                                     max={100}
                                     step={1}
                                     valueLabelDisplay="auto"
-                                    sx={{ marginTop: 2 }}
                                 />
-                                <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: 1 }}>
+                                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                                     <Typography level="body-md">{t("step2.feedbackStrictnessMin")}</Typography>
                                     <Typography level="body-md">{t("step2.feedbackStrictnessMax")}</Typography>
                                 </Box>

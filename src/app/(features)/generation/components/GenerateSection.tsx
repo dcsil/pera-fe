@@ -71,8 +71,8 @@ export default function GenerateSection({
                                     sx={{ width: 80 }}
                                 />
                             </FormControl>
-                            <FormControl>
-                                <FormLabel>{t("step2.feedbackStrictnessLabel")}</FormLabel>
+                            <FormControl sx={{ marginBottom: 3 }}>
+                                <FormLabel sx={{ marginBottom: 1 }}>{t("step2.feedbackStrictnessLabel")}</FormLabel>
                                 <Slider
                                     value={feedbackStrictness}
                                     onChange={(e, newValue) => setFeedbackStrictness(newValue as number)}
@@ -80,30 +80,30 @@ export default function GenerateSection({
                                     max={100}
                                     step={1}
                                     valueLabelDisplay="auto"
-                                    sx={{ marginTop: 2 }}
+                                    sx={{ marginTop: 1 }}
                                 />
                                 <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: 1 }}>
                                     <Typography level="body-md">{t("step2.feedbackStrictnessMin")}</Typography>
                                     <Typography level="body-md">{t("step2.feedbackStrictnessMax")}</Typography>
                                 </Box>
                             </FormControl>
-                        </Stack>
-                        <Box>
-                            <FormLabel>{t("step2.difficultyLabel")}</FormLabel>
-                            <Slider
-                                value={difficulty}
-                                onChange={(e, newValue) => setDifficulty(newValue as number)}
-                                min={1}
-                                max={10}
-                                step={1}
-                                valueLabelDisplay="auto"
-                                sx={{ marginTop: 2 }}
-                            />
-                            <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: 1 }}>
-                                <Typography level="body-md">{t("step2.difficultyEasy")}</Typography>
-                                <Typography level="body-md">{t("step2.difficultyHard")}</Typography>
+                            <Box sx={{ marginTop: 3 }}>
+                                <FormLabel sx={{ marginBottom: 1 }}>{t("step2.difficultyLabel")}</FormLabel>
+                                <Slider
+                                    value={difficulty}
+                                    onChange={(e, newValue) => setDifficulty(newValue as number)}
+                                    min={1}
+                                    max={10}
+                                    step={1}
+                                    valueLabelDisplay="auto"
+                                    sx={{ marginTop: 1 }}
+                                />
+                                <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: 1 }}>
+                                    <Typography level="body-md">{t("step2.difficultyEasy")}</Typography>
+                                    <Typography level="body-md">{t("step2.difficultyHard")}</Typography>
+                                </Box>
                             </Box>
-                        </Box>
+                        </Stack>
                     </Box>
                 </Stack>
 
