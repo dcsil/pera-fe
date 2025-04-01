@@ -2,7 +2,6 @@ export * from "./theme";
 export * from "./constants";
 
 import { extendTheme } from "@mui/joy/styles";
-import "@mui/joy/styles";
 
 declare module "@mui/joy/styles" {
     interface TypographySystem {
@@ -26,6 +25,10 @@ declare module "@mui/joy/styles" {
             outlinedActiveBg: string;
             outlinedBorder: string;
         };
+        primary: {
+            solidBg: string;
+            solidHoverBg: string; // Add this line
+        };
     }
 
     interface PaletteOptions {
@@ -40,6 +43,10 @@ declare module "@mui/joy/styles" {
             outlinedHoverBg?: string;
             outlinedActiveBg?: string;
             outlinedBorder?: string;
+        };
+        primary?: {
+            solidBg?: string;
+            solidHoverBg?: string; // Add this line
         };
     }
 }
@@ -59,9 +66,9 @@ const theme = extendTheme({
                     white: "#FFFFFF",
                 },
                 primary: {
-                    solidBg: "#B71C1C", // Deep red for primary background
+                    solidBg: "#1976d2", // Primary background color
+                    solidHoverBg: "#1565c0", // Add hover background color
                     solidColor: "#FFFFFF", // White text on primary
-                    solidHoverBg: "#D32F2F", // Slightly lighter red for hover
                     solidActiveBg: "#F44336", // Even lighter red for active
                 },
                 secondary: {
