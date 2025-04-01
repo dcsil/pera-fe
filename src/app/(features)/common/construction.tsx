@@ -36,8 +36,7 @@ export default function UnderConstruction() {
                 </Typography>
                 <Typography
                     level="body-md"
-                    // @ts-expect-error: Type '"text.primary"' is not assignable to the expected type
-                    color="text.primary"
+                    sx={{ color: "text.primary" }}
                 >
                     {t("subtitle")}
                 </Typography>

@@ -13,7 +13,7 @@ export default function Step1({ t, mode, onOptionSelect }: Step1Props) {
     return (
         <Stack spacing={4} alignItems="center" sx={{ padding: { xs: 2, md: 4 } }}>
             <Typography level="h2" fontWeight="xl" textAlign="center">
-                {t("title" + "." + mode?.toLowerCase())}
+                {t("title" + "." + (mode?.toLowerCase() ?? "rk"))}
             </Typography>
             <Typography level="h4" sx={{ color: "text.secondary", textAlign: "center" }}>
                 {t("subtitle")}
