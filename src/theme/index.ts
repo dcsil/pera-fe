@@ -12,6 +12,13 @@ declare module "@mui/joy/styles" {
         };
     }
 
+    interface PaletteColor {
+        solidBg?: string;
+        solidHoverBg?: string;
+        solidColor?: string;
+        solidActiveBg?: string;
+    }
+
     interface Palette {
         secondary: {
             solidBg: string;
@@ -25,10 +32,11 @@ declare module "@mui/joy/styles" {
             outlinedActiveBg: string;
             outlinedBorder: string;
         };
-        primary: {
+        primary: PaletteColor & {
             solidBg: string;
             solidHoverBg: string;
             solidColor: string;
+            solidActiveBg?: string;
         };
     }
 
@@ -48,7 +56,8 @@ declare module "@mui/joy/styles" {
         primary?: {
             solidBg?: string;
             solidHoverBg?: string;
-            solidColor?: string; // Add this line
+            solidColor?: string;
+            solidActiveBg?: string;
         };
     }
 }
