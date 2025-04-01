@@ -1,20 +1,21 @@
 "use client";
 
-import { Container, Typography, Card, Box } from "@mui/joy";
+import { Container, Typography, Card, Box, useTheme } from "@mui/joy";
 import { useTranslations } from "next-intl";
 
 export default function FeaturesSection() {
     const t = useTranslations("landing");
     const featureKeys = ["interactiveLearning", "aiPoweredInsights", "multilingualSupport"];
+    const theme = useTheme();
 
     return (
-        <Container sx={{ padding: theme => theme.spacing(8, 0) }}>
+        <Container sx={{ padding: theme.spacing(8, 0) }}>
             <Typography
                 level="h2"
                 textAlign="center"
                 fontWeight="lg"
                 gutterBottom
-                sx={{ color: theme => theme.vars.palette.text.primary }}
+                sx={{ color: theme.vars.palette.text.primary }}
             >
                 {t("features.title")}
             </Typography>
@@ -22,8 +23,8 @@ export default function FeaturesSection() {
                 sx={{
                     display: "grid",
                     gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                    gap: theme => theme.spacing(3),
-                    marginTop: theme => theme.spacing(4),
+                    gap: theme.spacing(3),
+                    marginTop: theme.spacing(4),
                 }}
             >
                 {featureKeys.map(key => (
@@ -31,18 +32,18 @@ export default function FeaturesSection() {
                         key={key}
                         variant="outlined"
                         sx={{
-                            padding: theme => theme.spacing(2),
-                            backgroundColor: theme => theme.vars.palette.background.surface,
+                            padding: theme.spacing(2),
+                            backgroundColor: theme.vars.palette.background.surface,
                         }}
                     >
                         <Typography
                             level="h4"
                             fontWeight="lg"
-                            sx={{ color: theme => theme.vars.palette.text.primary }}
+                            sx={{ color: theme.vars.palette.text.primary }}
                         >
                             {t(`features.items.${key}.title`)}
                         </Typography>
-                        <Typography sx={{ color: theme => theme.vars.palette.text.secondary }}>
+                        <Typography sx={{ color: theme.vars.palette.text.secondary }}>
                             {t(`features.items.${key}.description`)}
                         </Typography>
                     </Card>

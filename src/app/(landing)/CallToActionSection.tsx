@@ -19,10 +19,10 @@ export default function CallToActionSection() {
                     gap: 4,
                 }}
             >
-                <Typography level="h2" fontWeight="lg" sx={{ color: theme => theme.palette.common.white }}>
+                <Typography level="h2" fontWeight="lg" sx={{ color: theme.palette.common.white }}>
                     {t("cta.title")}
                 </Typography>
-                <Typography fontWeight="lg" sx={{ color: theme => theme.palette.common.white }}>
+                <Typography fontWeight="lg" sx={{ color: theme.palette.common.white }}>
                     {t("cta.subtitle")}
                 </Typography>
                 <Button

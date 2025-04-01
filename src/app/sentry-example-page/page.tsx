@@ -1,12 +1,13 @@
 "use client";
 
-import { Box, Container, Typography, Button } from "@mui/joy";
+import { Box, Container, Typography, Button, useTheme } from "@mui/joy";
 import * as Sentry from "@sentry/nextjs";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
     const t = useTranslations("sentryExamplePage");
+    const theme = useTheme();
     return (
         <Box
             sx={{
@@ -50,9 +51,9 @@ export default function Page() {
                             });
                         }}
                         sx={{
-                            "backgroundColor": theme => theme.palette.primary[500],
+                            "backgroundColor": theme.palette.primary.solidBg,
                             "&:hover": {
-                                backgroundColor: theme => theme.palette.primary[400],
+                                backgroundColor: theme.palette.primary.softHoverBg,
                             },
                         }}
                     >

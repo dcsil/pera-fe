@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Typography, Stack } from "@mui/joy";
+import { Box, Button, Typography, Stack, useTheme } from "@mui/joy";
 import { Construction } from "@mui/icons-material";
 import { useTranslations } from "next-intl";
 import { SPACING } from "@/theme";
@@ -8,11 +8,13 @@ import { SPACING } from "@/theme";
 export default function UnderConstruction() {
     const t = useTranslations("constructionPage");
 
+    const theme = useTheme();
+
     return (
         <Box
             sx={{
                 minHeight: "100vh",
-                background: theme =>
+                background:
                     `linear-gradient(45deg, ${theme.palette.secondary.solidHoverBg} 10%, ${theme.palette.primary.solidHoverBg} 90%)`,
                 display: "flex",
                 alignItems: "center",
