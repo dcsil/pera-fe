@@ -78,16 +78,16 @@ const theme = extendTheme({
                     white: "#FFFFFF",
                 },
                 primary: {
-                    solidBg: "#1976d2", // Primary background color
-                    solidHoverBg: "#1565c0", // Hover background color
-                    solidColor: "#FFFFFF", // Add text color for primary
-                    solidActiveBg: "#F44336", // Even lighter red for active
+                    solidBg: "#B71C1C", // Dark red
+                    solidHoverBg: "#D32F2F", // Medium red
+                    solidColor: "#FFFFFF", // White text on primary
+                    solidActiveBg: "#F44336", // Light red
                 },
                 secondary: {
-                    solidBg: "#FF5722", // Orange for secondary background
+                    solidBg: "#FF5722", // Orange
+                    solidHoverBg: "#FF7043", // Lighter orange
                     solidColor: "#FFFFFF", // White text on secondary
-                    solidHoverBg: "#FF7043", // Lighter orange for hover
-                    solidActiveBg: "#FF8A65", // Even lighter orange for active
+                    solidActiveBg: "#FF8A65", // Even lighter orange
                 },
                 success: {
                     solidBg: "#388E3C", // Green for success
