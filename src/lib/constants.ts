@@ -1,8 +1,8 @@
 const sampleResponse
     = {
-        AccuracyScore: 67,
-        FluencyScore: 100,
-        PronunciationScore: 33.4,
+        AccuracyScore: 3.25,
+        FluencyScore: 5,
+        PronunciationScore: 2.4,
         JsonResult:
         {
             Id: "4d013d3ef4f54be1934c3787b6870488",
