@@ -27,7 +27,8 @@ declare module "@mui/joy/styles" {
         };
         primary: {
             solidBg: string;
-            solidHoverBg: string; // Add this line
+            solidHoverBg: string;
+            solidColor: string;
         };
     }
 
@@ -46,7 +47,8 @@ declare module "@mui/joy/styles" {
         };
         primary?: {
             solidBg?: string;
-            solidHoverBg?: string; // Add this line
+            solidHoverBg?: string;
+            solidColor?: string; // Add this line
         };
     }
 }
@@ -67,8 +69,8 @@ const theme = extendTheme({
                 },
                 primary: {
                     solidBg: "#1976d2", // Primary background color
-                    solidHoverBg: "#1565c0", // Add hover background color
-                    solidColor: "#FFFFFF", // White text on primary
+                    solidHoverBg: "#1565c0", // Hover background color
+                    solidColor: "#FFFFFF", // Add text color for primary
                     solidActiveBg: "#F44336", // Even lighter red for active
                 },
                 secondary: {
