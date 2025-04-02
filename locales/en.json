@@ -170,5 +170,85 @@
     "french": "French",
     "chinese": "Chinese",
     "russian": "Russian"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overallScore": {
+      "title": "Overall Score",
+      "score": "87%",
+      "change": "+2.5% from last month"
+    },
+    "fluencyRating": {
+      "title": "Fluency Rating",
+      "score": "85%",
+      "change": "+1.8% from last month"
+    },
+    "activitiesCompleted": {
+      "title": "Activities Completed",
+      "count": "120",
+      "change": "+15 from last week"
+    },
+    "learningStreak": {
+      "title": "Learning Streak",
+      "days": "10 Days",
+      "change": "+2 days from last week"
+    },
+    "progressOverTime": {
+      "title": "Progress Over Time",
+      "filters": {
+        "week": "Week",
+        "month": "Month",
+        "year": "Year"
+      },
+      "chartPlaceholder": "[Chart Placeholder]"
+    },
+    "performanceMetrics": {
+      "title": "Performance Metrics",
+      "metrics": {
+        "pronunciation": "Pronunciation",
+        "speechSpeed": "Speech Speed",
+        "intonation": "Intonation"
+      },
+      "values": {
+        "pronunciation": "92%",
+        "speechSpeed": "120 WPM",
+        "intonation": "85%"
+      }
+    },
+    "activityBreakdown": {
+      "title": "Activity Breakdown",
+      "breakdown": {
+        "reading": "Reading: 45%",
+        "conversation": "Conversation: 35%",
+        "pronunciation": "Pronunciation: 20%"
+      }
+    },
+    "peerComparison": {
+      "title": "Overall Ranking",
+      "percentile": "percentile"
+    },
+    "recentActivity": {
+      "title": "Recent Activity",
+      "activity": "Reading Exercise: Completed with 95% accuracy"
+    },
+    "interactiveChart": {
+      "title": "Progress Over Time",
+      "subtitle": "Track your accuracy, fluency, and pronunciation scores",
+      "ranges": {
+        "day": "Day",
+        "week": "Week",
+        "month": "Month",
+        "custom": "Custom Range"
+      },
+      "customRange": {
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "applyButton": "Apply"
+      },
+      "controls": {
+        "metricLabel": "Metric:",
+        "dateRangeLabel": "Date Range:"
+      }
+    }
   }
 }
