@@ -2,7 +2,7 @@
 
 import { FlacAudioRecorder } from "@/lib/flac-audio-recorder";
 import { Mic, Stop } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import { Button } from "@mui/joy";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 
@@ -37,14 +37,30 @@ export default function RecordButton({ onBlobReady }: Readonly<RecordButtonProps
 
     return (
         <Button
-            variant="contained"
-            size="large"
+            variant="solid"
+            size="lg"
             onClick={handleClick}
-            startIcon={isRecording ? <Stop /> : <Mic />}
-            color={isRecording ? "error" : "primary"}
-            sx={{ px: 4 }}
-        >
-            {isRecording ? t("stop") : t("start")}
-        </Button>
+            startDecorator={isRecording ? <Stop /> : <Mic />}
+            color={isRecording ? "danger" : "primary"}
+            sx={{
+                "paddingX": 4,
+                "fontWeight": "bold",
+                "backgroundColor": isRecording ? "danger.solidBg" : "primary.solidBg",
+                "color": isRecording ? "danger.solidColor" : "primary.solidColor",
+                "&:hover": {
+                    backgroundColor: isRecording ? "danger.solidHoverBg" : "primary.solidHoverBg",
+                },
+                "@media (max-width: 600px)": {
+                    "&::after": {
+                        content: `"${isRecording ? t("stopShort") : t("startShort")}"`,
+                    },
+                },
+                "@media (min-width: 601px)": {
+                    "&::after": {
+                        content: `"${isRecording ? t("stop") : t("start")}"`,
+                    },
+                },
+            }}
+        />
     );
 }

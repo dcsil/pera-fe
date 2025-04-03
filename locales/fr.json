@@ -23,8 +23,10 @@
       "readingKaraoke": "Lire le karaoké",
       "sentry": "Exemple de sentinelle",
       "settings": "Paramètres",
-      "targetLanguage": "Langue cible"
-    }
+      "targetLanguage": "Langue cible",
+      "pera": "Pera"
+    },
+    "pera": "Pera"
   },
   "readingKaraoke": {
     "%": "%",
@@ -38,10 +40,135 @@
     },
     "startButton": "Commencer",
     "subtitle": "Améliorez vos compétences en lecture en chantant dans vos chansons préférées!",
-    "title": "Lire le karaoké"
+    "title": "Lire le karaoké",
+    ":": ":",
+    "accuracyScore": "Précision",
+    "defaultComments": "Excellent travail! \nContinuez à pratiquer pour s'améliorer davantage.",
+    "errorsTitle": "Erreurs",
+    "feedbackPlaceholder": "Vos commentaires apparaîtront ici.",
+    "feedbackTitle": "Retour",
+    "fluencyScore": "Aisance",
+    "instructions": "Directions: cliquez sur le bouton d'enregistrement pour démarrer, puis lisez la phrase ci-dessous.",
+    "nextShort": "Suivant",
+    "noErrors": "Aucune erreur détectée. \nExcellent travail!",
+    "prevShort": "Crévuré",
+    "pronunciationScore": "Prononciation",
+    "startRecording": "Commencer l'enregistrement",
+    "stopRecording": "Arrêter l'enregistrement"
   },
   "recordButton": {
     "startRecording": "Commencer l'enregistrement",
-    "stopRecording": "Arrêter l'enregistrement"
+    "stopRecording": "Arrêter l'enregistrement",
+    "start": "Commencer l'enregistrement",
+    "startShort": "Commencer",
+    "stop": "Arrêter l'enregistrement",
+    "stopShort": "Arrêt"
+  },
+  ":": ":",
+  "generation": {
+    "step1": {
+      "generate": "Générer",
+      "history": "Histoire",
+      "historyDisabled": "Histoire (à venir bientôt)",
+      "import": "Importer"
+    },
+    "step2": {
+      "backButton": "<Retour",
+      "describeContentLabel": "Décrivez le contenu que vous souhaitez lire à haute voix:",
+      "describeContentPlaceholder": "Tapez une brève description du contenu ...",
+      "difficultyEasy": "Facile",
+      "difficultyHard": "Dur",
+      "difficultyLabel": "Sélectionnez le niveau de difficulté:",
+      "dragDropText": "Faites glisser et déposez, ou cliquez pour ouvrir le sélecteur de fichiers",
+      "feedbackStrictnessLabel": "Rigueur",
+      "feedbackStrictnessMax": "Toutes les erreurs",
+      "feedbackStrictnessMin": "Seules les erreurs majeures",
+      "fileTypeLabel": "Depuis:",
+      "fileTypeOptions": {
+        "docx": "Document Word",
+        "pasteText": "Texto à coller",
+        "pdf": "Pdf",
+        "textFile": "Fichier texte"
+      },
+      "generateTitle": "Générer du contenu",
+      "importDescription": "Sélectionnez un type de fichier et téléchargez votre contenu.",
+      "importTitle": "Importer du contenu",
+      "optionsTitle": "Options",
+      "pasteTextLabel": "Collez votre texte ici:",
+      "pasteTextPlaceholder": "Tapez ou collez votre texte ici ...",
+      "proceedButton": "Procéder",
+      "startButton": "Commencer",
+      "teleprompterLabel": "Téléprompteur",
+      "wordsPerMinuteLabel": "Mots par minute"
+    },
+    "subtitle": "Pour commencer, sélectionnez une option ci-dessous.",
+    "title": {
+      "default": "Bienvenue à la génération!",
+      "lr": "Bienvenue à Long Reading!",
+      "rk": "Bienvenue à la lecture du karaoké!"
+    }
+  },
+  "landing": {
+    "cta": {
+      "button": "Inscrivez-vous maintenant",
+      "subtitle": "Rejoignez des milliers d'apprenants et commencez votre voyage aujourd'hui.",
+      "title": "Prêt à commencer?"
+    },
+    "features": {
+      "items": {
+        "aiPoweredInsights": {
+          "description": "Recevez des commentaires personnalisés pour améliorer vos compétences.",
+          "title": "Idées alimentées par l'IA"
+        },
+        "interactiveLearning": {
+          "description": "Engagez-vous avec des exercices interactifs adaptés à vos besoins.",
+          "title": "Apprentissage interactif"
+        },
+        "multilingualSupport": {
+          "description": "Apprenez dans votre langue préférée avec des traductions sans couture.",
+          "title": "Support multilingue"
+        }
+      },
+      "title": "Nos caractéristiques"
+    },
+    "hero": {
+      "contactButton": "Entrer en contact",
+      "subtitle": "Autonomiser l'apprentissage des langues avec une technologie de pointe.",
+      "title": "Bienvenue à Pera par Lexislabs"
+    },
+    "testimonials": {
+      "items": {
+        "carlos": {
+          "feedback": "Apprendre une nouvelle langue n'a jamais été aussi amusant et facile!",
+          "name": "Carlos García"
+        },
+        "jane": {
+          "feedback": "La rétroaction de l'IA est incroyablement précise et utile. \nAimer!",
+          "name": "Jane Smith"
+        },
+        "john": {
+          "feedback": "Pera a transformé la façon dont j'apprends les langues. \nHautement recommandé!",
+          "name": "John Doe"
+        }
+      },
+      "title": "Ce que nos utilisateurs disent"
+    }
+  },
+  "settings": {
+    "chinese": "Chinois",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "english": "Anglais",
+    "french": "Français",
+    "localeLabel": "Langue",
+    "notificationsLabel": "Activer les notifications",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "russian": "russe",
+    "saveButton": "Enregistrer les modifications",
+    "spanish": "Espagnol",
+    "title": "Paramètres",
+    "usernameLabel": "Nom d'utilisateur",
+    "usernamePlaceholder": "Entrez votre nom d'utilisateur"
   }
 }

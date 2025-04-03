@@ -23,8 +23,10 @@
       "readingKaraoke": "Чтение караоке",
       "sentry": "Часовой пример",
       "settings": "Настройки",
-      "targetLanguage": "Целевой язык"
-    }
+      "targetLanguage": "Целевой язык",
+      "pera": "Пера"
+    },
+    "pera": "Пера"
   },
   "readingKaraoke": {
     "%": "%",
@@ -38,10 +40,135 @@
     },
     "startButton": "Начинать",
     "subtitle": "Улучшите свои навыки чтения, подпеваясь на ваши любимые песни!",
-    "title": "Чтение караоке"
+    "title": "Чтение караоке",
+    ":": ":",
+    "accuracyScore": "Точность",
+    "defaultComments": "Отличная работа! \nПродолжайте практиковать, чтобы улучшить дальнейшее.",
+    "errorsTitle": "Ошибки",
+    "feedbackPlaceholder": "Ваш отзыв появится здесь.",
+    "feedbackTitle": "Обратная связь",
+    "fluencyScore": "Беглость",
+    "instructions": "Направления: нажмите кнопку «Запустить», а затем прочитайте предложение ниже.",
+    "nextShort": "Следующий",
+    "noErrors": "Ошибки не обнаружены. \nОтличная работа!",
+    "prevShort": "Предыдущий",
+    "pronunciationScore": "Произношение",
+    "startRecording": "Начать запись",
+    "stopRecording": "Прекратить запись"
   },
   "recordButton": {
     "startRecording": "Начать запись",
-    "stopRecording": "Прекратить запись"
+    "stopRecording": "Прекратить запись",
+    "start": "Начать запись",
+    "startShort": "Начинать",
+    "stop": "Прекратить запись",
+    "stopShort": "Останавливаться"
+  },
+  ":": ":",
+  "generation": {
+    "step1": {
+      "generate": "Генерировать",
+      "history": "История",
+      "historyDisabled": "История (скоро)",
+      "import": "Импорт"
+    },
+    "step2": {
+      "backButton": "<Назад",
+      "describeContentLabel": "Опишите контент, который вы хотите прочитать вслух:",
+      "describeContentPlaceholder": "Введите краткое описание контента ...",
+      "difficultyEasy": "Легкий",
+      "difficultyHard": "Жесткий",
+      "difficultyLabel": "Выберите уровень сложности:",
+      "dragDropText": "Перетаскивать или нажмите, чтобы открыть сборщик файлов",
+      "feedbackStrictnessLabel": "Обратная связь строгость",
+      "feedbackStrictnessMax": "Все ошибки",
+      "feedbackStrictnessMin": "Только серьезные ошибки",
+      "fileTypeLabel": "От:",
+      "fileTypeOptions": {
+        "docx": "Word Document",
+        "pasteText": "Вставьте текст",
+        "pdf": "PDF",
+        "textFile": "Текстовый файл"
+      },
+      "generateTitle": "Генерировать контент",
+      "importDescription": "Выберите тип файла и загрузите свой контент.",
+      "importTitle": "Импорт контент",
+      "optionsTitle": "Параметры",
+      "pasteTextLabel": "Вставьте свой текст здесь:",
+      "pasteTextPlaceholder": "Введите или вставьте здесь свой текст ...",
+      "proceedButton": "Продолжить",
+      "startButton": "Начинать",
+      "teleprompterLabel": "Телепроблем",
+      "wordsPerMinuteLabel": "Слова в минуту"
+    },
+    "subtitle": "Чтобы начать, выберите опцию ниже.",
+    "title": {
+      "default": "Добро пожаловать в поколение!",
+      "lr": "Добро пожаловать в долгое чтение!",
+      "rk": "Добро пожаловать в чтение караоке!"
+    }
+  },
+  "landing": {
+    "cta": {
+      "button": "Зарегистрируйтесь сейчас",
+      "subtitle": "Присоединяйтесь к тысячам учеников и начните свое путешествие сегодня.",
+      "title": "Готовы начать работу?"
+    },
+    "features": {
+      "items": {
+        "aiPoweredInsights": {
+          "description": "Получите персонализированную обратную связь, чтобы улучшить свои навыки.",
+          "title": "Ай-мощный понимание"
+        },
+        "interactiveLearning": {
+          "description": "Взаимодействуйте с интерактивными упражнениями, адаптированными к вашим потребностям.",
+          "title": "Интерактивное обучение"
+        },
+        "multilingualSupport": {
+          "description": "Учитесь на предпочтительном языке с бесшовными переводами.",
+          "title": "Многоязычная поддержка"
+        }
+      },
+      "title": "Наши функции"
+    },
+    "hero": {
+      "contactButton": "Свяжитесь с нами",
+      "subtitle": "Расширение прав и возможностей изучения языка с помощью передовых технологий.",
+      "title": "Добро пожаловать в Pera от lexislabs"
+    },
+    "testimonials": {
+      "items": {
+        "carlos": {
+          "feedback": "Изучение нового языка никогда не было таким веселым и легким!",
+          "name": "Карлос Гарсия"
+        },
+        "jane": {
+          "feedback": "Обратная связь ИИ невероятно точна и полезна. \nЛюбить это!",
+          "name": "Джейн Смит"
+        },
+        "john": {
+          "feedback": "Пера изменила способ изучения языков. \nНастоятельно рекомендуется!",
+          "name": "Джон Доу"
+        }
+      },
+      "title": "Что говорят наши пользователи"
+    }
+  },
+  "settings": {
+    "chinese": "китайский",
+    "emailLabel": "Электронная почта",
+    "emailPlaceholder": "Введите свой адрес электронной почты",
+    "english": "Английский",
+    "french": "Французский",
+    "localeLabel": "Язык",
+    "notificationsLabel": "Включить уведомления",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "Введите свой пароль",
+    "russian": "Русский",
+    "saveButton": "Сохранить изменения",
+    "spanish": "испанский",
+    "title": "Настройки",
+    "usernameLabel": "Имя пользователя",
+    "usernamePlaceholder": "Введите свое имя пользователя"
   }
 }
