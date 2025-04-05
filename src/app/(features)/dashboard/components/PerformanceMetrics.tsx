@@ -3,7 +3,13 @@ import { Box, Typography } from "@mui/joy";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/joy/styles";
 
-export default function PerformanceMetrics() {
+interface PerformanceMetricsProps {
+    fluency: number;
+    accuracy: number;
+    pronunciation: number;
+}
+
+export default function PerformanceMetrics({ fluency, accuracy, pronunciation }: Readonly<PerformanceMetricsProps>) {
     const t = useTranslations("dashboard");
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -32,9 +38,13 @@ export default function PerformanceMetrics() {
                     alignItems: isSmallScreen ? "stretch" : "center",
                 }}
             >
-                {["pronunciation", "speechSpeed", "intonation"].map(metric => (
+                {[
+                    { label: "pronunciation", value: pronunciation },
+                    { label: "fluency", value: fluency },
+                    { label: "accuracy", value: accuracy },
+                ].map(metric => (
                     <Box
-                        key={metric}
+                        key={metric.label}
                         sx={{
                             flex: 1,
                             textAlign: "center",
@@ -46,10 +56,10 @@ export default function PerformanceMetrics() {
                         }}
                     >
                         <Typography level="body-md" fontWeight="bold" sx={{ color: "text.primary" }}>
-                            {t(`performanceMetrics.metrics.${metric}`)}
+                            {t(`performanceMetrics.metrics.${metric.label}`)}
                         </Typography>
                         <Typography level="h2" fontWeight="bold" mt={1} sx={{ color: "text.primary" }}>
-                            {t(`performanceMetrics.values.${metric}`)}
+                            {metric.value.toFixed(1)}
                         </Typography>
                     </Box>
                 ))}

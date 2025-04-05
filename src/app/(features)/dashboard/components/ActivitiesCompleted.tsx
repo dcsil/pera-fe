@@ -1,9 +1,12 @@
-import { useTranslations } from "next-intl";
 import { Box, Typography } from "@mui/joy";
+import { useTranslations } from "next-intl";
 
-export default function ActivitiesCompleted() {
+interface ActivitiesCompletedProps {
+    count: number;
+}
+
+export default function ActivitiesCompleted({ count }: Readonly<ActivitiesCompletedProps>) {
     const t = useTranslations("dashboard");
-
     return (
         <Box
             sx={{
@@ -18,10 +21,7 @@ export default function ActivitiesCompleted() {
                 {t("activitiesCompleted.title")}
             </Typography>
             <Typography level="h2" fontWeight="bold" mt={1}>
-                {t("activitiesCompleted.count")}
-            </Typography>
-            <Typography level="body-sm" sx={{ color: "success.solidActiveBg" }} mt={0.5}>
-                {t("activitiesCompleted.change")}
+                {count}
             </Typography>
         </Box>
     );

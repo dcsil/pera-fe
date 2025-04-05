@@ -1,15 +1,29 @@
-import { useTranslations } from "next-intl";
 import { Box, Typography } from "@mui/joy";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
+import { useTranslations } from "next-intl";
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
+import { capitalize } from "@/utils/stringUtils"; // Import the capitalize function
 
-export default function ActivityBreakdown() {
+interface ActivityBreakdownProps {
+    activities: Array<{
+        label: string;
+        value: number;
+    }>;
+}
+
+const colorMapping: Record<string, string> = {
+    reading: "var(--joy-palette-primary-solidBg)",
+    conversation: "var(--joy-palette-secondary-solidBg)",
+    pronunciation: "var(--joy-palette-success-solidBg)",
+};
+
+export default function ActivityBreakdown({ activities }: Readonly<ActivityBreakdownProps>) {
     const t = useTranslations("dashboard");
 
-    const activities = [
-        { label: t("activityBreakdown.breakdown.reading"), value: 45, color: "var(--joy-palette-primary-solidBg)" },
-        { label: t("activityBreakdown.breakdown.conversation"), value: 35, color: "var(--joy-palette-secondary-solidBg)" },
-        { label: t("activityBreakdown.breakdown.pronunciation"), value: 20, color: "var(--joy-palette-success-solidBg)" },
-    ];
+    const activitiesWithColors = activities.map(activity => ({
+        ...activity,
+        label: capitalize(activity.label),
+        color: colorMapping[activity.label.toLowerCase()] || "#000000",
+    }));
 
     return (
         <Box
@@ -30,7 +44,7 @@ export default function ActivityBreakdown() {
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie
-                            data={activities}
+                            data={activitiesWithColors}
                             dataKey="value"
                             nameKey="label"
                             cx="50%"
@@ -39,20 +53,32 @@ export default function ActivityBreakdown() {
                             innerRadius="50%"
                             paddingAngle={5}
                         >
-                            {activities.map((activity, index) => (
-                                <Cell key={`cell-${index}`} fill={activity.color} />
+                            {activitiesWithColors.map(activity => (
+                                <Cell
+                                    key={activity.label}
+                                    fill={activity.color}
+                                />
                             ))}
                         </Pie>
+                        <Tooltip
+                            formatter={(value: number, name: string) => {
+                                const translatedName = t(`activityBreakdown.breakdown.${name.toLowerCase()}`, { name });
+                                return [`${value.toFixed(1)}%`, translatedName];
+                            }}
+                        />
                         <Legend
                             verticalAlign="bottom"
                             wrapperStyle={{
-                                paddingTop: "16px", // Add spacing between the chart and legend
+                                paddingTop: "16px",
                             }}
-                            formatter={(value, entry, index) => (
-                                <Typography level="h4" sx={{ px: "5px", color: "text.secondary" }}>
-                                    {activities[index].label}
-                                </Typography>
-                            )}
+                            formatter={(value: string) => {
+                                const translatedName = t(`activityBreakdown.breakdown.${value.toLowerCase()}`, { value });
+                                return (
+                                    <Typography level="body-lg" sx={{ px: "5px", color: "text.secondary" }}>
+                                        {translatedName}
+                                    </Typography>
+                                );
+                            }}
                         />
                     </PieChart>
                 </ResponsiveContainer>

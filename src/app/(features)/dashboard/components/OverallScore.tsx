@@ -1,9 +1,12 @@
-import { useTranslations } from "next-intl";
 import { Box, Typography } from "@mui/joy";
+import { useTranslations } from "next-intl";
 
-export default function OverallScore() {
+interface OverallScoreProps {
+    score: number;
+}
+
+export default function OverallScore({ score }: Readonly<OverallScoreProps>) {
     const t = useTranslations("dashboard");
-
     return (
         <Box
             sx={{
@@ -18,10 +21,7 @@ export default function OverallScore() {
                 {t("overallScore.title")}
             </Typography>
             <Typography level="h2" fontWeight="bold" mt={1}>
-                {t("overallScore.score")}
-            </Typography>
-            <Typography level="body-sm" sx={{ color: "success.solidActiveBg" }} mt={0.5}>
-                {t("overallScore.change")}
+                {score.toFixed(1)}
             </Typography>
         </Box>
     );

@@ -1,9 +1,13 @@
 import { useTranslations } from "next-intl";
 import { Box, Typography, CircularProgress } from "@mui/joy";
+import { getOrdinalPrefix, getOrdinalSuffix } from "@/utils/numericUtils";
 
-export default function PeerComparison() {
+interface PeerComparisonProps {
+    percentile: number;
+}
+
+export default function PeerComparison({ percentile }: Readonly<PeerComparisonProps>) {
     const t = useTranslations("dashboard");
-    const percentile = 75;
 
     return (
         <Box
@@ -48,7 +52,9 @@ export default function PeerComparison() {
                         color: "text.primary",
                     }}
                 >
-                    {percentile + "th"}
+                    {getOrdinalPrefix(percentile, t)}
+                    {percentile}
+                    {getOrdinalSuffix(percentile, t)}
                 </Typography>
                 <Typography
                     level="body-sm"

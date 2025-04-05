@@ -1,9 +1,12 @@
-import { useTranslations } from "next-intl";
 import { Box, Typography } from "@mui/joy";
+import { useTranslations } from "next-intl";
 
-export default function LearningStreak() {
+interface LearningStreakProps {
+    streak: number;
+}
+
+export default function LearningStreak({ streak }: Readonly<LearningStreakProps>) {
     const t = useTranslations("dashboard");
-
     return (
         <Box
             sx={{
@@ -18,10 +21,7 @@ export default function LearningStreak() {
                 {t("learningStreak.title")}
             </Typography>
             <Typography level="h2" fontWeight="bold" mt={1}>
-                {t("learningStreak.days")}
-            </Typography>
-            <Typography level="body-sm" sx={{ color: "success.solidActiveBg" }} mt={0.5}>
-                {t("learningStreak.change")}
+                {streak + " " + t("learningStreak.days")}
             </Typography>
         </Box>
     );

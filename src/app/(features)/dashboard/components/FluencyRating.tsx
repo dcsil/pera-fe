@@ -1,9 +1,12 @@
-import { useTranslations } from "next-intl";
 import { Box, Typography } from "@mui/joy";
+import { useTranslations } from "next-intl";
 
-export default function FluencyRating() {
+interface FluencyRatingProps {
+    rating: number;
+}
+
+export default function FluencyRating({ rating }: Readonly<FluencyRatingProps>) {
     const t = useTranslations("dashboard");
-
     return (
         <Box
             sx={{
@@ -18,10 +21,7 @@ export default function FluencyRating() {
                 {t("fluencyRating.title")}
             </Typography>
             <Typography level="h2" fontWeight="bold" mt={1}>
-                {t("fluencyRating.score")}
-            </Typography>
-            <Typography level="body-sm" sx={{ color: "success.solidActiveBg" }} mt={0.5}>
-                {t("fluencyRating.change")}
+                {rating.toFixed(1)}
             </Typography>
         </Box>
     );

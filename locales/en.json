@@ -190,7 +190,7 @@
     },
     "learningStreak": {
       "title": "Learning Streak",
-      "days": "10 Days",
+      "days": "days",
       "change": "+2 days from last week"
     },
     "progressOverTime": {
@@ -203,29 +203,36 @@
       "chartPlaceholder": "[Chart Placeholder]"
     },
     "performanceMetrics": {
-      "title": "Performance Metrics",
+      "title": "Weekly Performance Metrics",
       "metrics": {
         "pronunciation": "Pronunciation",
-        "speechSpeed": "Speech Speed",
-        "intonation": "Intonation"
+        "fluency": "Fluency",
+        "accuracy": "Accuracy"
       },
       "values": {
         "pronunciation": "92%",
-        "speechSpeed": "120 WPM",
-        "intonation": "85%"
+        "fluency": "28%",
+        "accuracy": "85%"
       }
     },
     "activityBreakdown": {
       "title": "Activity Breakdown",
       "breakdown": {
-        "reading": "Reading: 45%",
-        "conversation": "Conversation: 35%",
-        "pronunciation": "Pronunciation: 20%"
+        "reading": "Reading",
+        "conversation": "Conversation",
+        "pronunciation": "Pronunciation"
       }
     },
     "peerComparison": {
       "title": "Overall Ranking",
-      "percentile": "percentile"
+      "percentile": "percentile",
+      "ordinalSuffixes": {
+        "th": "th",
+        "st": "st",
+        "nd": "nd",
+        "rd": "rd"
+      },
+      "ordinalPrefix": ""
     },
     "recentActivity": {
       "title": "Recent Activity",
@@ -248,7 +255,14 @@
       "controls": {
         "metricLabel": "Metric:",
         "dateRangeLabel": "Date Range:"
-      }
-    }
+      },
+      "metrics": {
+        "pronunciation": "Pronunciation",
+        "fluency": "Fluency",
+        "accuracy": "Accuracy"
+      },
+      "locale": "en"
+    },
+    "loading": "Processing data . . . "
   }
 }

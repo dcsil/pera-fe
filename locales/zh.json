@@ -24,9 +24,9 @@
       "sentry": "哨兵示例",
       "settings": "设置",
       "targetLanguage": "目标语言",
-      "pera": "佩拉"
+      "pera": "Pera"
     },
-    "pera": "佩拉"
+    "pera": "Pera"
   },
   "readingKaraoke": {
     "%": "％",
@@ -170,5 +170,99 @@
     "title": "设置",
     "usernameLabel": "用户名",
     "usernamePlaceholder": "输入您的用户名"
+  },
+  "dashboard": {
+    "peerComparison": {
+      "ordinalPrefix": "第",
+      "ordinalSuffixes": {
+        "nd": "",
+        "rd": "",
+        "st": "",
+        "th": ""
+      },
+      "percentile": "百分位数",
+      "title": "总体排名"
+    },
+    "activitiesCompleted": {
+      "change": "上周15",
+      "count": "120",
+      "title": "活动完成"
+    },
+    "activityBreakdown": {
+      "breakdown": {
+        "conversation": "对话",
+        "pronunciation": "发音",
+        "reading": "阅读"
+      },
+      "title": "活动崩溃"
+    },
+    "fluencyRating": {
+      "change": "比上个月1.8％",
+      "score": "85％",
+      "title": "流利的等级"
+    },
+    "interactiveChart": {
+      "controls": {
+        "dateRangeLabel": "日期范围：",
+        "metricLabel": "公制："
+      },
+      "customRange": {
+        "applyButton": "申请",
+        "endDate": "结束日期",
+        "startDate": "开始日期"
+      },
+      "ranges": {
+        "custom": "自定义范围",
+        "day": "天",
+        "month": "月",
+        "week": "星期"
+      },
+      "subtitle": "跟踪您的准确性，流利性和发音评分",
+      "title": "随着时间的推移",
+      "metrics": {
+        "accuracy": "准确性",
+        "fluency": "流利",
+        "pronunciation": "发音"
+      },
+      "locale": "zh"
+    },
+    "learningStreak": {
+      "change": "上周2天",
+      "days": "天",
+      "title": "学习条纹"
+    },
+    "loading": "处理数据。 \n。 \n。",
+    "overallScore": {
+      "change": "上个月2.5％",
+      "score": "87％",
+      "title": "总分"
+    },
+    "performanceMetrics": {
+      "metrics": {
+        "pronunciation": "发音",
+        "fluency": "流利",
+        "accuracy": "准确性"
+      },
+      "values": {
+        "accuracy": "85％",
+        "pronunciation": "92％",
+        "fluency": "120 wpm"
+      },
+      "title": "每周性能指标"
+    },
+    "progressOverTime": {
+      "chartPlaceholder": "[图表占位符]",
+      "filters": {
+        "month": "月",
+        "week": "星期",
+        "year": "年"
+      },
+      "title": "随着时间的推移"
+    },
+    "recentActivity": {
+      "activity": "阅读练习：以95％的精度完成",
+      "title": "最近的活动"
+    },
+    "title": "仪表板"
   }
 }
