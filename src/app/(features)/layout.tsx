@@ -42,14 +42,14 @@ const NAV_ITEMS = [
     },
 ] as const;
 
-function NavList({ onClose }: { onClose?: () => void }) {
+function NavList({ onClose }: Readonly<{ onClose?: () => void }>) {
     const t = useTranslations("common.nav");
-    const pathname = usePathname() || ""; // Default to an empty string if null
+    const pathname = usePathname() ?? ""; // Default to an empty string if null
     const params = useSearchParams();
     const theme = useTheme();
 
     return (
-        <List sx={{ mt: 8 }}>
+        <List>
             {/* Logo and Title */}
             <Box
                 sx={{
