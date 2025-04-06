@@ -16,6 +16,7 @@ function SignUpForm({ onSignUpSuccess }: { onSignUpSuccess: () => void }) {
     const [confirmPassword, setConfirmPassword] = useState("");
     // Will only trigger when submit is attempted, and will not re-validate between submissions
     const [passwordError, setPasswordError] = useState(false);
+    const [emailInUseError, setEmailInUseError] = useState(false);
 
     async function handleSignUp(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -23,6 +24,7 @@ function SignUpForm({ onSignUpSuccess }: { onSignUpSuccess: () => void }) {
             setPasswordError(true);
             return;
         }
+        setPasswordError(false);
 
         const url = `${BACKEND}/accounts/sign-up/`;
         const response = await fetch(url, {
@@ -45,6 +47,10 @@ function SignUpForm({ onSignUpSuccess }: { onSignUpSuccess: () => void }) {
         if (json.success) {
             onSignUpSuccess();
         }
+        // TODO: BE should change this to a more machine-readable message
+        else if (json.message == "Email already in use.") {
+            setEmailInUseError(true);
+        }
     }
 
     // TODO: Error feedback currently use browser built-in messages. They should
@@ -63,7 +69,7 @@ function SignUpForm({ onSignUpSuccess }: { onSignUpSuccess: () => void }) {
                         onChange={e => setName(e.target.value)}
                     />
                 </FormControl>
-                <FormControl>
+                <FormControl error={emailInUseError}>
                     <FormLabel>{t("emailLabel")}</FormLabel>
                     <Input
                         required
@@ -72,6 +78,11 @@ function SignUpForm({ onSignUpSuccess }: { onSignUpSuccess: () => void }) {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
+                    {emailInUseError && (
+                        <FormHelperText>
+                            {t("emailInUseError")}
+                        </FormHelperText>
+                    )}
                 </FormControl>
                 <FormControl>
                     <FormLabel>{t("passwordLabel")}</FormLabel>

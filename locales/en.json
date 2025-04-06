@@ -16,6 +16,7 @@
     "namePlaceholder": "Enter your name",
     "emailLabel": "Email",
     "emailPlaceholder": "Enter your email address",
+    "emailInUseError": "This email appears to be in use already.",
     "passwordLabel": "Password",
     "passwordPlaceholder": "Enter your password",
     "confirmPasswordLabel": "Confirm Password",
