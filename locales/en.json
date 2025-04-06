@@ -1,4 +1,31 @@
 {
+  "loginPage": {
+    "title": "Login",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "noAccountPrompt": "Don't have an account? ",
+    "createAccountLabel": "Create one!",
+    "submitButton": "Login",
+    "loginFailed": "Username or password is incorrect. Please try again."
+  },
+  "signUpPage": {
+    "title": "Sign Up",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "passwordMismatchError": "Passwords do not match.",
+    "alreadyHaveAccountPrompt": "Already have an account? ",
+    "toLoginLabel": "Login instead!",
+    "submitButton": "Sign Up",
+    "success": "Account created successfully! Redirecting you to login ..."
+  },
   "constructionPage": {
     "title": "Pera by LexisLabs",
     "subtitle": "We're building something special. Coming soon.",
