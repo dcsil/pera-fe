@@ -13,7 +13,8 @@ export default function LoginPage() {
     const [loginFailed, setLoginFailed] = useState(false);
     const router = useRouter();
 
-    async function handleLogin() {
+    async function handleLogin(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
         const url = `${BACKEND}/accounts/login/`;
         const response = await fetch(url, {
             method: "POST",
@@ -37,40 +38,44 @@ export default function LoginPage() {
         <Stack spacing={4} alignItems="center" sx={{ width: "100%", maxWidth: 800, padding: { xs: 2, md: 4 } }}>
             <Card variant="outlined" sx={{ width: "100%", padding: { xs: 2, md: 4 } }}>
                 <Typography level="h4">{t("title")}</Typography>
-                <Stack spacing={2}>
-                    <FormControl>
-                        <FormLabel>{t("emailLabel")}</FormLabel>
-                        <Input
-                            placeholder={t("emailPlaceholder")}
-                            type="email"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                    </FormControl>
-                    <FormControl>
-                        <FormLabel>{t("passwordLabel")}</FormLabel>
-                        <Input
-                            placeholder={t("passwordPlaceholder")}
-                            type="password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                    </FormControl>
-                    {loginFailed && (
-                        <Typography color="danger">{t("loginFailed")}</Typography>
-                    )}
-                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <Typography sx={{ mr: 2 }}>
-                            {t("noAccountPrompt")}
-                            <Link href="/sign-up">
-                                {t("createAccountLabel")}
-                            </Link>
-                        </Typography>
-                        <Button variant="solid" onClick={handleLogin}>
-                            {t("submitButton")}
-                        </Button>
-                    </Box>
-                </Stack>
+                <form onSubmit={handleLogin}>
+                    <Stack spacing={2}>
+                        <FormControl>
+                            <FormLabel>{t("emailLabel")}</FormLabel>
+                            <Input
+                                required
+                                placeholder={t("emailPlaceholder")}
+                                type="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>{t("passwordLabel")}</FormLabel>
+                            <Input
+                                required
+                                placeholder={t("passwordPlaceholder")}
+                                type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </FormControl>
+                        {loginFailed && (
+                            <Typography color="danger">{t("loginFailed")}</Typography>
+                        )}
+                        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                            <Typography sx={{ mr: 2 }}>
+                                {t("noAccountPrompt")}
+                                <Link href="/sign-up">
+                                    {t("createAccountLabel")}
+                                </Link>
+                            </Typography>
+                            <Button variant="solid" type="submit">
+                                {t("submitButton")}
+                            </Button>
+                        </Box>
+                    </Stack>
+                </form>
             </Card>
         </Stack>
     );
