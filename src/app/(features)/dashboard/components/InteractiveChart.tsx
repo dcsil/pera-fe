@@ -83,7 +83,8 @@ export default function InteractiveChart({ data }: Readonly<{ data: Array<{ date
                 <Box
                     sx={{
                         display: "flex",
-                        alignItems: "center",
+                        flexDirection: { xs: "column", sm: "row" },
+                        alignItems: { xs: "stretch", sm: "center" },
                         gap: 2,
                         mb: 2,
                         flexWrap: "wrap",
@@ -92,15 +93,16 @@ export default function InteractiveChart({ data }: Readonly<{ data: Array<{ date
                     <Box
                         sx={{
                             display: "flex",
-                            alignItems: "center",
+                            flexDirection: { xs: "column", sm: "row" },
+                            alignItems: { xs: "stretch", sm: "center" },
                             gap: 1,
-                            flexWrap: "nowrap",
+                            flexWrap: "wrap",
                         }}
                     >
                         <Typography level="h5" sx={{ fontWeight: "bold", color: "text.primary" }}>
                             {t("controls.metricLabel")}
                         </Typography>
-                        <Box sx={{ display: "flex", gap: 1 }}>
+                        <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1 }}>
                             {Object.keys(chartConfig).map((key) => {
                                 const metric = key as keyof typeof chartConfig;
                                 return (
@@ -123,15 +125,15 @@ export default function InteractiveChart({ data }: Readonly<{ data: Array<{ date
                     <Box
                         sx={{
                             display: "flex",
-                            alignItems: "center",
+                            flexDirection: { xs: "column", sm: "row" },
+                            alignItems: { xs: "stretch", sm: "center" },
                             gap: 1,
-                            flexWrap: "nowrap",
                         }}
                     >
                         <Typography level="h5" sx={{ fontWeight: "bold", color: "text.primary" }}>
                             {t("controls.dateRangeLabel")}
                         </Typography>
-                        <Box sx={{ display: "flex", gap: 1 }}>
+                        <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1 }}>
                             {["day", "week", "month"].map(range => (
                                 <Button
                                     key={range}
