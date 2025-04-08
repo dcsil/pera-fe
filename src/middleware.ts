@@ -10,7 +10,6 @@ const privateRoutes = [
     "/generation",
     "/scripted-assessment/reading-karaoke",
     "/settings",
-    "/sentry-example-page",
 ];
 
 export default async function middleware(req: NextRequest) {
