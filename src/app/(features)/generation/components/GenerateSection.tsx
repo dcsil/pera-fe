@@ -1,8 +1,6 @@
 "use client";
 
 import { Button, Box, Typography, Stack, Card, FormControl, FormLabel, Slider, Textarea, Switch, Input } from "@mui/joy";
-import { sendGenerateData, getLanguageFromCookies } from "@/lib/api";
-import { useState } from "react";
 
 interface GenerateSectionProps {
     t: (key: string) => string;
@@ -34,32 +32,7 @@ export default function GenerateSection({
     setFeedbackStrictness,
     onBack,
     onStart,
-}: Readonly<GenerateSectionProps>) {
-    const [loading, setLoading] = useState(false);
-
-    const handleStart = async () => {
-        setLoading(true);
-        try {
-            const payload = {
-                text: description,
-                title: "Generated Title",
-                language: getLanguageFromCookies(),
-                difficulty: difficulty.toString(),
-                exercise_mode: "RK",
-                content_mode: "generate",
-            };
-            await sendGenerateData(payload);
-            onStart();
-        }
-        catch (error) {
-            console.error("Error sending generate data:", error);
-            onStart();
-        }
-        finally {
-            setLoading(false);
-        }
-    };
-
+}: GenerateSectionProps) {
     return (
         <Stack spacing={4} alignItems="center" sx={{ width: "100%", maxWidth: 800, padding: { xs: 2, md: 4 } }}>
             <Typography level="h4" fontWeight="lg" textAlign="center">
@@ -133,11 +106,12 @@ export default function GenerateSection({
                         </Stack>
                     </Box>
                 </Stack>
+
                 <Stack direction="row" justifyContent="space-between" sx={{ marginTop: 4 }}>
                     <Button variant="plain" onClick={onBack}>
                         {t("step2.backButton")}
                     </Button>
-                    <Button variant="solid" onClick={handleStart} loading={loading}>
+                    <Button variant="solid" onClick={onStart}>
                         {t("step2.startButton")}
                     </Button>
                 </Stack>
