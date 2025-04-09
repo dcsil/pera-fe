@@ -1,6 +1,3 @@
-export * from "./theme";
-export * from "./constants";
-
 import { extendTheme } from "@mui/joy/styles";
 
 declare module "@mui/joy/styles" {

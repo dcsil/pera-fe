@@ -5,7 +5,6 @@ import { NavigateNext, NavigateBefore, ExpandMore, ExpandLess } from "@mui/icons
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { PageContainer } from "../../common/PageContainer";
-import { SPACING } from "@/theme";
 import RecordButton from "@/components/RecordButton";
 import { BACKEND } from "@/lib/urls";
 import FeedbackDial from "@/components/FeedbackDial";
@@ -186,7 +185,7 @@ export default function ReadingKaraoke() {
                 spacing={1}
                 sx={{
                     textAlign: "center",
-                    mb: SPACING.SECTION_GAP,
+                    mb: 4,
                     mt: 6,
                 }}
             >
@@ -325,7 +324,7 @@ export default function ReadingKaraoke() {
 
             <Stack
                 direction="row"
-                spacing={SPACING.ELEMENT_GAP}
+                spacing={2}
                 sx={{
                     justifyContent: "space-between",
                     width: "100%",
