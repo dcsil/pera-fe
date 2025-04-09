@@ -200,5 +200,99 @@
     "success": "Compte créé avec succès! \nVous rediriger vers la connexion ...",
     "title": "S'inscrire",
     "toLoginLabel": "Connectez-vous à la place!"
+  },
+  "dashboard": {
+    "activitiesCompleted": {
+      "change": "15 de la semaine dernière",
+      "count": "120",
+      "title": "Activités terminées"
+    },
+    "activityBreakdown": {
+      "breakdown": {
+        "conversation": "Conversation",
+        "pronunciation": "Prononciation",
+        "reading": "En lisant"
+      },
+      "title": "Déchange d'activités"
+    },
+    "fluencyRating": {
+      "change": "1,8% par rapport au mois dernier",
+      "score": "85%",
+      "title": "Cote de maîtrise"
+    },
+    "interactiveChart": {
+      "controls": {
+        "dateRangeLabel": "Plage de dates:",
+        "metricLabel": "Métrique:"
+      },
+      "customRange": {
+        "applyButton": "Appliquer",
+        "endDate": "Date de fin",
+        "startDate": "Date de début"
+      },
+      "ranges": {
+        "custom": "Gamme personnalisée",
+        "day": "Jour",
+        "month": "Mois",
+        "week": "Semaine"
+      },
+      "subtitle": "Suivez vos scores de précision, de maîtrise et de prononciation",
+      "title": "Progresser dans le temps",
+      "metrics": {
+        "accuracy": "Précision",
+        "fluency": "Aisance",
+        "pronunciation": "Prononciation"
+      },
+      "locale": "fr"
+    },
+    "learningStreak": {
+      "change": "2 jours de la semaine dernière",
+      "days": "jours",
+      "title": "Séquence d'apprentissage"
+    },
+    "loading": "Traitement des données. \n. \n.",
+    "overallScore": {
+      "change": "2,5% par rapport au mois dernier",
+      "score": "87%",
+      "title": "Score global"
+    },
+    "peerComparison": {
+      "ordinalPrefix": "",
+      "ordinalSuffixes": {
+        "nd": "nd",
+        "rd": "rd",
+        "st": "St",
+        "th": "ème"
+      },
+      "percentile": "centile",
+      "title": "Classement général"
+    },
+    "performanceMetrics": {
+      "metrics": {
+        "accuracy": "Précision",
+        "fluency": "Aisance",
+        "pronunciation": "Prononciation"
+      },
+      "values": {
+        "accuracy": "85%",
+        "pronunciation": "92%",
+        "fluency": "120 WPM"
+      },
+      "title": "Métriques de performance hebdomadaires"
+    },
+    "progressOverTime": {
+      "chartPlaceholder": "[Placeholder du graphique]",
+      "filters": {
+        "month": "Mois",
+        "week": "Semaine",
+        "year": "Année"
+      },
+      "title": "Progresser dans le temps"
+    },
+    "recentActivity": {
+      "activity": "Exercice de lecture: achevé avec une précision à 95%",
+      "title": "Activité récente"
+    },
+    "title": "Tableau de bord"
   }
 }

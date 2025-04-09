@@ -200,5 +200,99 @@
     "french": "French",
     "chinese": "Chinese",
     "russian": "Russian"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overallScore": {
+      "title": "Overall Score",
+      "score": "87%",
+      "change": "+2.5% from last month"
+    },
+    "fluencyRating": {
+      "title": "Fluency Rating",
+      "score": "85%",
+      "change": "+1.8% from last month"
+    },
+    "activitiesCompleted": {
+      "title": "Activities Completed",
+      "count": "120",
+      "change": "+15 from last week"
+    },
+    "learningStreak": {
+      "title": "Learning Streak",
+      "days": "days",
+      "change": "+2 days from last week"
+    },
+    "progressOverTime": {
+      "title": "Progress Over Time",
+      "filters": {
+        "week": "Week",
+        "month": "Month",
+        "year": "Year"
+      },
+      "chartPlaceholder": "[Chart Placeholder]"
+    },
+    "performanceMetrics": {
+      "title": "Weekly Performance Metrics",
+      "metrics": {
+        "pronunciation": "Pronunciation",
+        "fluency": "Fluency",
+        "accuracy": "Accuracy"
+      },
+      "values": {
+        "pronunciation": "92%",
+        "fluency": "28%",
+        "accuracy": "85%"
+      }
+    },
+    "activityBreakdown": {
+      "title": "Activity Breakdown",
+      "breakdown": {
+        "reading": "Reading",
+        "conversation": "Conversation",
+        "pronunciation": "Pronunciation"
+      }
+    },
+    "peerComparison": {
+      "title": "Overall Ranking",
+      "percentile": "percentile",
+      "ordinalSuffixes": {
+        "th": "th",
+        "st": "st",
+        "nd": "nd",
+        "rd": "rd"
+      },
+      "ordinalPrefix": ""
+    },
+    "recentActivity": {
+      "title": "Recent Activity",
+      "activity": "Reading Exercise: Completed with 95% accuracy"
+    },
+    "interactiveChart": {
+      "title": "Progress Over Time",
+      "subtitle": "Track your accuracy, fluency, and pronunciation scores",
+      "ranges": {
+        "day": "Day",
+        "week": "Week",
+        "month": "Month",
+        "custom": "Custom Range"
+      },
+      "customRange": {
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "applyButton": "Apply"
+      },
+      "controls": {
+        "metricLabel": "Metric:",
+        "dateRangeLabel": "Date Range:"
+      },
+      "metrics": {
+        "pronunciation": "Pronunciation",
+        "fluency": "Fluency",
+        "accuracy": "Accuracy"
+      },
+      "locale": "en"
+    },
+    "loading": "Processing data . . . "
   }
 }

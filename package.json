@@ -17,10 +17,12 @@
     "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^6.4.6",
     "@sentry/nextjs": "^9.3.0",
+    "date-fns": "^2.30.0",
     "next": "15.1.6",
     "next-intl": "^3.26.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

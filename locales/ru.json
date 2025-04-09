@@ -24,9 +24,9 @@
       "sentry": "Часовой пример",
       "settings": "Настройки",
       "targetLanguage": "Целевой язык",
-      "pera": "Пера"
+      "pera": "Pera"
     },
-    "pera": "Пера"
+    "pera": "Pera"
   },
   "readingKaraoke": {
     "%": "%",
@@ -200,5 +200,99 @@
     "success": "Учетная запись создана успешно! \nПеренаправление вас входа в систему ...",
     "title": "Зарегистрироваться",
     "toLoginLabel": "Войдите вместо этого!"
+  },
+  "dashboard": {
+    "activitiesCompleted": {
+      "change": "15 с прошлой недели",
+      "count": "120",
+      "title": "Деятельность завершена"
+    },
+    "activityBreakdown": {
+      "breakdown": {
+        "conversation": "Беседа",
+        "pronunciation": "Произношение",
+        "reading": "Чтение"
+      },
+      "title": "Распад деятельности"
+    },
+    "fluencyRating": {
+      "change": "1,8% по сравнению с прошлым месяцем",
+      "score": "85%",
+      "title": "Рейтинг беглости"
+    },
+    "interactiveChart": {
+      "controls": {
+        "dateRangeLabel": "Диапазон даты:",
+        "metricLabel": "Метрика:"
+      },
+      "customRange": {
+        "applyButton": "Применять",
+        "endDate": "Дата окончания",
+        "startDate": "Дата начала"
+      },
+      "ranges": {
+        "custom": "Пользовательский диапазон",
+        "day": "День",
+        "month": "Месяц",
+        "week": "Неделя"
+      },
+      "subtitle": "Отслеживайте свою точность, беглость и показатели произношения",
+      "title": "Прогресс со временем",
+      "metrics": {
+        "accuracy": "Точность",
+        "fluency": "Беглость",
+        "pronunciation": "Произношение"
+      },
+      "locale": "ru"
+    },
+    "learningStreak": {
+      "change": "2 дня с прошлой недели",
+      "days": "дни",
+      "title": "Стрик обучения"
+    },
+    "loading": "Обработка данных. \nПолем \nПолем",
+    "overallScore": {
+      "change": "2,5% по сравнению с прошлым месяцем",
+      "score": "87%",
+      "title": "Общий счет"
+    },
+    "peerComparison": {
+      "ordinalPrefix": "",
+      "ordinalSuffixes": {
+        "nd": "н.д.",
+        "rd": "rd.",
+        "st": "ул",
+        "th": "тур"
+      },
+      "percentile": "процентиль",
+      "title": "Общий рейтинг"
+    },
+    "performanceMetrics": {
+      "metrics": {
+        "pronunciation": "Произношение",
+        "fluency": "Беглость",
+        "accuracy": "Точность"
+      },
+      "values": {
+        "accuracy": "85%",
+        "pronunciation": "92%",
+        "fluency": "120 WPM"
+      },
+      "title": "Еженедельные показатели производительности"
+    },
+    "progressOverTime": {
+      "chartPlaceholder": "[График заполнителя]",
+      "filters": {
+        "month": "Месяц",
+        "week": "Неделя",
+        "year": "Год"
+      },
+      "title": "Прогресс со временем"
+    },
+    "recentActivity": {
+      "activity": "Упражнение для чтения: завершено с точностью 95%",
+      "title": "Недавняя деятельность"
+    },
+    "title": "Приборная панель"
   }
 }
