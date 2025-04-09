@@ -54,7 +54,8 @@
     "nextShort": "Próximo",
     "noErrors": "No hay errores detectados. \n¡Buen trabajo!",
     "prevShort": "Previsamente",
-    "pronunciationScore": "Pronunciación"
+    "pronunciationScore": "Pronunciación",
+    "loading": "Cargando . . ."
   },
   "recordButton": {
     "start": "Comenzar a grabar",
@@ -65,7 +66,7 @@
     "stopShort": "Detener"
   },
   ":": ":",
-  "generation": {
+  "get-started": {
     "step1": {
       "generate": "Generar",
       "history": "Historia",
@@ -73,7 +74,7 @@
       "import": "Importar"
     },
     "step2": {
-      "backButton": "<Hacia atrás",
+      "backButton": "< Hacia atrás",
       "describeContentLabel": "Describa el contenido que desea leer en voz alta:",
       "describeContentPlaceholder": "Escriba una breve descripción del contenido ...",
       "difficultyEasy": "Fácil",
@@ -85,21 +86,24 @@
       "feedbackStrictnessMin": "Solo errores importantes",
       "fileTypeLabel": "De:",
       "fileTypeOptions": {
-        "docx": "Documento de palabras",
+        "docx": "Documento de palabras (próximamente)",
         "pasteText": "Pegar texto",
-        "pdf": "Pdf",
-        "textFile": "Archivo de texto"
+        "pdf": "Pdf (próximamente)",
+        "textFile": "Archivo de texto (próximamente)"
       },
       "generateTitle": "Generar contenido",
       "importDescription": "Seleccione un tipo de archivo y cargue su contenido.",
       "importTitle": "Importar contenido",
       "optionsTitle": "Opción",
+      "experimentalWarning": "Estas son funciones experimentales que actualmente no tienen ningún efecto.",
       "pasteTextLabel": "Pega tu texto aquí:",
       "pasteTextPlaceholder": "Escriba o pegue su texto aquí ...",
       "proceedButton": "Proceder",
       "startButton": "Comenzar",
       "teleprompterLabel": "Teleprompter",
-      "wordsPerMinuteLabel": "Palabras por minuto"
+      "wordsPerMinuteLabel": "Palabras por minuto",
+      "titleLabel": "",
+      "titlePlaceholder": ""
     },
     "subtitle": "Para comenzar, seleccione una opción a continuación.",
     "title": {
@@ -170,6 +174,34 @@
     "title": "Ajustes",
     "usernameLabel": "Nombre de usuario",
     "usernamePlaceholder": "Ingrese su nombre de usuario"
+  },
+  "loginPage": {
+    "createAccountLabel": "¡Crea uno!",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su dirección de correo electrónico",
+    "loginFailed": "El nombre de usuario o la contraseña es incorrecto. \nPor favor intente de nuevo.",
+    "noAccountPrompt": "¿No tienes una cuenta?",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "submitButton": "Acceso",
+    "title": "Acceso"
+  },
+  "signUpPage": {
+    "alreadyHaveAccountPrompt": "¿Ya tienes una cuenta?",
+    "confirmPasswordLabel": "confirmar Contraseña",
+    "confirmPasswordPlaceholder": "Confirma tu contraseña",
+    "emailInUseError": "Este correo electrónico parece estar en uso.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su dirección de correo electrónico",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Ingrese su nombre",
+    "passwordLabel": "Contraseña",
+    "passwordMismatchError": "Las contraseñas no coinciden.",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "submitButton": "Inscribirse",
+    "success": "Cuenta creada con éxito! \nRedirigirte para iniciar sesión ...",
+    "title": "Inscribirse",
+    "toLoginLabel": "¡Inicie sesión en su lugar!"
   },
   "dashboard": {
     "activitiesCompleted": {

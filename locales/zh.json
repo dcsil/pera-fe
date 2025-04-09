@@ -54,7 +54,8 @@
     "prevShort": "上一条",
     "pronunciationScore": "发音",
     "startRecording": "开始录制",
-    "stopRecording": "停止记录"
+    "stopRecording": "停止记录",
+    "loading": "加载中..."
   },
   "recordButton": {
     "startRecording": "开始录制",
@@ -65,7 +66,7 @@
     "stopShort": "停止"
   },
   ":": "：",
-  "generation": {
+  "get-started": {
     "step1": {
       "generate": "产生",
       "history": "历史",
@@ -73,7 +74,7 @@
       "import": "进口"
     },
     "step2": {
-      "backButton": "<返回",
+      "backButton": "< 返回",
       "describeContentLabel": "描述您要大声朗读的内容：",
       "describeContentPlaceholder": "键入内容的简要说明...",
       "difficultyEasy": "简单的",
@@ -85,21 +86,24 @@
       "feedbackStrictnessMin": "只是主要错误",
       "fileTypeLabel": "从：",
       "fileTypeOptions": {
-        "docx": "Word文档",
+        "docx": "Word文档（即将推出）",
         "pasteText": "糊状文字",
-        "pdf": "PDF",
-        "textFile": "文本文件"
+        "pdf": "PDF（即将推出）",
+        "textFile": "文本文件（即将推出）"
       },
       "generateTitle": "生成内容",
       "importDescription": "选择文件类型并上传您的内容。",
       "importTitle": "导入内容",
       "optionsTitle": "选项",
+      "experimentalWarning": "这是实验性功能，尚未生效。",
       "pasteTextLabel": "在这里粘贴您的文字：",
       "pasteTextPlaceholder": "在这里输入或粘贴您的文字...",
       "proceedButton": "继续",
       "startButton": "开始",
       "teleprompterLabel": "远程编译器",
-      "wordsPerMinuteLabel": "每分钟的话"
+      "wordsPerMinuteLabel": "每分钟的话",
+      "titleLabel": "段落标题：",
+      "titlePlaceholder": "输入段落标题"
     },
     "subtitle": "要开始，请在下面选择一个选项。",
     "title": {
@@ -170,6 +174,34 @@
     "title": "设置",
     "usernameLabel": "用户名",
     "usernamePlaceholder": "输入您的用户名"
+  },
+  "loginPage": {
+    "createAccountLabel": "创建一个！",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "loginFailed": "用户名或密码不正确。\n请重试。",
+    "noAccountPrompt": "没有帐户？",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "submitButton": "登录",
+    "title": "登录"
+  },
+  "signUpPage": {
+    "alreadyHaveAccountPrompt": "已经有一个帐户？",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordPlaceholder": "确认您的密码",
+    "emailInUseError": "该电子邮件似乎已经在使用。",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "nameLabel": "姓名",
+    "namePlaceholder": "输入您的名字",
+    "passwordLabel": "密码",
+    "passwordMismatchError": "密码不匹配。",
+    "passwordPlaceholder": "输入您的密码",
+    "submitButton": "报名",
+    "success": "帐户成功创建了！\n重定向您登录...",
+    "title": "报名",
+    "toLoginLabel": "而是登录！"
   },
   "dashboard": {
     "peerComparison": {
