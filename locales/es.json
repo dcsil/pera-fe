@@ -170,5 +170,99 @@
     "title": "Ajustes",
     "usernameLabel": "Nombre de usuario",
     "usernamePlaceholder": "Ingrese su nombre de usuario"
+  },
+  "dashboard": {
+    "activitiesCompleted": {
+      "change": "15 de la semana pasada",
+      "count": "120",
+      "title": "Actividades completadas"
+    },
+    "activityBreakdown": {
+      "breakdown": {
+        "conversation": "Conversación",
+        "pronunciation": "Pronunciación",
+        "reading": "Lectura"
+      },
+      "title": "Desglose de actividad"
+    },
+    "fluencyRating": {
+      "change": "1.8% del mes pasado",
+      "score": "85%",
+      "title": "Calificación de fluidez"
+    },
+    "interactiveChart": {
+      "controls": {
+        "dateRangeLabel": "Rango de fecha:",
+        "metricLabel": "Métrico:"
+      },
+      "customRange": {
+        "applyButton": "Aplicar",
+        "endDate": "Fecha final",
+        "startDate": "Fecha de inicio"
+      },
+      "ranges": {
+        "custom": "Gama personalizada",
+        "day": "Día",
+        "month": "Mes",
+        "week": "Semana"
+      },
+      "subtitle": "Rastree sus puntajes de precisión, fluidez y pronunciación",
+      "title": "Progresar con el tiempo",
+      "metrics": {
+        "accuracy": "Exactitud",
+        "fluency": "Fluidez",
+        "pronunciation": "Pronunciación"
+      },
+      "locale": "es"
+    },
+    "learningStreak": {
+      "change": "2 días de la semana pasada",
+      "days": "días",
+      "title": "Racha de aprendizaje"
+    },
+    "loading": "Procesamiento de datos. \n. \n.",
+    "overallScore": {
+      "change": "2.5% del mes pasado",
+      "score": "87%",
+      "title": "Puntaje general"
+    },
+    "peerComparison": {
+      "ordinalPrefix": "",
+      "ordinalSuffixes": {
+        "nd": "Dakota del Norte",
+        "rd": "rd",
+        "st": "calle",
+        "th": "th"
+      },
+      "percentile": "percentil",
+      "title": "Clasificación general"
+    },
+    "performanceMetrics": {
+      "metrics": {
+        "pronunciation": "Pronunciación",
+        "fluency": "Fluidez",
+        "accuracy": "Precisión"
+      },
+      "values": {
+        "accuracy": "85%",
+        "pronunciation": "92%",
+        "fluency": "120 WPM"
+      },
+      "title": "Métricas de rendimiento semanales"
+    },
+    "progressOverTime": {
+      "chartPlaceholder": "[Marcador de posición]",
+      "filters": {
+        "month": "Mes",
+        "week": "Semana",
+        "year": "Año"
+      },
+      "title": "Progresar con el tiempo"
+    },
+    "recentActivity": {
+      "activity": "Ejercicio de lectura: completado con una precisión del 95%",
+      "title": "Actividad reciente"
+    },
+    "title": "Panel"
   }
 }
