@@ -221,6 +221,7 @@
       "title": "Séquence d'apprentissage"
     },
     "loading": "Traitement des données. \n. \n.",
+    "continueWhereYouLeftOff": "Reprendre la pratique",
     "overallScore": {
       "change": "2,5% par rapport au mois dernier",
       "score": "87%",
