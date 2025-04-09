@@ -1,5 +1,6 @@
 import { BACKEND } from "@/lib/urls";
 import { fetchAuth } from "./auth";
+import { getCookie } from "@/utils/cookies";
 
 interface RequestPayload {
     text: string;
@@ -43,7 +44,6 @@ export async function sendGenerateData(payload: RequestPayload): Promise<Respons
 }
 
 export function getLanguageFromCookies(): string {
-    const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
-    console.log("Language cookie:", match ? decodeURIComponent(match[1]) : "en");
-    return match ? decodeURIComponent(match[1]) : "en"; // Default to "en" if no language cookie is found
+    const match = getCookie("locale");
+    return match ?? "en"; // Default to "en" if no language cookie is found
 }
