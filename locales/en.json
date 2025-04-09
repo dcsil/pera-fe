@@ -291,6 +291,7 @@
       },
       "locale": "en"
     },
-    "loading": "Processing data . . . "
+    "loading": "Processing data . . . ",
+    "continueWhereYouLeftOff": "Resume practice"
   }
 }
