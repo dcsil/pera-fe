@@ -97,7 +97,7 @@ export default function ImportSection({
                             <FormLabel sx={{ marginTop: 2 }}>{t("step2.fileTypeLabel")}</FormLabel>
                             <Select
                                 value={fileType}
-                                onChange={(e, newValue) => setFileType(newValue || "text file")}
+                                onChange={(e, newValue) => setFileType(newValue ?? "paste text")}
                             >
                                 <Option value="text file">{t("step2.fileTypeOptions.textFile")}</Option>
                                 <Option value="pdf">{t("step2.fileTypeOptions.pdf")}</Option>

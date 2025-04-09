@@ -17,7 +17,7 @@ export default function Generation() {
     const mode = params?.get("mode") || null;
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState<"import" | "generate" | "history" | null>(null);
-    const [fileType, setFileType] = useState("text file");
+    const [fileType, setFileType] = useState("paste text");
     const [teleprompter, setTeleprompter] = useState(false);
     const [wordsPerMinute, setWordsPerMinute] = useState(120);
     const [feedbackStrictness, setFeedbackStrictness] = useState(50);
