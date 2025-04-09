@@ -43,7 +43,7 @@ export default function Home() {
                         <Button
                             variant="solid"
                             size="lg"
-                            href="mailto:teamlexislabs@outlook.com"
+                            href="/sign-up"
                             component="a"
                             sx={{
                                 "backgroundColor": theme.palette.common.white,
@@ -53,7 +53,7 @@ export default function Home() {
                                 },
                             }}
                         >
-                            {t("hero.contactButton")}
+                            {t("cta.button")}
                         </Button>
                     </Box>
                 </Container>

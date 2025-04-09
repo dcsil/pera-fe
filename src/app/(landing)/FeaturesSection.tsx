@@ -15,7 +15,7 @@ export default function FeaturesSection() {
                 textAlign="center"
                 fontWeight="lg"
                 gutterBottom
-                sx={{ color: theme.vars.palette.text.primary }}
+                sx={{ color: theme.palette.common.white }}
             >
                 {t("features.title")}
             </Typography>
