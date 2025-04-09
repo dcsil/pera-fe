@@ -54,7 +54,8 @@
     "prevShort": "Crévuré",
     "pronunciationScore": "Prononciation",
     "startRecording": "Commencer l'enregistrement",
-    "stopRecording": "Arrêter l'enregistrement"
+    "stopRecording": "Arrêter l'enregistrement",
+    "loading": "Chargement . . ."
   },
   "recordButton": {
     "startRecording": "Commencer l'enregistrement",

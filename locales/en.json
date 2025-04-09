@@ -82,7 +82,8 @@
     "errorsTitle": "Errors",
     "noErrors": "No errors detected. Great job!",
     "prevShort": "Prev",
-    "nextShort": "Next"
+    "nextShort": "Next",
+    "loading": "Loading . . ."
   },
   "landing": {
     "hero": {

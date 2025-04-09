@@ -54,7 +54,8 @@
     "prevShort": "Предыдущий",
     "pronunciationScore": "Произношение",
     "startRecording": "Начать запись",
-    "stopRecording": "Прекратить запись"
+    "stopRecording": "Прекратить запись",
+    "loading": "Загрузка . . ."
   },
   "recordButton": {
     "startRecording": "Начать запись",

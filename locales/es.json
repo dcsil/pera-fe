@@ -54,7 +54,8 @@
     "nextShort": "Próximo",
     "noErrors": "No hay errores detectados. \n¡Buen trabajo!",
     "prevShort": "Previsamente",
-    "pronunciationScore": "Pronunciación"
+    "pronunciationScore": "Pronunciación",
+    "loading": "Cargando . . ."
   },
   "recordButton": {
     "start": "Comenzar a grabar",

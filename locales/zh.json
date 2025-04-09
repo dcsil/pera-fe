@@ -54,7 +54,8 @@
     "prevShort": "上一条",
     "pronunciationScore": "发音",
     "startRecording": "开始录制",
-    "stopRecording": "停止记录"
+    "stopRecording": "停止记录",
+    "loading": "加载中..."
   },
   "recordButton": {
     "startRecording": "开始录制",
