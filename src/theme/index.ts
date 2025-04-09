@@ -115,7 +115,8 @@ const theme = extendTheme({
         },
     },
     fontFamily: {
-        body: "SF Pro Text, var(--gh-fontFamily-fallback)",
+        body: "SF Pro Text, var(--joy-fontFamily-fallback)",
+        display: "SF Pro Text, var(--joy-fontFamily-fallback)",
     },
     components: {
         JoyButton: {
