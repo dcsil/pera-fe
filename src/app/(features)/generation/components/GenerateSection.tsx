@@ -1,6 +1,8 @@
 "use client";
 
-import { Button, Box, Typography, Stack, Card, FormControl, FormLabel, Slider, Textarea, Switch, Input } from "@mui/joy";
+import { Box, Button, Card, FormControl, FormLabel, Stack, Textarea, Typography } from "@mui/joy";
+import CommonOptions from "./CommonOptions";
+import MobileFriendlySlider from "@/components/MobileFriendlySlider";
 
 interface GenerateSectionProps {
     t: (key: string) => string;
@@ -40,7 +42,7 @@ export default function GenerateSection({
             </Typography>
             <Card variant="outlined" sx={{ width: "100%", padding: { xs: 2, md: 4 } }}>
                 <Stack spacing={4}>
-                    <Box>
+                    <Stack spacing={2}>
                         <FormLabel>{t("step2.describeContentLabel")}</FormLabel>
                         <Textarea
                             minRows={4}
@@ -49,62 +51,31 @@ export default function GenerateSection({
                             onChange={e => setDescription(e.target.value)}
                             sx={{ width: "100%", marginTop: 2 }}
                         />
-                    </Box>
-                    <Box>
-                        <Typography level="body-md" fontWeight="lg" sx={{ marginBottom: 2 }}>
-                            {t("step2.optionsTitle")}
-                        </Typography>
-                        <Stack spacing={2}>
-                            <FormControl orientation="horizontal" sx={{ justifyContent: "space-between" }}>
-                                <FormLabel>{t("step2.teleprompterLabel")}</FormLabel>
-                                <Switch
-                                    checked={teleprompter}
-                                    onChange={e => setTeleprompter(e.target.checked)}
-                                />
-                            </FormControl>
-                            <FormControl orientation="horizontal" sx={{ justifyContent: "space-between" }}>
-                                <FormLabel>{t("step2.wordsPerMinuteLabel")}</FormLabel>
-                                <Input
-                                    type="number"
-                                    value={wordsPerMinute}
-                                    onChange={e => setWordsPerMinute(Number(e.target.value))}
-                                    sx={{ width: 80 }}
-                                />
-                            </FormControl>
-                            <FormControl sx={{ marginBottom: 3 }}>
-                                <FormLabel sx={{ marginBottom: 1 }}>{t("step2.feedbackStrictnessLabel")}</FormLabel>
-                                <Slider
-                                    value={feedbackStrictness}
-                                    onChange={(e, newValue) => setFeedbackStrictness(newValue as number)}
-                                    min={0}
-                                    max={100}
-                                    step={1}
-                                    valueLabelDisplay="auto"
-                                    sx={{ marginTop: 1 }}
-                                />
-                                <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: 1 }}>
-                                    <Typography level="body-md">{t("step2.feedbackStrictnessMin")}</Typography>
-                                    <Typography level="body-md">{t("step2.feedbackStrictnessMax")}</Typography>
-                                </Box>
-                            </FormControl>
-                            <Box sx={{ marginTop: 3 }}>
-                                <FormLabel sx={{ marginBottom: 1 }}>{t("step2.difficultyLabel")}</FormLabel>
-                                <Slider
-                                    value={difficulty}
-                                    onChange={(e, newValue) => setDifficulty(newValue as number)}
-                                    min={1}
-                                    max={10}
-                                    step={1}
-                                    valueLabelDisplay="auto"
-                                    sx={{ marginTop: 1 }}
-                                />
-                                <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: 1 }}>
-                                    <Typography level="body-md">{t("step2.difficultyEasy")}</Typography>
-                                    <Typography level="body-md">{t("step2.difficultyHard")}</Typography>
-                                </Box>
-                            </Box>
-                        </Stack>
-                    </Box>
+                        <FormControl>
+                            <FormLabel>{t("step2.difficultyLabel")}</FormLabel>
+                            <MobileFriendlySlider
+                                value={difficulty}
+                                onChange={(e, newValue) => setDifficulty(newValue as number)}
+                                min={1}
+                                max={10}
+                                step={1}
+                                valueLabelDisplay="auto"
+                                marks={[
+                                    { value: 1, label: t("step2.difficultyEasy") },
+                                    { value: 10, label: t("step2.difficultyHard") },
+                                ]}
+                            />
+                        </FormControl>
+                    </Stack>
+                    <CommonOptions
+                        t={t}
+                        teleprompter={teleprompter}
+                        setTeleprompter={setTeleprompter}
+                        wordsPerMinute={wordsPerMinute}
+                        setWordsPerMinute={setWordsPerMinute}
+                        feedbackStrictness={feedbackStrictness}
+                        setFeedbackStrictness={setFeedbackStrictness}
+                    />
                 </Stack>
 
                 <Stack direction="row" justifyContent="space-between" sx={{ marginTop: 4 }}>

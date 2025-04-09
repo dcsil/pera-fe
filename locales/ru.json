@@ -95,6 +95,7 @@
       "importDescription": "Выберите тип файла и загрузите свой контент.",
       "importTitle": "Импорт контент",
       "optionsTitle": "Параметры",
+      "experimentalWarning": "Это экспериментальные функции, которые еще не имеют эффекта.",
       "pasteTextLabel": "Вставьте свой текст здесь:",
       "pasteTextPlaceholder": "Введите или вставьте здесь свой текст ...",
       "proceedButton": "Продолжить",

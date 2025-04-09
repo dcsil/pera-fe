@@ -95,6 +95,7 @@
       "importDescription": "选择文件类型并上传您的内容。",
       "importTitle": "导入内容",
       "optionsTitle": "选项",
+      "experimentalWarning": "这是实验性功能，尚未生效。",
       "pasteTextLabel": "在这里粘贴您的文字：",
       "pasteTextPlaceholder": "在这里输入或粘贴您的文字...",
       "proceedButton": "继续",

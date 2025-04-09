@@ -158,6 +158,7 @@
       },
       "dragDropText": "Drag and drop, or click to open file picker",
       "optionsTitle": "Options",
+      "experimentalWarning": "These are experimental features that currently have no effect.",
       "teleprompterLabel": "Teleprompter",
       "wordsPerMinuteLabel": "Words per minute",
       "feedbackStrictnessLabel": "Feedback strictness",

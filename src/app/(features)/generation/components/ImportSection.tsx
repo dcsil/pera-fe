@@ -1,8 +1,10 @@
 "use client";
 
-import { Button, Box, Typography, Stack, Card, FormControl, FormLabel, Select, Option, Switch, Input, Slider, Textarea } from "@mui/joy";
+import { Box, Button, Card, FormControl, FormLabel, Input, Option, Select, Stack, Textarea, Typography } from "@mui/joy";
 import { useState } from "react";
-import { sendImportData, getLanguageFromCookies } from "@/lib/api";
+
+import { getLanguageFromCookies, sendImportData } from "@/lib/api";
+import CommonOptions from "./CommonOptions";
 
 interface ImportSectionProps {
     t: (key: string) => string;
@@ -137,42 +139,15 @@ export default function ImportSection({
 
                     {/* Options Section */}
                     <Box sx={{ flex: 1 }}>
-                        <Typography level="body-md" fontWeight="lg" sx={{ marginBottom: 2 }}>
-                            {t("step2.optionsTitle")}
-                        </Typography>
-                        <Stack spacing={2}>
-                            <FormControl orientation="horizontal" sx={{ justifyContent: "space-between" }}>
-                                <FormLabel>{t("step2.teleprompterLabel")}</FormLabel>
-                                <Switch
-                                    checked={teleprompter}
-                                    onChange={e => setTeleprompter(e.target.checked)}
-                                />
-                            </FormControl>
-                            <FormControl orientation="horizontal" sx={{ justifyContent: "space-between" }}>
-                                <FormLabel>{t("step2.wordsPerMinuteLabel")}</FormLabel>
-                                <Input
-                                    type="number"
-                                    value={wordsPerMinute}
-                                    onChange={e => setWordsPerMinute(Number(e.target.value))}
-                                    sx={{ width: 80 }}
-                                />
-                            </FormControl>
-                            <FormControl>
-                                <FormLabel sx={{ marginBottom: 1 }}>{t("step2.feedbackStrictnessLabel")}</FormLabel>
-                                <Slider
-                                    value={feedbackStrictness}
-                                    onChange={(e, newValue) => setFeedbackStrictness(newValue as number)}
-                                    min={0}
-                                    max={100}
-                                    step={1}
-                                    valueLabelDisplay="auto"
-                                />
-                                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                                    <Typography level="body-md">{t("step2.feedbackStrictnessMin")}</Typography>
-                                    <Typography level="body-md">{t("step2.feedbackStrictnessMax")}</Typography>
-                                </Box>
-                            </FormControl>
-                        </Stack>
+                        <CommonOptions
+                            t={t}
+                            teleprompter={teleprompter}
+                            setTeleprompter={setTeleprompter}
+                            wordsPerMinute={wordsPerMinute}
+                            setWordsPerMinute={setWordsPerMinute}
+                            feedbackStrictness={feedbackStrictness}
+                            setFeedbackStrictness={setFeedbackStrictness}
+                        />
                     </Box>
                 </Stack>
 

@@ -95,6 +95,7 @@
       "importDescription": "Seleccione un tipo de archivo y cargue su contenido.",
       "importTitle": "Importar contenido",
       "optionsTitle": "Opción",
+      "experimentalWarning": "Estas son funciones experimentales que actualmente no tienen ningún efecto.",
       "pasteTextLabel": "Pega tu texto aquí:",
       "pasteTextPlaceholder": "Escriba o pegue su texto aquí ...",
       "proceedButton": "Proceder",
