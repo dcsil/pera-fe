@@ -73,7 +73,7 @@
       "import": "Импорт"
     },
     "step2": {
-      "backButton": "<Назад",
+      "backButton": "< Назад",
       "describeContentLabel": "Опишите контент, который вы хотите прочитать вслух:",
       "describeContentPlaceholder": "Введите краткое описание контента ...",
       "difficultyEasy": "Легкий",
@@ -99,7 +99,9 @@
       "proceedButton": "Продолжить",
       "startButton": "Начинать",
       "teleprompterLabel": "Телепроблем",
-      "wordsPerMinuteLabel": "Слова в минуту"
+      "wordsPerMinuteLabel": "Слова в минуту",
+      "titleLabel": "Название отрывка:",
+      "titlePlaceholder": "Входной проход заголовок"
     },
     "subtitle": "Чтобы начать, выберите опцию ниже.",
     "title": {
@@ -170,5 +172,33 @@
     "title": "Настройки",
     "usernameLabel": "Имя пользователя",
     "usernamePlaceholder": "Введите свое имя пользователя"
+  },
+  "loginPage": {
+    "createAccountLabel": "Создай один!",
+    "emailLabel": "Электронная почта",
+    "emailPlaceholder": "Введите свой адрес электронной почты",
+    "loginFailed": "Имя пользователя или пароль неверно. \nПожалуйста, попробуйте еще раз.",
+    "noAccountPrompt": "У вас нет учетной записи?",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "Введите свой пароль",
+    "submitButton": "Авторизоваться",
+    "title": "Авторизоваться"
+  },
+  "signUpPage": {
+    "alreadyHaveAccountPrompt": "Уже есть аккаунт?",
+    "confirmPasswordLabel": "Подтвердите пароль",
+    "confirmPasswordPlaceholder": "Подтвердите свой пароль",
+    "emailInUseError": "Это электронное письмо уже используется.",
+    "emailLabel": "Электронная почта",
+    "emailPlaceholder": "Введите свой адрес электронной почты",
+    "nameLabel": "Имя",
+    "namePlaceholder": "Введите свое имя",
+    "passwordLabel": "Пароль",
+    "passwordMismatchError": "Пароли не совпадают.",
+    "passwordPlaceholder": "Введите свой пароль",
+    "submitButton": "Зарегистрироваться",
+    "success": "Учетная запись создана успешно! \nПеренаправление вас входа в систему ...",
+    "title": "Зарегистрироваться",
+    "toLoginLabel": "Войдите вместо этого!"
   }
 }

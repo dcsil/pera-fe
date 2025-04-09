@@ -73,7 +73,7 @@
       "import": "Importer"
     },
     "step2": {
-      "backButton": "<Retour",
+      "backButton": "< Retour",
       "describeContentLabel": "Décrivez le contenu que vous souhaitez lire à haute voix:",
       "describeContentPlaceholder": "Tapez une brève description du contenu ...",
       "difficultyEasy": "Facile",
@@ -99,7 +99,9 @@
       "proceedButton": "Procéder",
       "startButton": "Commencer",
       "teleprompterLabel": "Téléprompteur",
-      "wordsPerMinuteLabel": "Mots par minute"
+      "wordsPerMinuteLabel": "Mots par minute",
+      "titleLabel": "Titre du passage",
+      "titlePlaceholder": "Entrez un titre pour votre passage"
     },
     "subtitle": "Pour commencer, sélectionnez une option ci-dessous.",
     "title": {
@@ -170,5 +172,33 @@
     "title": "Paramètres",
     "usernameLabel": "Nom d'utilisateur",
     "usernamePlaceholder": "Entrez votre nom d'utilisateur"
+  },
+  "loginPage": {
+    "createAccountLabel": "Créez-en un!",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "loginFailed": "Le nom d'utilisateur ou le mot de passe est incorrect. \nVeuillez réessayer.",
+    "noAccountPrompt": "Vous n'avez pas de compte?",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "submitButton": "Se connecter",
+    "title": "Se connecter"
+  },
+  "signUpPage": {
+    "alreadyHaveAccountPrompt": "Vous avez déjà un compte?",
+    "confirmPasswordLabel": "Confirmez le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "emailInUseError": "Cet e-mail semble déjà être utilisé.",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "passwordLabel": "Mot de passe",
+    "passwordMismatchError": "Les mots de passe ne correspondent pas.",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "submitButton": "S'inscrire",
+    "success": "Compte créé avec succès! \nVous rediriger vers la connexion ...",
+    "title": "S'inscrire",
+    "toLoginLabel": "Connectez-vous à la place!"
   }
 }

@@ -73,7 +73,7 @@
       "import": "Importar"
     },
     "step2": {
-      "backButton": "<Hacia atrás",
+      "backButton": "< Hacia atrás",
       "describeContentLabel": "Describa el contenido que desea leer en voz alta:",
       "describeContentPlaceholder": "Escriba una breve descripción del contenido ...",
       "difficultyEasy": "Fácil",
@@ -99,7 +99,9 @@
       "proceedButton": "Proceder",
       "startButton": "Comenzar",
       "teleprompterLabel": "Teleprompter",
-      "wordsPerMinuteLabel": "Palabras por minuto"
+      "wordsPerMinuteLabel": "Palabras por minuto",
+      "titleLabel": "",
+      "titlePlaceholder": ""
     },
     "subtitle": "Para comenzar, seleccione una opción a continuación.",
     "title": {
@@ -170,5 +172,33 @@
     "title": "Ajustes",
     "usernameLabel": "Nombre de usuario",
     "usernamePlaceholder": "Ingrese su nombre de usuario"
+  },
+  "loginPage": {
+    "createAccountLabel": "¡Crea uno!",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su dirección de correo electrónico",
+    "loginFailed": "El nombre de usuario o la contraseña es incorrecto. \nPor favor intente de nuevo.",
+    "noAccountPrompt": "¿No tienes una cuenta?",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "submitButton": "Acceso",
+    "title": "Acceso"
+  },
+  "signUpPage": {
+    "alreadyHaveAccountPrompt": "¿Ya tienes una cuenta?",
+    "confirmPasswordLabel": "confirmar Contraseña",
+    "confirmPasswordPlaceholder": "Confirma tu contraseña",
+    "emailInUseError": "Este correo electrónico parece estar en uso.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su dirección de correo electrónico",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Ingrese su nombre",
+    "passwordLabel": "Contraseña",
+    "passwordMismatchError": "Las contraseñas no coinciden.",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "submitButton": "Inscribirse",
+    "success": "Cuenta creada con éxito! \nRedirigirte para iniciar sesión ...",
+    "title": "Inscribirse",
+    "toLoginLabel": "¡Inicie sesión en su lugar!"
   }
 }

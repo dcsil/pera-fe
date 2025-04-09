@@ -170,7 +170,9 @@
       "describeContentPlaceholder": "Type a brief description of the content...",
       "difficultyLabel": "Select the difficulty level:",
       "difficultyEasy": "Easy",
-      "difficultyHard": "Hard"
+      "difficultyHard": "Hard",
+      "titleLabel": "Passage title:",
+      "titlePlaceholder": "Input passage title"
     }
   },
   "recordButton": {

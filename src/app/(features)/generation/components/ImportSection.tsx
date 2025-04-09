@@ -2,6 +2,7 @@
 
 import { Button, Box, Typography, Stack, Card, FormControl, FormLabel, Select, Option, Switch, Input, Slider, Textarea } from "@mui/joy";
 import { useState } from "react";
+import { sendImportData, getLanguageFromCookies } from "@/lib/api";
 
 interface ImportSectionProps {
     t: (key: string) => string;
@@ -14,7 +15,7 @@ interface ImportSectionProps {
     feedbackStrictness: number;
     setFeedbackStrictness: (value: number) => void;
     onBack: () => void;
-    onStart: () => void;
+    onStart: (passage: number) => void;
 }
 
 export default function ImportSection({
@@ -29,8 +30,44 @@ export default function ImportSection({
     setFeedbackStrictness,
     onBack,
     onStart,
-}: ImportSectionProps) {
-    const [pastedText, setPastedText] = useState(""); // State for pasted text
+}: Readonly<ImportSectionProps>) {
+    const [pastedText, setPastedText] = useState("");
+    const [title, setTitle] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleStart = async () => {
+        setLoading(true);
+        try {
+            const payload = {
+                text: pastedText || "Imported content",
+                title: title || "Imported Title",
+                language: getLanguageFromCookies(),
+                difficulty: "custom",
+                exercise_mode: "RK",
+                content_mode: "import",
+            };
+            await sendImportData(payload);
+            const response = await sendImportData(payload);
+            if (response?.status !== 200) {
+                throw new Error("Failed to send import data");
+            }
+            const responseData = await response.json();
+
+            if (responseData.passage_id) {
+                onStart(responseData.passage_id);
+            }
+            else {
+                console.error("Invalid response from sendImportData:", response);
+            }
+        }
+        catch (error) {
+            console.error("Error sending import data:", error);
+            onStart(0);
+        }
+        finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <Stack spacing={4} alignItems="center" sx={{ width: "100%", maxWidth: 800, padding: { xs: 2, md: 4 } }}>
@@ -46,8 +83,17 @@ export default function ImportSection({
                 >
                     {/* Import Section */}
                     <Box sx={{ flex: 1 }}>
+                        <Box>
+                            <FormLabel>{t("step2.titleLabel")}</FormLabel>
+                            <Input
+                                placeholder={t("step2.titlePlaceholder")}
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
+                                sx={{ width: "100%", marginTop: 2 }}
+                            />
+                        </Box>
                         <FormControl>
-                            <FormLabel>{t("step2.fileTypeLabel")}</FormLabel>
+                            <FormLabel sx={{ marginTop: 2 }}>{t("step2.fileTypeLabel")}</FormLabel>
                             <Select
                                 value={fileType}
                                 onChange={(e, newValue) => setFileType(newValue || "text file")}
@@ -135,7 +181,7 @@ export default function ImportSection({
                     <Button variant="plain" onClick={onBack}>
                         {t("step2.backButton")}
                     </Button>
-                    <Button variant="solid" onClick={onStart}>
+                    <Button variant="solid" onClick={handleStart} loading={loading}>
                         {t("step2.startButton")}
                     </Button>
                 </Stack>

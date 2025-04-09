@@ -41,7 +41,7 @@ export default function Generation() {
                     feedbackStrictness={feedbackStrictness}
                     setFeedbackStrictness={setFeedbackStrictness}
                     onBack={() => setStep(1)}
-                    onStart={() => router.push("/scripted-assessment/reading-karaoke")}
+                    onStart={(passage_id: number) => router.push("/scripted-assessment/reading-karaoke?passage_id=" + passage_id)}
                 />
             );
         }
