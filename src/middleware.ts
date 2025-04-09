@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 // if we miss a route here.
 const privateRoutes = [
     "/dashboard",
-    "/generation",
+    "/get-started",
     "/scripted-assessment/reading-karaoke",
     "/settings",
 ];
