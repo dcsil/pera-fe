@@ -46,7 +46,6 @@ export default function ImportSection({
                 exercise_mode: "RK",
                 content_mode: "import",
             };
-            await sendImportData(payload);
             const response = await sendImportData(payload);
             if (response?.status !== 200) {
                 throw new Error("Failed to send import data");
