@@ -151,9 +151,9 @@
       "proceedButton": "Proceed",
       "fileTypeLabel": "From:",
       "fileTypeOptions": {
-        "textFile": "Text File",
-        "pdf": "PDF",
-        "docx": "Word Document",
+        "textFile": "Text File (Coming Soon)",
+        "pdf": "PDF (Coming Soon)",
+        "docx": "Word Document (Coming Soon)",
         "pasteText": "Paste Text"
       },
       "dragDropText": "Drag and drop, or click to open file picker",

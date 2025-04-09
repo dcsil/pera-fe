@@ -86,10 +86,10 @@
       "feedbackStrictnessMin": "Только серьезные ошибки",
       "fileTypeLabel": "От:",
       "fileTypeOptions": {
-        "docx": "Word Document",
+        "docx": "Word Document (появится скоро)",
         "pasteText": "Вставьте текст",
-        "pdf": "PDF",
-        "textFile": "Текстовый файл"
+        "pdf": "PDF (появится скоро)",
+        "textFile": "Текстовый файл (появится скоро)"
       },
       "generateTitle": "Генерировать контент",
       "importDescription": "Выберите тип файла и загрузите свой контент.",

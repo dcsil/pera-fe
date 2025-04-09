@@ -86,10 +86,10 @@
       "feedbackStrictnessMin": "Solo errores importantes",
       "fileTypeLabel": "De:",
       "fileTypeOptions": {
-        "docx": "Documento de palabras",
+        "docx": "Documento de palabras (próximamente)",
         "pasteText": "Pegar texto",
-        "pdf": "Pdf",
-        "textFile": "Archivo de texto"
+        "pdf": "Pdf (próximamente)",
+        "textFile": "Archivo de texto (próximamente)"
       },
       "generateTitle": "Generar contenido",
       "importDescription": "Seleccione un tipo de archivo y cargue su contenido.",

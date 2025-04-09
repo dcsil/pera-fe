@@ -86,10 +86,10 @@
       "feedbackStrictnessMin": "Seules les erreurs majeures",
       "fileTypeLabel": "Depuis:",
       "fileTypeOptions": {
-        "docx": "Document Word",
+        "docx": "Document Word (à venir bientôt)",
         "pasteText": "Texto à coller",
-        "pdf": "Pdf",
-        "textFile": "Fichier texte"
+        "pdf": "Pdf (à venir bientôt)",
+        "textFile": "Fichier texte (à venir bientôt)"
       },
       "generateTitle": "Générer du contenu",
       "importDescription": "Sélectionnez un type de fichier et téléchargez votre contenu.",

@@ -86,10 +86,10 @@
       "feedbackStrictnessMin": "只是主要错误",
       "fileTypeLabel": "从：",
       "fileTypeOptions": {
-        "docx": "Word文档",
+        "docx": "Word文档（即将推出）",
         "pasteText": "糊状文字",
-        "pdf": "PDF",
-        "textFile": "文本文件"
+        "pdf": "PDF（即将推出）",
+        "textFile": "文本文件（即将推出）"
       },
       "generateTitle": "生成内容",
       "importDescription": "选择文件类型并上传您的内容。",
