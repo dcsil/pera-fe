@@ -57,7 +57,8 @@ export default function Dashboard() {
                 const passages = await response.json();
                 const highestId = Math.max(...passages.map((p: { passage_id: number }) => p.passage_id));
                 setHighestPassageId(highestId);
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error fetching passages:", error);
             }
         }
