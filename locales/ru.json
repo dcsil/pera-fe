@@ -55,7 +55,12 @@
     "pronunciationScore": "Произношение",
     "startRecording": "Начать запись",
     "stopRecording": "Прекратить запись",
-    "loading": "Загрузка . . ."
+    "loading": "Загрузка . . .",
+    "overview": {
+      "backButton": "Вернитесь к обзору",
+      "selectSentence": "Выберите предложение для чтения",
+      "viewAllSentences": "Просмотреть все"
+    }
   },
   "recordButton": {
     "startRecording": "Начать запись",

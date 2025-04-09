@@ -241,10 +241,15 @@ export default function ReadingKaraoke() {
                     size="sm"
                     onClick={() => setIsOverviewVisible(true)}
                     sx={{
-                        minWidth: "auto",
-                        padding: "4px 8px",
-                        fontSize: "0.875rem",
-                        fontWeight: "bold",
+                        "minWidth": "auto",
+                        "padding": "4px 8px",
+                        "fontSize": "0.875rem",
+                        "fontWeight": "bold",
+                        "backgroundColor": "primary.solidBg",
+                        "color": "primary.solidColor",
+                        "&:hover": {
+                            backgroundColor: "primary.solidHoverBg",
+                        },
                     }}
                 >
                     {t("overview.viewAllSentences")}

@@ -55,7 +55,12 @@
     "pronunciationScore": "发音",
     "startRecording": "开始录制",
     "stopRecording": "停止记录",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "overview": {
+      "backButton": "返回概述",
+      "selectSentence": "选择一个句子阅读",
+      "viewAllSentences": "查看全部"
+    }
   },
   "recordButton": {
     "startRecording": "开始录制",

@@ -55,7 +55,12 @@
     "pronunciationScore": "Prononciation",
     "startRecording": "Commencer l'enregistrement",
     "stopRecording": "Arrêter l'enregistrement",
-    "loading": "Chargement . . ."
+    "loading": "Chargement . . .",
+    "overview": {
+      "backButton": "Retour à la vue d'ensemble",
+      "selectSentence": "Sélectionnez une phrase à lire",
+      "viewAllSentences": "Afficher tous"
+    }
   },
   "recordButton": {
     "startRecording": "Commencer l'enregistrement",

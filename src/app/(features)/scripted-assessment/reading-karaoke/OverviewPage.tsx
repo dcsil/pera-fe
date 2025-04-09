@@ -98,8 +98,13 @@ export default function OverviewPage({
                 variant="plain"
                 onClick={onBack}
                 sx={{
-                    mt: 4,
-                    alignSelf: "center",
+                    "mt": 4,
+                    "alignSelf": "center",
+                    "backgroundColor": "primary.solidBg",
+                    "color": "primary.solidColor",
+                    "&:hover": {
+                        backgroundColor: "primary.solidHoverBg",
+                    },
                 }}
             >
                 {t("overview.backButton")}
