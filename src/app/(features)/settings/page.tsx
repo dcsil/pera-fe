@@ -18,7 +18,7 @@ export default function Settings() {
 
     const handleLocaleChange = (newLocale: string) => {
         setLocale(newLocale);
-        setCookie("locale", newLocale);
+        setCookie("locale", newLocale, 86400 * 7);
         window.location.reload(); // Reload to apply the new locale
     };
 
