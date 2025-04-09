@@ -10,6 +10,7 @@ import { BACKEND } from "@/lib/urls";
 import FeedbackDial from "@/components/FeedbackDial";
 import { FALLBACK_PASSAGE } from "@/constants/fallbackPassage";
 import { fetchAuth } from "@/lib/auth";
+import OverviewPage from "./OverviewPage";
 
 interface Word {
     Word: string;
@@ -51,6 +52,7 @@ export default function ReadingKaraoke() {
     const [passage, setPassage] = useState<Passage | null>(null);
     const [loading, setLoading] = useState(true);
     const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+    const [isOverviewVisible, setIsOverviewVisible] = useState(false);
 
     useEffect(() => {
         // This will only run on the client side
@@ -173,6 +175,22 @@ export default function ReadingKaraoke() {
         );
     }
 
+    if (isOverviewVisible) {
+        return (
+            <OverviewPage
+                passageTitle={passage.title}
+                sentences={passage.sentences}
+                currentSentenceIndex={currentSentenceIndex}
+                progress={progress}
+                onSelectSentence={(index) => {
+                    setCurrentSentenceIndex(index);
+                    setIsOverviewVisible(false);
+                }}
+                onBack={() => setIsOverviewVisible(false)}
+            />
+        );
+    }
+
     return (
         <PageContainer>
             <Stack
@@ -191,26 +209,46 @@ export default function ReadingKaraoke() {
                 </Typography>
             </Stack>
 
-            <Stack spacing={1} sx={{ width: "100%", maxWidth: "75%", mx: "auto", mb: 2 }}>
-                <Typography level="body-sm" sx={{ color: "text.secondary" }}>
-                    {t("progress", { current: currentSentenceIndex + 1, total: passage.sentences.length })}
-                </Typography>
-                <LinearProgress
-                    determinate
-                    variant="solid"
-                    value={progress}
+            <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                sx={{ width: "100%", maxWidth: "75%", mx: "auto", mb: 2 }}
+            >
+                <Box sx={{ flex: 1 }}>
+                    <Typography level="body-sm" sx={{ color: "text.secondary" }}>
+                        {t("progress", { current: currentSentenceIndex + 1, total: passage.sentences.length })}
+                    </Typography>
+                    <LinearProgress
+                        determinate
+                        variant="solid"
+                        value={progress}
+                        sx={{
+                            "height": "8px",
+                            "borderRadius": 4,
+                            "backgroundColor": "secondary.outlinedBg",
+                            "& .MuiLinearProgress-bar": {
+                                backgroundColor: "primary.solidBg",
+                            },
+                            "&:focus-visible": {
+                                outline: "none",
+                            },
+                        }}
+                    />
+                </Box>
+                <Button
+                    variant="plain"
+                    size="sm"
+                    onClick={() => setIsOverviewVisible(true)}
                     sx={{
-                        "height": "8px",
-                        "borderRadius": 4,
-                        "backgroundColor": "secondary.outlinedBg",
-                        "& .MuiLinearProgress-bar": {
-                            backgroundColor: "primary.solidBg",
-                        },
-                        "&:focus-visible": {
-                            outline: "none",
-                        },
+                        minWidth: "auto",
+                        padding: "4px 8px",
+                        fontSize: "0.875rem",
+                        fontWeight: "bold",
                     }}
-                />
+                >
+                    {t("overview.viewAllSentences")}
+                </Button>
             </Stack>
 
             <Card
