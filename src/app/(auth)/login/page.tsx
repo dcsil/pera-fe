@@ -3,8 +3,10 @@
 import { Button, Card, Stack, Input, FormControl, FormLabel, Typography, Link, Box } from "@mui/joy";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { BACKEND } from "@/lib/urls";
 import { useRouter } from "next/navigation";
+
+import { BACKEND } from "@/lib/urls";
+import { login } from "@/lib/auth";
 
 export default function LoginPage() {
     const t = useTranslations("loginPage");
@@ -27,6 +29,8 @@ export default function LoginPage() {
             }),
         });
         if (response.ok) {
+            const json = await response.json();
+            login(json.token, json.expiry);
             router.push("/dashboard");
         }
         else if (response.status == 401) {
