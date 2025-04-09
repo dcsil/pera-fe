@@ -51,45 +51,39 @@ export default function ReadingKaraoke() {
     const [passage, setPassage] = useState<Passage | null>(null);
     const [loading, setLoading] = useState(true);
     const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-    const [passageId, setPassageId] = useState<string | null>(null);
 
     useEffect(() => {
         // This will only run on the client side
         const queryParams = new URLSearchParams(window.location.search);
         const id = queryParams.get("passage_id");
-        setPassageId(id);
+
+        // The "0" is meant to be a temporary measure. We did this in other places too.
+        handlePassageIdChange(id ?? "0");
+        // Can be replaced by useEffectEvent once it becomes stable
     }, []);
 
-    useEffect(() => {
-        if (!passageId) {
-            console.error("Passage ID is null");
-            return;
+    async function handlePassageIdChange(id: string) {
+        try {
+            const response = await fetchAuth(`${BACKEND}/texts/user-passages/`);
+            if (!response?.ok) {
+                throw new Error("Failed to fetch passage");
+            }
+            const data: Passage[] = await response.json();
+            console.log(data);
+            const foundPassage = data.find((item: Passage) => item.passage_id === Number(id));
+            if (!foundPassage) {
+                throw new Error("Passage not found, passageId: " + id);
+            }
+            setPassage(foundPassage);
         }
-        async function fetchPassage() {
-            try {
-                const response = await fetchAuth(`${BACKEND}/texts/user-passages/`);
-                if (!response?.ok) {
-                    throw new Error("Failed to fetch passage");
-                }
-                const data: Passage[] = await response.json();
-                console.log(data);
-                const passage = data.find((item: Passage) => item.passage_id === Number(passageId));
-                if (!passage) {
-                    throw new Error("Passage not found, passageId: " + passageId);
-                }
-                setPassage(passage);
-            }
-            catch (error) {
-                console.error("Error fetching passage:", error);
-                setPassage(FALLBACK_PASSAGE);
-            }
-            finally {
-                setLoading(false);
-            }
+        catch (error) {
+            console.error("Error fetching passage:", error);
+            setPassage(FALLBACK_PASSAGE);
         }
-
-        fetchPassage();
-    }, [passageId]);
+        finally {
+            setLoading(false);
+        }
+    };
 
     const progress = passage ? ((currentSentenceIndex + 1) / passage.sentences.length) * 100 : 0;
 
