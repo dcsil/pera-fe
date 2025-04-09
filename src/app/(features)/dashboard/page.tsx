@@ -52,6 +52,10 @@ export default function Dashboard() {
         return null;
     }
 
+    // Calculate activity breakdown data
+    // Reading exercises corresponds to long reading
+    // Conversation exercises corresponds to Convobot
+    // Pronunciation exercises corresponds to reading karaoke
     const totalActivities
         = stats.week_reading_exercises
             + stats.week_conversation_exercises
