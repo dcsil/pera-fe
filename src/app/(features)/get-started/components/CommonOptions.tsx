@@ -1,4 +1,4 @@
-import { Stack, Typography, FormControl, FormLabel, Switch, Input, Box } from "@mui/joy";
+import { Stack, Typography, FormControl, FormLabel, Switch, Input } from "@mui/joy";
 
 import MobileFriendlySlider from "@/components/MobileFriendlySlider";
 

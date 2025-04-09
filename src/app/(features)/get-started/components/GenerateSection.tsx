@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Card, FormControl, FormLabel, Stack, Textarea, Typography } from "@mui/joy";
+import { Button, Card, FormControl, FormLabel, Stack, Textarea, Typography } from "@mui/joy";
 import CommonOptions from "./CommonOptions";
 import MobileFriendlySlider from "@/components/MobileFriendlySlider";
 
