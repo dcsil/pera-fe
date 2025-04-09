@@ -13,7 +13,7 @@ import { sendImportData, getLanguageFromCookies } from "@/lib/api";
 export default function Generation() {
     const router = useRouter();
     const params = useSearchParams();
-    const t = useTranslations("generation");
+    const t = useTranslations("get-started");
     const mode = params?.get("mode") || null;
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState<"import" | "generate" | "history" | null>(null);

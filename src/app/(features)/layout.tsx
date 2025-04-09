@@ -17,13 +17,13 @@ const NAV_ITEMS = [
         icon: Home,
     },
     {
-        path: "/generation?mode=RK",
+        path: "/get-started?mode=RK",
         finalPath: "/scripted-assessment/reading-karaoke",
         label: "readingKaraoke",
         icon: Mic,
     },
     {
-        path: "/generation?mode=LR",
+        path: "/get-started?mode=LR",
         finalPath: "/scripted-assessment/long-reading",
         label: "longReading",
         icon: Book,
@@ -81,10 +81,10 @@ function NavList({ onClose }: Readonly<{ onClose?: () => void }>) {
                 const isSelected = (() => {
                     if (pathname === finalPath) return true;
                     const mode = params?.get("mode");
-                    if (pathname.startsWith("/generation") && mode === "RK" && finalPath === "/scripted-assessment/reading-karaoke") {
+                    if (pathname.startsWith("/get-started") && mode === "RK" && finalPath === "/scripted-assessment/reading-karaoke") {
                         return true;
                     }
-                    if (pathname.startsWith("/generation") && mode === "LR" && finalPath === "/scripted-assessment/long-reading") {
+                    if (pathname.startsWith("/get-started") && mode === "LR" && finalPath === "/scripted-assessment/long-reading") {
                         return true;
                     }
                     return false;

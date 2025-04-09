@@ -14,7 +14,7 @@ export default function ReviewGeneratedText({
     onAddToReadingKaraoke,
     onRetry,
 }: Readonly<ReviewGeneratedTextProps>) {
-    const t = useTranslations("generation");
+    const t = useTranslations("get-started");
 
     return (
         <Box
