@@ -7,6 +7,8 @@ import { useState } from "react";
 import Step1 from "./components/Step1";
 import ImportSection from "./components/ImportSection";
 import GenerateSection from "./components/GenerateSection";
+import ReviewGeneratedText from "./components/ReviewGeneratedText";
+import { sendImportData, getLanguageFromCookies } from "@/lib/api";
 
 export default function Generation() {
     const router = useRouter();
@@ -21,10 +23,52 @@ export default function Generation() {
     const [feedbackStrictness, setFeedbackStrictness] = useState(50);
     const [description, setDescription] = useState("");
     const [difficulty, setDifficulty] = useState(5);
+    const [generatedText, setGeneratedText] = useState<string>("");
+    const [title, setTitle] = useState<string>("Generated Title");
 
     const handleOptionSelect = (option: "import" | "generate" | "history") => {
         setSelectedOption(option);
         setStep(2);
+    };
+
+    const handleGenerate = async () => {
+        const simulatedText = "This is the generated text based on your input.";
+        const title = description || "Generated Title";
+        setTitle(title);
+        setGeneratedText(simulatedText);
+        setStep(3);
+    };
+
+    const handleRetry = () => {
+        setStep(2);
+    };
+
+    const handleAddToReadingKaraoke = async () => {
+        try {
+            const payload = {
+                text: generatedText || "Generated content",
+                title: title || "Generated Title",
+                language: getLanguageFromCookies(),
+                difficulty: "custom",
+                exercise_mode: "RK",
+                content_mode: "generate",
+            };
+            const response = await sendImportData(payload);
+            if (response?.status !== 200) {
+                throw new Error("Failed to send import data");
+            }
+            const responseData = await response.json();
+
+            if (responseData.passage_id) {
+                router.push(`/scripted-assessment/reading-karaoke?passage_id=${responseData.passage_id}`);
+            }
+            else {
+                console.error("Invalid response from sendImportData:", response);
+            }
+        }
+        catch (error) {
+            console.error("Error sending import data:", error);
+        }
     };
 
     const renderStep2 = () => {
@@ -60,7 +104,7 @@ export default function Generation() {
                     feedbackStrictness={feedbackStrictness}
                     setFeedbackStrictness={setFeedbackStrictness}
                     onBack={() => setStep(1)}
-                    onStart={() => router.push("/scripted-assessment/reading-karaoke")}
+                    onStart={handleGenerate}
                 />
             );
         }
@@ -78,9 +122,17 @@ export default function Generation() {
                 padding: 2,
             }}
         >
-            {step === 1
-                ? (<Step1 t={t} mode={mode} onOptionSelect={handleOptionSelect} />)
-                : (renderStep2())}
+            {step === 1 && (
+                <Step1 t={t} mode={mode} onOptionSelect={handleOptionSelect} />
+            )}
+            {step === 2 && renderStep2()}
+            {step === 3 && (
+                <ReviewGeneratedText
+                    generatedText={generatedText}
+                    onAddToReadingKaraoke={handleAddToReadingKaraoke}
+                    onRetry={handleRetry}
+                />
+            )}
         </Box>
     );
 }
