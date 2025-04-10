@@ -130,7 +130,7 @@ function SharedHeader({
 export default function ReadingKaraoke() {
     const t = useTranslations("readingKaraoke");
 
-    const [feedback, setFeedback] = useState<FeedbackProps | undefined>(undefined);
+    const [feedback, setFeedback] = useState<FeedbackProps | null>(null);
     const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
     const [passage, setPassage] = useState<Passage | null>(null);
     const [loading, setLoading] = useState(true);
@@ -171,12 +171,14 @@ export default function ReadingKaraoke() {
     };
 
     const handleNext = () => {
+        setFeedback(null);
         if (passage && currentSentenceIndex < passage.sentences.length - 1) {
             setCurrentSentenceIndex(currentSentenceIndex + 1);
         }
     };
 
     const handlePrevious = () => {
+        setFeedback(null);
         if (currentSentenceIndex > 0) {
             setCurrentSentenceIndex(currentSentenceIndex - 1);
         }
@@ -190,11 +192,11 @@ export default function ReadingKaraoke() {
 
         let json;
         try {
-            const response = await fetch(url, {
+            const response = await fetchAuth(url, {
                 method: "POST",
                 body: formData,
             });
-            if (!response.ok) {
+            if (response === null || !response.ok) {
                 console.error("Failed to send audio");
                 return;
             }
@@ -234,6 +236,56 @@ export default function ReadingKaraoke() {
             mispronouncedWords,
         });
         setIsFeedbackVisible(true);
+    }
+
+    function renderSentenceWithHighlights() {
+        if (passage === null || feedback === null) {
+            return (
+                <Typography
+                    level="body-md"
+                    sx={{
+                        color: "text.primary",
+                    }}
+                >
+                    {passage?.sentences[currentSentenceIndex].text}
+                </Typography>
+            );
+        }
+
+        // TODO: Split words better, should be done by NLTK on backend
+        const words = passage.sentences[currentSentenceIndex].text.split(" ");
+        return (
+            <Typography
+                level="body-md"
+                sx={{
+                    color: "text.primary",
+                }}
+            >
+                {words.map((word, index) => {
+                    const isMispronounced = feedback.mispronouncedWords.some(
+                        mw => mw.word.toLowerCase() === word.toLowerCase().replaceAll(/[,\.;:!?\(\)]/g, ""),
+                    );
+                    return (
+                        <>
+                            <Typography
+                                key={index + word}
+                                sx={{
+                                    backgroundColor: isMispronounced ? "var(--joy-palette-primary-solidBg)" : "inherit",
+                                    color: isMispronounced ? "white" : "inherit",
+                                    fontWeight: isMispronounced ? "bold" : "normal",
+                                    borderRadius: isMispronounced ? "4px" : "0",
+                                    padding: isMispronounced ? "2px 4px" : "0",
+                                    margin: isMispronounced ? "-2px 0px" : "0px 0px",
+                                }}
+                            >
+                                {word}
+                            </Typography>
+                            <Typography key={index + word + " space"}>{" "}</Typography>
+                        </>
+                    );
+                })}
+            </Typography>
+        );
     }
 
     if (loading) {
@@ -293,15 +345,7 @@ export default function ReadingKaraoke() {
                         {t("instructions")}
                     </Typography>
                     <Divider sx={{ mb: 1 }} />
-                    <Typography
-                        level="body-md"
-                        sx={{
-                            color: "text.primary",
-                            textAlign: "center",
-                        }}
-                    >
-                        {passage.sentences[currentSentenceIndex]?.text}
-                    </Typography>
+                    {renderSentenceWithHighlights()}
                 </Card>
 
                 <Card
