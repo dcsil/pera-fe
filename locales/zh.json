@@ -72,6 +72,11 @@
   },
   ":": "：",
   "get-started": {
+    "review": {
+      "addToReadingKaraoke": "加入卡拉OK",
+      "retry": "重试",
+      "title": "创建的文本"
+    },
     "step1": {
       "generate": "产生",
       "history": "历史",

@@ -137,6 +137,11 @@
     }
   },
   "get-started": {
+    "review": {
+      "addToReadingKaraoke": "Add to Reading Karaoke",
+      "retry": "Retry",
+      "title": "Generated Text"
+    },
     "title": {
       "default": "Welcome to Generation!",
       "rk": "Welcome to Reading Karaoke!",

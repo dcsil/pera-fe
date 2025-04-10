@@ -9,6 +9,8 @@ import ImportSection from "./components/ImportSection";
 import GenerateSection from "./components/GenerateSection";
 import ReviewGeneratedText from "./components/ReviewGeneratedText";
 import { sendImportData, getLanguageFromCookies } from "@/lib/api";
+import { fetchAuth } from "@/lib/auth";
+import { BACKEND } from "@/lib/urls";
 
 export default function Generation() {
     const router = useRouter();
@@ -32,10 +34,31 @@ export default function Generation() {
     };
 
     const handleGenerate = async () => {
-        const simulatedText = "This is the generated text based on your input.";
-        const title = description || "Generated Title";
-        setTitle(title);
-        setGeneratedText(simulatedText);
+        const payload = {
+            description: description,
+            difficulty: difficulty,
+        };
+        setTitle(description);
+        try {
+            const response = await fetchAuth(`${BACKEND}/texts/generate-passage/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+            if (!response?.ok) {
+                throw new Error("Failed to send import data");
+            }
+            const responseData = await response.json();
+            console.log(responseData);
+            setGeneratedText(responseData);
+        }
+        catch (error) {
+            console.error("Error generating text:", error);
+            const simulatedText = "This is the generated text based on your input.";
+            setGeneratedText(simulatedText);
+        }
         setStep(3);
     };
 
