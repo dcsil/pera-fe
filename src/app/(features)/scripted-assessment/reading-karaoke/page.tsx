@@ -196,7 +196,7 @@ export default function ReadingKaraoke() {
                 method: "POST",
                 body: formData,
             });
-            if (response === null || !response.ok) {
+            if (!response?.ok) {
                 console.error("Failed to send audio");
                 return;
             }

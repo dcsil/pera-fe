@@ -21,7 +21,7 @@ export default function OverallScore({ score }: Readonly<OverallScoreProps>) {
                 {t("overallScore.title")}
             </Typography>
             <Typography level="h2" fontWeight="bold" mt={1}>
-                {score.toFixed(1)}
+                {Number(score.toFixed(1)) * 20}
             </Typography>
         </Box>
     );

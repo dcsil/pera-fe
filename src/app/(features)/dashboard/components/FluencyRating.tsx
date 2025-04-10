@@ -21,7 +21,7 @@ export default function FluencyRating({ rating }: Readonly<FluencyRatingProps>) 
                 {t("fluencyRating.title")}
             </Typography>
             <Typography level="h2" fontWeight="bold" mt={1}>
-                {rating.toFixed(1)}
+                {Number(rating.toFixed(1)) * 20}
             </Typography>
         </Box>
     );

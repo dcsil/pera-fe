@@ -30,8 +30,16 @@ export default function InteractiveChart({ data }: Readonly<{ data: Array<{ date
         },
     };
 
+    // Multiply accuracy, fluency, and pronunciation by 20 because api gives out of 5 not 100
+    const transformedData = data.map(entry => ({
+        ...entry,
+        accuracy: entry.accuracy * 20,
+        fluency: entry.fluency * 20,
+        pronunciation: entry.pronunciation * 20,
+    }));
+
     const [activeChart, setActiveChart] = React.useState<keyof typeof chartConfig>("accuracy");
-    const [chartData, setChartData] = React.useState(data);
+    const [chartData, setChartData] = React.useState(transformedData);
     type DateRange = "day" | "week" | "month";
     const [dateRange, setDateRange] = React.useState<DateRange>("week");
 
@@ -48,7 +56,7 @@ export default function InteractiveChart({ data }: Readonly<{ data: Array<{ date
         else {
             sliceLength = 30;
         }
-        const filteredData = data.slice(-sliceLength);
+        const filteredData = transformedData.slice(-sliceLength);
         setChartData(filteredData);
     };
 
