@@ -82,7 +82,8 @@
     "errorsTitle": "Errors",
     "noErrors": "No errors detected. Great job!",
     "prevShort": "Prev",
-    "nextShort": "Next"
+    "nextShort": "Next",
+    "loading": "Loading . . ."
   },
   "landing": {
     "hero": {
@@ -130,7 +131,7 @@
       "button": "Sign Up Now"
     }
   },
-  "generation": {
+  "get-started": {
     "title": {
       "default": "Welcome to Generation!",
       "rk": "Welcome to Reading Karaoke!",
@@ -150,13 +151,14 @@
       "proceedButton": "Proceed",
       "fileTypeLabel": "From:",
       "fileTypeOptions": {
-        "textFile": "Text File",
-        "pdf": "PDF",
-        "docx": "Word Document",
+        "textFile": "Text File (Coming Soon)",
+        "pdf": "PDF (Coming Soon)",
+        "docx": "Word Document (Coming Soon)",
         "pasteText": "Paste Text"
       },
       "dragDropText": "Drag and drop, or click to open file picker",
       "optionsTitle": "Options",
+      "experimentalWarning": "These are experimental features that currently have no effect.",
       "teleprompterLabel": "Teleprompter",
       "wordsPerMinuteLabel": "Words per minute",
       "feedbackStrictnessLabel": "Feedback strictness",
@@ -170,7 +172,9 @@
       "describeContentPlaceholder": "Type a brief description of the content...",
       "difficultyLabel": "Select the difficulty level:",
       "difficultyEasy": "Easy",
-      "difficultyHard": "Hard"
+      "difficultyHard": "Hard",
+      "titleLabel": "Passage title:",
+      "titlePlaceholder": "Input passage title"
     }
   },
   "recordButton": {

@@ -28,7 +28,7 @@ export default function CallToActionSection() {
                 <Button
                     variant="solid"
                     size="lg"
-                    href="mailto:teamlexislabs@outlook.com"
+                    href="/sign-up"
                     component="a"
                     sx={{
                         "backgroundColor": theme.palette.primary.solidBg,

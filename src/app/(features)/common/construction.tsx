@@ -3,7 +3,6 @@
 import { Box, Button, Typography, Stack, useTheme } from "@mui/joy";
 import { Construction } from "@mui/icons-material";
 import { useTranslations } from "next-intl";
-import { SPACING } from "@/theme";
 
 export default function UnderConstruction() {
     const t = useTranslations("constructionPage");
@@ -22,7 +21,7 @@ export default function UnderConstruction() {
             }}
         >
             <Stack
-                spacing={SPACING.SECTION_GAP}
+                spacing={4}
                 alignItems="center"
                 sx={{
                     width: "100%",

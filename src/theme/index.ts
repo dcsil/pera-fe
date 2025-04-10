@@ -1,6 +1,3 @@
-export * from "./theme";
-export * from "./constants";
-
 import { extendTheme } from "@mui/joy/styles";
 
 declare module "@mui/joy/styles" {
@@ -118,7 +115,8 @@ const theme = extendTheme({
         },
     },
     fontFamily: {
-        body: "SF Pro Text, var(--gh-fontFamily-fallback)",
+        body: "SF Pro Text, var(--joy-fontFamily-fallback)",
+        display: "SF Pro Text, var(--joy-fontFamily-fallback)",
     },
     components: {
         JoyButton: {
