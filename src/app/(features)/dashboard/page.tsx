@@ -30,11 +30,12 @@ export default function Dashboard() {
         async function fetchData() {
             setLoading(true);
             try {
-                const response = await fetch("/api/dashboard"); // TODO: SET API URL
-                if (!response.ok) {
+                const response = await fetchAuth(`${BACKEND}/accounts/dashboard`);
+                if (!response?.ok) {
                     throw new Error("Network response was not ok");
                 }
-                const result: DashboardApiResponse = await response.json();
+                const jsonResult = await response.json();
+                const result: DashboardApiResponse = jsonResult.progress_dashboard;
                 setStats(result.stats);
                 setData(result.data);
             }
@@ -183,9 +184,9 @@ export default function Dashboard() {
                     }}
                     >
                         <PerformanceMetrics
-                            fluency={stats.week_fluency}
-                            accuracy={stats.week_accuracy}
-                            pronunciation={stats.week_pronunciation}
+                            fluency={stats.week_fluency * 20}
+                            accuracy={stats.week_accuracy * 20}
+                            pronunciation={stats.week_pronunciation * 20}
                         />
                     </Grid>
                 </Grid>

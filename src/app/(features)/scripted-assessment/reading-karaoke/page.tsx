@@ -190,11 +190,11 @@ export default function ReadingKaraoke() {
 
         let json;
         try {
-            const response = await fetch(url, {
+            const response = await fetchAuth(url, {
                 method: "POST",
                 body: formData,
             });
-            if (!response.ok) {
+            if (!response?.ok) {
                 console.error("Failed to send audio");
                 return;
             }
