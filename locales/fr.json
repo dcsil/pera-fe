@@ -72,6 +72,11 @@
   },
   ":": ":",
   "get-started": {
+    "review": {
+      "addToReadingKaraoke": "Ajouter au karaoké de lecture",
+      "retry": "Réessayer",
+      "title": "Texte généré"
+    },
     "step1": {
       "generate": "Générer",
       "history": "Histoire",

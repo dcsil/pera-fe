@@ -72,6 +72,11 @@
   },
   ":": ":",
   "get-started": {
+    "review": {
+      "addToReadingKaraoke": "Добавить в караоке для чтения",
+      "retry": "Повторить",
+      "title": "созданный текст"
+    },
     "step1": {
       "generate": "Генерировать",
       "history": "История",
