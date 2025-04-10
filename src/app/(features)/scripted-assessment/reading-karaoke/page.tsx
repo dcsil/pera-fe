@@ -315,6 +315,7 @@ export default function ReadingKaraoke() {
                 sentences={passage.sentences}
                 currentSentenceIndex={currentSentenceIndex}
                 onSelectSentence={(index) => {
+                    setFeedback(null);
                     setCurrentSentenceIndex(index);
                     setIsOverviewVisible(false);
                 }}
