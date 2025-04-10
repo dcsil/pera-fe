@@ -57,7 +57,7 @@
     "stopRecording": "停止记录",
     "loading": "加载中...",
     "overview": {
-      "backButton": "返回概述",
+      "backToPractice": "返回",
       "selectSentence": "选择一个句子阅读",
       "viewAllSentences": "查看全部"
     }

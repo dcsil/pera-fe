@@ -86,8 +86,8 @@
     "loading": "Loading . . .",
     "overview": {
       "viewAllSentences": "View all",
-      "selectSentence": "Select a sentence to read",
-      "backButton": "Return to overview"
+      "backToPractice": "Return",
+      "selectSentence": "Select a sentence to read"
     }
   },
   "landing": {

@@ -10,7 +10,7 @@ import { BACKEND } from "@/lib/urls";
 import FeedbackDial from "@/components/FeedbackDial";
 import { FALLBACK_PASSAGE } from "@/constants/fallbackPassage";
 import { fetchAuth } from "@/lib/auth";
-import OverviewPage from "./OverviewPage";
+import Overview from "./Overview";
 
 interface Word {
     Word: string;
@@ -42,6 +42,89 @@ interface Passage {
         completion_status: boolean;
         created_at: string;
     }>;
+}
+
+function SharedHeader({
+    isOverviewVisible,
+    onToggleOverviewVisibility,
+    passage,
+    currentSentenceIndex,
+}: {
+    isOverviewVisible: boolean;
+    onToggleOverviewVisibility: () => void;
+    passage: Passage;
+    currentSentenceIndex: number;
+}) {
+    const t = useTranslations("readingKaraoke");
+
+    const progress = passage ? ((currentSentenceIndex + 1) / passage.sentences.length) * 100 : 0;
+
+    return (
+        <>
+            <Stack
+                spacing={1}
+                sx={{
+                    textAlign: "center",
+                    mb: 4,
+                    mt: 6,
+                }}
+            >
+                <Typography level="h2" sx={{ color: "text.primary" }}>
+                    {t("title")}
+                </Typography>
+                <Typography level="body-md" sx={{ color: "text.secondary" }}>
+                    {passage.title}
+                </Typography>
+            </Stack>
+
+            <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                sx={{ width: "100%", maxWidth: "75%", mx: "auto", mb: 2 }}
+            >
+                <Box sx={{ flex: 1 }}>
+                    <Typography level="body-sm" sx={{ color: "text.secondary" }}>
+                        {t("progress", { current: currentSentenceIndex + 1, total: passage.sentences.length })}
+                    </Typography>
+                    <LinearProgress
+                        determinate
+                        variant="solid"
+                        value={progress}
+                        sx={{
+                            "height": "8px",
+                            "borderRadius": 4,
+                            "backgroundColor": "secondary.outlinedBg",
+                            "& .MuiLinearProgress-bar": {
+                                backgroundColor: "primary.solidBg",
+                            },
+                            "&:focus-visible": {
+                                outline: "none",
+                            },
+                        }}
+                    />
+                </Box>
+                <Button
+                    variant="plain"
+                    size="sm"
+                    onClick={onToggleOverviewVisibility}
+                    sx={{
+                        "minWidth": "auto",
+                        "padding": "4px 8px",
+                        "fontSize": "0.875rem",
+                        "fontWeight": "bold",
+                        "backgroundColor": "primary.solidBg",
+                        "color": "primary.solidColor",
+                        "&:hover": {
+                            backgroundColor: "primary.solidHoverBg",
+                        },
+                    }}
+                >
+                    {t(isOverviewVisible ? "overview.backToPractice" : "overview.viewAllSentences")}
+                </Button>
+            </Stack>
+        </>
+    );
 }
 
 export default function ReadingKaraoke() {
@@ -86,8 +169,6 @@ export default function ReadingKaraoke() {
             setLoading(false);
         }
     };
-
-    const progress = passage ? ((currentSentenceIndex + 1) / passage.sentences.length) * 100 : 0;
 
     const handleNext = () => {
         if (passage && currentSentenceIndex < passage.sentences.length - 1) {
@@ -175,239 +256,187 @@ export default function ReadingKaraoke() {
         );
     }
 
+    let mainContent;
     if (isOverviewVisible) {
-        return (
-            <OverviewPage
-                passageTitle={passage.title}
+        mainContent = (
+            <Overview
                 sentences={passage.sentences}
                 currentSentenceIndex={currentSentenceIndex}
-                progress={progress}
                 onSelectSentence={(index) => {
                     setCurrentSentenceIndex(index);
                     setIsOverviewVisible(false);
                 }}
-                onBack={() => setIsOverviewVisible(false)}
             />
+        );
+    }
+    else {
+        mainContent = (
+            <>
+                <Card
+                    variant="outlined"
+                    sx={{
+                        padding: 2,
+                        backgroundColor: "background.surface",
+                        width: "75%",
+                        mx: "auto",
+                        mb: 2,
+                    }}
+                >
+                    <Typography
+                        level="h5"
+                        sx={{
+                            color: "text.primary",
+                            textAlign: "left",
+                            mb: 0,
+                        }}
+                    >
+                        {t("instructions")}
+                    </Typography>
+                    <Divider sx={{ mb: 1 }} />
+                    <Typography
+                        level="body-md"
+                        sx={{
+                            color: "text.primary",
+                            textAlign: "center",
+                        }}
+                    >
+                        {passage.sentences[currentSentenceIndex]?.text}
+                    </Typography>
+                </Card>
+
+                <Card
+                    variant="outlined"
+                    sx={{
+                        padding: 3,
+                        textAlign: "center",
+                        backgroundColor: "background.surface",
+                        width: "75%",
+                        mx: "auto",
+                    }}
+                >
+                    <Stack direction="row" justifyContent="space-between" alignItems="center">
+                        <Typography level="h4" sx={{ color: "text.primary" }}>
+                            {t("feedbackTitle")}
+                        </Typography>
+                        <IconButton
+                            onClick={() => setIsFeedbackVisible(!isFeedbackVisible)}
+                            size="sm"
+                            variant="plain"
+                        >
+                            {isFeedbackVisible ? <ExpandLess /> : <ExpandMore />}
+                        </IconButton>
+                    </Stack>
+                    {isFeedbackVisible && (
+                        <Box sx={{ mt: 2 }}>
+                            {feedback
+                                ? (
+                                        <Stack spacing={4} alignItems="center">
+                                            <Stack
+                                                direction={{ xs: "column", sm: "row" }}
+                                                spacing={4}
+                                                justifyContent="center"
+                                                alignItems="center"
+                                            >
+                                                <FeedbackDial label={t("accuracyScore")} value={feedback.accuracy} />
+                                                <FeedbackDial label={t("fluencyScore")} value={feedback.fluency} />
+                                                <FeedbackDial label={t("pronunciationScore")} value={feedback.pronunciation} />
+                                            </Stack>
+                                            <Box sx={{ mt: 4, textAlign: "left", width: "100%" }}>
+                                                <Typography level="h4" sx={{ mb: 2 }}>
+                                                    {t("errorsTitle")}
+                                                </Typography>
+                                                {feedback.mispronouncedWords.length > 0
+                                                    ? (
+                                                            feedback.mispronouncedWords.map(word => (
+                                                                <Typography key={word.word} level="body-sm" sx={{ mb: 1 }}>
+                                                                    <strong>
+                                                                        {word.word}
+                                                                        {t(":")}
+                                                                    </strong>
+                                                                    {" "}
+                                                                    {word.error}
+                                                                </Typography>
+                                                            ))
+                                                        )
+                                                    : (
+                                                            <Typography level="body-sm" sx={{ color: "text.secondary" }}>
+                                                                {t("noErrors")}
+                                                            </Typography>
+                                                        )}
+                                            </Box>
+                                        </Stack>
+                                    )
+                                : (
+                                        <Typography level="body-sm" sx={{ color: "text.secondary", mt: 2 }}>
+                                            {t("feedbackPlaceholder")}
+                                        </Typography>
+                                    )}
+                        </Box>
+                    )}
+                </Card>
+
+                <Stack
+                    direction="row"
+                    spacing={2}
+                    sx={{
+                        justifyContent: "space-between",
+                        width: "100%",
+                        maxWidth: "75%",
+                        mx: "auto",
+                        mt: 4,
+                        mb: 6,
+                        flexWrap: "wrap",
+                    }}
+                >
+                    <Button
+                        variant="solid"
+                        startDecorator={<NavigateBefore />}
+                        onClick={handlePrevious}
+                        disabled={currentSentenceIndex === 0}
+                        sx={{
+                            "backgroundColor": "primary.solidBg",
+                            "color": "primary.solidColor",
+                            "&:hover": {
+                                backgroundColor: "primary.solidHoverBg",
+                            },
+                            "flex": "1 1 auto",
+                            "minWidth": "80px",
+                        }}
+                    >
+                        {t("previous")}
+                    </Button>
+                    <RecordButton onBlobReady={sendAudio} />
+                    <Button
+                        variant="solid"
+                        endDecorator={<NavigateNext />}
+                        onClick={handleNext}
+                        disabled={currentSentenceIndex === passage.sentences.length - 1}
+                        sx={{
+                            "backgroundColor": "primary.solidBg",
+                            "color": "primary.solidColor",
+                            "&:hover": {
+                                backgroundColor: "primary.solidHoverBg",
+                            },
+                            "flex": "1 1 auto",
+                            "minWidth": "80px",
+                        }}
+                    >
+                        {t("next")}
+                    </Button>
+                </Stack>
+            </>
         );
     }
 
     return (
         <PageContainer>
-            <Stack
-                spacing={1}
-                sx={{
-                    textAlign: "center",
-                    mb: 4,
-                    mt: 6,
-                }}
-            >
-                <Typography level="h2" sx={{ color: "text.primary" }}>
-                    {t("title")}
-                </Typography>
-                <Typography level="body-md" sx={{ color: "text.secondary" }}>
-                    {passage.title}
-                </Typography>
-            </Stack>
-
-            <Stack
-                direction="row"
-                spacing={2}
-                alignItems="center"
-                sx={{ width: "100%", maxWidth: "75%", mx: "auto", mb: 2 }}
-            >
-                <Box sx={{ flex: 1 }}>
-                    <Typography level="body-sm" sx={{ color: "text.secondary" }}>
-                        {t("progress", { current: currentSentenceIndex + 1, total: passage.sentences.length })}
-                    </Typography>
-                    <LinearProgress
-                        determinate
-                        variant="solid"
-                        value={progress}
-                        sx={{
-                            "height": "8px",
-                            "borderRadius": 4,
-                            "backgroundColor": "secondary.outlinedBg",
-                            "& .MuiLinearProgress-bar": {
-                                backgroundColor: "primary.solidBg",
-                            },
-                            "&:focus-visible": {
-                                outline: "none",
-                            },
-                        }}
-                    />
-                </Box>
-                <Button
-                    variant="plain"
-                    size="sm"
-                    onClick={() => setIsOverviewVisible(true)}
-                    sx={{
-                        "minWidth": "auto",
-                        "padding": "4px 8px",
-                        "fontSize": "0.875rem",
-                        "fontWeight": "bold",
-                        "backgroundColor": "primary.solidBg",
-                        "color": "primary.solidColor",
-                        "&:hover": {
-                            backgroundColor: "primary.solidHoverBg",
-                        },
-                    }}
-                >
-                    {t("overview.viewAllSentences")}
-                </Button>
-            </Stack>
-
-            <Card
-                variant="outlined"
-                sx={{
-                    padding: 2,
-                    backgroundColor: "background.surface",
-                    width: "75%",
-                    mx: "auto",
-                    mb: 2,
-                }}
-            >
-                <Typography
-                    level="h5"
-                    sx={{
-                        color: "text.primary",
-                        textAlign: "left",
-                        mb: 0,
-                    }}
-                >
-                    {t("instructions")}
-                </Typography>
-                <Divider sx={{ mb: 1 }} />
-                <Typography
-                    level="body-md"
-                    sx={{
-                        color: "text.primary",
-                        textAlign: "center",
-                    }}
-                >
-                    {passage.sentences[currentSentenceIndex]?.text}
-                </Typography>
-            </Card>
-
-            <Card
-                variant="outlined"
-                sx={{
-                    padding: 3,
-                    textAlign: "center",
-                    backgroundColor: "background.surface",
-                    width: "75%",
-                    mx: "auto",
-                }}
-            >
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                    <Typography level="h4" sx={{ color: "text.primary" }}>
-                        {t("feedbackTitle")}
-                    </Typography>
-                    <IconButton
-                        onClick={() => setIsFeedbackVisible(!isFeedbackVisible)}
-                        size="sm"
-                        variant="plain"
-                    >
-                        {isFeedbackVisible ? <ExpandLess /> : <ExpandMore />}
-                    </IconButton>
-                </Stack>
-                {isFeedbackVisible && (
-                    <Box sx={{ mt: 2 }}>
-                        {feedback
-                            ? (
-                                    <Stack spacing={4} alignItems="center">
-                                        <Stack
-                                            direction={{ xs: "column", sm: "row" }}
-                                            spacing={4}
-                                            justifyContent="center"
-                                            alignItems="center"
-                                        >
-                                            <FeedbackDial label={t("accuracyScore")} value={feedback.accuracy} />
-                                            <FeedbackDial label={t("fluencyScore")} value={feedback.fluency} />
-                                            <FeedbackDial label={t("pronunciationScore")} value={feedback.pronunciation} />
-                                        </Stack>
-                                        <Box sx={{ mt: 4, textAlign: "left", width: "100%" }}>
-                                            <Typography level="h4" sx={{ mb: 2 }}>
-                                                {t("errorsTitle")}
-                                            </Typography>
-                                            {feedback.mispronouncedWords.length > 0
-                                                ? (
-                                                        feedback.mispronouncedWords.map(word => (
-                                                            <Typography key={word.word} level="body-sm" sx={{ mb: 1 }}>
-                                                                <strong>
-                                                                    {word.word}
-                                                                    {t(":")}
-                                                                </strong>
-                                                                {" "}
-                                                                {word.error}
-                                                            </Typography>
-                                                        ))
-                                                    )
-                                                : (
-                                                        <Typography level="body-sm" sx={{ color: "text.secondary" }}>
-                                                            {t("noErrors")}
-                                                        </Typography>
-                                                    )}
-                                        </Box>
-                                    </Stack>
-                                )
-                            : (
-                                    <Typography level="body-sm" sx={{ color: "text.secondary", mt: 2 }}>
-                                        {t("feedbackPlaceholder")}
-                                    </Typography>
-                                )}
-                    </Box>
-                )}
-            </Card>
-
-            <Stack
-                direction="row"
-                spacing={2}
-                sx={{
-                    justifyContent: "space-between",
-                    width: "100%",
-                    maxWidth: "75%",
-                    mx: "auto",
-                    mt: 4,
-                    mb: 6,
-                    flexWrap: "wrap",
-                }}
-            >
-                <Button
-                    variant="solid"
-                    startDecorator={<NavigateBefore />}
-                    onClick={handlePrevious}
-                    disabled={currentSentenceIndex === 0}
-                    sx={{
-                        "backgroundColor": "primary.solidBg",
-                        "color": "primary.solidColor",
-                        "&:hover": {
-                            backgroundColor: "primary.solidHoverBg",
-                        },
-                        "flex": "1 1 auto",
-                        "minWidth": "80px",
-                    }}
-                >
-                    {t("previous")}
-                </Button>
-                <RecordButton onBlobReady={sendAudio} />
-                <Button
-                    variant="solid"
-                    endDecorator={<NavigateNext />}
-                    onClick={handleNext}
-                    disabled={currentSentenceIndex === passage.sentences.length - 1}
-                    sx={{
-                        "backgroundColor": "primary.solidBg",
-                        "color": "primary.solidColor",
-                        "&:hover": {
-                            backgroundColor: "primary.solidHoverBg",
-                        },
-                        "flex": "1 1 auto",
-                        "minWidth": "80px",
-                    }}
-                >
-                    {t("next")}
-                </Button>
-            </Stack>
+            <SharedHeader
+                isOverviewVisible={isOverviewVisible}
+                onToggleOverviewVisibility={() => { setIsOverviewVisible(!isOverviewVisible); }}
+                passage={passage}
+                currentSentenceIndex={currentSentenceIndex}
+            />
+            {mainContent}
         </PageContainer>
     );
 }

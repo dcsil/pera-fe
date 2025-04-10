@@ -57,7 +57,7 @@
     "stopRecording": "Прекратить запись",
     "loading": "Загрузка . . .",
     "overview": {
-      "backButton": "Вернитесь к обзору",
+      "backToPractice": "Вернуться",
       "selectSentence": "Выберите предложение для чтения",
       "viewAllSentences": "Просмотреть все"
     }

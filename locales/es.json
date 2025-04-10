@@ -57,7 +57,7 @@
     "pronunciationScore": "Pronunciación",
     "loading": "Cargando . . .",
     "overview": {
-      "backButton": "Volver a la descripción general",
+      "backToPractice": "Volver",
       "selectSentence": "Seleccione una oración para leer",
       "viewAllSentences": "Ver todas"
     }

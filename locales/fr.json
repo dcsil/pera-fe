@@ -57,7 +57,7 @@
     "stopRecording": "Arrêter l'enregistrement",
     "loading": "Chargement . . .",
     "overview": {
-      "backButton": "Retour à la vue d'ensemble",
+      "backToPractice": "Retour",
       "selectSentence": "Sélectionnez une phrase à lire",
       "viewAllSentences": "Afficher tous"
     }
