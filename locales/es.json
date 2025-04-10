@@ -55,7 +55,12 @@
     "noErrors": "No hay errores detectados. \n¡Buen trabajo!",
     "prevShort": "Previsamente",
     "pronunciationScore": "Pronunciación",
-    "loading": "Cargando . . ."
+    "loading": "Cargando . . .",
+    "overview": {
+      "backToPractice": "Volver",
+      "selectSentence": "Seleccione una oración para leer",
+      "viewAllSentences": "Ver todas"
+    }
   },
   "recordButton": {
     "start": "Comenzar a grabar",

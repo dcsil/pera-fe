@@ -83,7 +83,12 @@
     "noErrors": "No errors detected. Great job!",
     "prevShort": "Prev",
     "nextShort": "Next",
-    "loading": "Loading . . ."
+    "loading": "Loading . . .",
+    "overview": {
+      "viewAllSentences": "View all",
+      "backToPractice": "Return",
+      "selectSentence": "Select a sentence to read"
+    }
   },
   "landing": {
     "hero": {
