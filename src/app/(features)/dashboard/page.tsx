@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Box, Grid, Typography, Button, Stack } from "@mui/joy";
+import { useTranslations } from "next-intl";
 import OverallScore from "./components/OverallScore";
 import PerformanceMetrics from "./components/PerformanceMetrics";
 import ActivityBreakdown from "./components/ActivityBreakdown";
@@ -10,16 +13,18 @@ import FluencyRating from "./components/FluencyRating";
 import ActivitiesCompleted from "./components/ActivitiesCompleted";
 import LearningStreak from "./components/LearningStreak";
 import InteractiveChart from "./components/InteractiveChart";
-import { Box, Grid, Typography } from "@mui/joy";
-import { useTranslations } from "next-intl";
 import { DashboardApiResponse, DashboardStats, DashboardDataPoint } from "./types";
 import { progressDashboardSampleData } from "./sampleData";
+import { fetchAuth } from "@/lib/auth";
+import { BACKEND } from "@/lib/urls";
 
 export default function Dashboard() {
     const t = useTranslations("dashboard");
+    const router = useRouter();
     const [stats, setStats] = useState<DashboardStats | null>(null);
     const [data, setData] = useState<DashboardDataPoint[]>([]);
     const [loading, setLoading] = useState(true);
+    const [highestPassageId, setHighestPassageId] = useState<number | null>(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -42,12 +47,29 @@ export default function Dashboard() {
                 setLoading(false);
             }
         }
+
+        async function fetchPassages() {
+            try {
+                const response = await fetchAuth(`${BACKEND}/texts/user-passages/`);
+                if (!response?.ok) {
+                    throw new Error("Failed to fetch passages");
+                }
+                const passages = await response.json();
+                const highestId = Math.max(...passages.map((p: { passage_id: number }) => p.passage_id));
+                setHighestPassageId(highestId);
+            }
+            catch (error) {
+                console.error("Error fetching passages:", error);
+            }
+        }
+
         fetchData();
+        fetchPassages();
     }, []);
 
     if (loading || !stats) {
         if (!loading) {
-            console.error("Malformed response data from backend when obtanining progress data.");
+            console.error("Malformed response data from backend when obtaining progress data.");
         }
         return null;
     }
@@ -76,6 +98,12 @@ export default function Dashboard() {
         },
     ];
 
+    const handleContinue = () => {
+        if (highestPassageId) {
+            router.push(`/scripted-assessment/reading-karaoke?passage_id=${highestPassageId}`);
+        }
+    };
+
     return (
         <Box
             sx={{
@@ -86,9 +114,32 @@ export default function Dashboard() {
                 boxSizing: "border-box",
             }}
         >
-            <Typography level="h4" fontWeight="bold" mb={3}>
-                {t("title")}
-            </Typography>
+            {/* Title and Button Row */}
+            <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{ mb: 3 }}
+            >
+                <Typography level="h4" fontWeight="bold">
+                    {t("title")}
+                </Typography>
+                <Button
+                    variant="solid"
+                    color="primary"
+                    onClick={handleContinue}
+                    disabled={!highestPassageId}
+                    sx={{
+                        minWidth: "auto",
+                        padding: "6px 16px",
+                        fontSize: "0.875rem",
+                        fontWeight: "bold",
+                    }}
+                >
+                    {t("continueWhereYouLeftOff")}
+                </Button>
+            </Stack>
+
             <Grid container spacing={2} alignItems="stretch" sx={{ flex: "1 1 auto" }}>
                 <Grid xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column" }}>
                     <OverallScore score={stats.overall} />
